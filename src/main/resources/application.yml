@@ -1,0 +1,16 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+# 应用名称
+spring:
+  application:
+    name: oa-data-migration
+# 数据库配置
+---
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://10.51.8.26\master:1433;database=jxwoa
+    # url: jdbc:sqlserver://10.51.8.26;database=jxwoa
+    username: dev_biuaxia
+    password: 2PvR4UEThwFofg
