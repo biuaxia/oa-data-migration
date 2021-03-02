@@ -16,6 +16,9 @@
 
         <maven.test.skip>true</maven.test.skip>
         <mssql-jdbc.version>8.2.1.jre8</mssql-jdbc.version>
+        <mybatis-plus-boot-starter.version>3.4.2</mybatis-plus-boot-starter.version>
+        <tika-core.version>1.25</tika-core.version>
+        <hutool-all.version>5.5.9</hutool-all.version>
     </properties>
 
     <dependencies>
@@ -73,21 +76,21 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>LATEST</version>
+            <version>${mybatis-plus-boot-starter.version}</version>
         </dependency>
 
         <!--用户设备获取-->
         <dependency>
             <groupId>org.apache.tika</groupId>
             <artifactId>tika-core</artifactId>
-            <version>LATEST</version>
+            <version>${tika-core.version}</version>
         </dependency>
 
         <!--工具集-->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>LATEST</version>
+            <version>${hutool-all.version}</version>
         </dependency>
 
     </dependencies>
