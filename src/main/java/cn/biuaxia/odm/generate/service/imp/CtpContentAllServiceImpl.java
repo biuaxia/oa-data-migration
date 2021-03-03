@@ -1,17 +1,12 @@
 package cn.biuaxia.odm.generate.service.imp;
 
+import cn.biuaxia.odm.generate.domain.CtpContentAll;
+import cn.biuaxia.odm.generate.mapper.CtpContentAllMapper;
+import cn.biuaxia.odm.generate.service.CtpContentAllService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
-
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import cn.biuaxia.odm.generate.mapper.CtpContentAllMapper;
-
-import java.util.List;
-
-import cn.biuaxia.odm.generate.domain.CtpContentAll;
-import cn.biuaxia.odm.generate.service.CtpContentAllService;
 
 @Service
 public class CtpContentAllServiceImpl extends ServiceImpl<CtpContentAllMapper, CtpContentAll> implements CtpContentAllService {

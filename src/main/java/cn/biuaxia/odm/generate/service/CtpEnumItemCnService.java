@@ -1,12 +1,11 @@
 package cn.biuaxia.odm.generate.service;
 
-import java.util.List;
-
 import cn.biuaxia.odm.generate.domain.CtpEnumItemCn;
 import com.baomidou.mybatisplus.extension.service.IService;
 
-public interface CtpEnumItemCnService extends IService<CtpEnumItemCn> {
+import java.util.List;
 
+public interface CtpEnumItemCnService extends IService<CtpEnumItemCn> {
 
     int updateBatch(List<CtpEnumItemCn> list);
 

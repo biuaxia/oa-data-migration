@@ -1,17 +1,12 @@
 package cn.biuaxia.odm.generate.service.imp;
 
-import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
-import java.util.List;
-
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-
-import java.util.List;
-
 import cn.biuaxia.odm.generate.domain.CtpEnumItemCn;
 import cn.biuaxia.odm.generate.mapper.CtpEnumItemCnMapper;
 import cn.biuaxia.odm.generate.service.CtpEnumItemCnService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CtpEnumItemCnServiceImpl extends ServiceImpl<CtpEnumItemCnMapper, CtpEnumItemCn> implements CtpEnumItemCnService {

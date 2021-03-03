@@ -1,12 +1,11 @@
 package cn.biuaxia.odm.generate.service;
 
-import java.util.List;
-
 import cn.biuaxia.odm.generate.domain.CtpContentAll;
 import com.baomidou.mybatisplus.extension.service.IService;
 
-public interface CtpContentAllService extends IService<CtpContentAll> {
+import java.util.List;
 
+public interface CtpContentAllService extends IService<CtpContentAll> {
 
     int updateBatch(List<CtpContentAll> list);
 

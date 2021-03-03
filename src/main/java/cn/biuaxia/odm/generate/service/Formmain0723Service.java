@@ -1,12 +1,11 @@
 package cn.biuaxia.odm.generate.service;
 
-import java.util.List;
-
 import cn.biuaxia.odm.generate.domain.Formmain0723;
 import com.baomidou.mybatisplus.extension.service.IService;
 
-public interface Formmain0723Service extends IService<Formmain0723> {
+import java.util.List;
 
+public interface Formmain0723Service extends IService<Formmain0723> {
 
     int updateBatch(List<Formmain0723> list);
 

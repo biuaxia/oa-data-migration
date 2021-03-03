@@ -1,17 +1,12 @@
 package cn.biuaxia.odm.generate.service.imp;
 
+import cn.biuaxia.odm.generate.domain.Formmain0802;
+import cn.biuaxia.odm.generate.mapper.Formmain0802Mapper;
+import cn.biuaxia.odm.generate.service.Formmain0802Service;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
-
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-
-import java.util.List;
-
-import cn.biuaxia.odm.generate.mapper.Formmain0802Mapper;
-import cn.biuaxia.odm.generate.domain.Formmain0802;
-import cn.biuaxia.odm.generate.service.Formmain0802Service;
 
 @Service
 public class Formmain0802ServiceImpl extends ServiceImpl<Formmain0802Mapper, Formmain0802> implements Formmain0802Service {

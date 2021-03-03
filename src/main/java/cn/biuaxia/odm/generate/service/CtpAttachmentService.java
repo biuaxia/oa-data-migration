@@ -1,12 +1,11 @@
 package cn.biuaxia.odm.generate.service;
 
-import java.util.List;
-
 import cn.biuaxia.odm.generate.domain.CtpAttachment;
 import com.baomidou.mybatisplus.extension.service.IService;
 
-public interface CtpAttachmentService extends IService<CtpAttachment> {
+import java.util.List;
 
+public interface CtpAttachmentService extends IService<CtpAttachment> {
 
     int updateBatch(List<CtpAttachment> list);
 

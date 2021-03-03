@@ -1,17 +1,12 @@
 package cn.biuaxia.odm.generate.service.imp;
 
+import cn.biuaxia.odm.generate.domain.OrgMember;
+import cn.biuaxia.odm.generate.mapper.OrgMemberMapper;
+import cn.biuaxia.odm.generate.service.OrgMemberService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
-
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import cn.biuaxia.odm.generate.mapper.OrgMemberMapper;
-
-import java.util.List;
-
-import cn.biuaxia.odm.generate.domain.OrgMember;
-import cn.biuaxia.odm.generate.service.OrgMemberService;
 
 @Service
 public class OrgMemberServiceImpl extends ServiceImpl<OrgMemberMapper, OrgMember> implements OrgMemberService {
