@@ -1,0 +1,22 @@
+package cn.biuaxia.odm.generate.mapper;
+
+import cn.biuaxia.odm.generate.domain.Formmain0660;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+@Mapper
+public interface Formmain0660Mapper extends BaseMapper<Formmain0660> {
+    int updateBatch(List<Formmain0660> list);
+
+    int updateBatchSelective(List<Formmain0660> list);
+
+    int batchInsert(@Param("list") List<Formmain0660> list);
+
+    int insertOrUpdate(Formmain0660 record);
+
+    int insertOrUpdateSelective(Formmain0660 record);
+}

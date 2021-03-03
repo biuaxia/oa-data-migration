@@ -4,12 +4,13 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.util.Date;
 
 @Data
 @Builder
@@ -62,7 +63,7 @@ public class EdocSummary implements Serializable {
     @TableField(value = "COMPLETE_TIME")
     private Date completeTime;
 
-    @TableField(value = "[STATE]")
+    @TableField(value = "`STATE`")
     private Short state;
 
     @TableField(value = "SUBJECT")

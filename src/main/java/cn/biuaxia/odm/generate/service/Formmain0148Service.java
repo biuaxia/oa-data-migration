@@ -1,0 +1,17 @@
+package cn.biuaxia.odm.generate.service;
+
+import java.util.List;
+
+import cn.biuaxia.odm.generate.domain.Formmain0148;
+import com.baomidou.mybatisplus.extension.service.IService;
+
+public interface Formmain0148Service extends IService<Formmain0148> {
+
+
+    int batchInsert(List<Formmain0148> list);
+
+    int insertOrUpdate(Formmain0148 record);
+
+    int insertOrUpdateSelective(Formmain0148 record);
+
+}

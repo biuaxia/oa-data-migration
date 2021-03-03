@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.odm.generate.mapper.CtpContentAllMapper">
+    <resultMap id="BaseResultMap" type="cn.biuaxia.odm.generate.domain.CtpContentAll">
+        <!--@mbg.generated-->
+        <!--@Table CTP_CONTENT_ALL-->
+        <id column="ID" jdbcType="BIGINT" property="id"/>
+        <result column="CREATE_ID" jdbcType="BIGINT" property="createId"/>
+        <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="MODIFY_ID" jdbcType="BIGINT" property="modifyId"/>
+        <result column="MODIFY_DATE" jdbcType="TIMESTAMP" property="modifyDate"/>
+        <result column="MODULE_TYPE" jdbcType="SMALLINT" property="moduleType"/>
+        <result column="MODULE_ID" jdbcType="BIGINT" property="moduleId"/>
+        <result column="MODULE_TEMPLATE_ID" jdbcType="BIGINT" property="moduleTemplateId"/>
+        <result column="CONTENT_TYPE" jdbcType="SMALLINT" property="contentType"/>
+        <result column="CONTENT_DATA_ID" jdbcType="BIGINT" property="contentDataId"/>
+        <result column="CONTENT_TEMPLATE_ID" jdbcType="BIGINT" property="contentTemplateId"/>
+        <result column="TITLE" jdbcType="VARCHAR" property="title"/>
+        <result column="SORT" jdbcType="SMALLINT" property="sort"/>
+        <result column="CONTENT" jdbcType="LONGVARCHAR" property="content"/>
+        <result column="trans_id" jdbcType="BIGINT" property="transId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, CREATE_ID, CREATE_DATE, MODIFY_ID, MODIFY_DATE, MODULE_TYPE, MODULE_ID, MODULE_TEMPLATE_ID,
+        CONTENT_TYPE, CONTENT_DATA_ID, CONTENT_TEMPLATE_ID, TITLE, SORT, CONTENT, trans_id
+    </sql>
+    <update id="updateBatch" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update CTP_CONTENT_ALL
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="CREATE_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.createId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="CREATE_DATE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.createDate,jdbcType=TIMESTAMP}
+                </foreach>
+            </trim>
+            <trim prefix="MODIFY_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.modifyId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="MODIFY_DATE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.modifyDate,jdbcType=TIMESTAMP}
+                </foreach>
+            </trim>
+            <trim prefix="MODULE_TYPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.moduleType,jdbcType=SMALLINT}
+                </foreach>
+            </trim>
+            <trim prefix="MODULE_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.moduleId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="MODULE_TEMPLATE_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.moduleTemplateId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="CONTENT_TYPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.contentType,jdbcType=SMALLINT}
+                </foreach>
+            </trim>
+            <trim prefix="CONTENT_DATA_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.contentDataId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="CONTENT_TEMPLATE_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.contentTemplateId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="TITLE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.title,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="SORT = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.sort,jdbcType=SMALLINT}
+                </foreach>
+            </trim>
+            <trim prefix="CONTENT = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.content,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="trans_id = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.transId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <update id="updateBatchSelective" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update CTP_CONTENT_ALL
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="CREATE_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.createId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CREATE_DATE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createDate != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.createDate,jdbcType=TIMESTAMP}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="MODIFY_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.modifyId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.modifyId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="MODIFY_DATE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.modifyDate != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.modifyDate,jdbcType=TIMESTAMP}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="MODULE_TYPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.moduleType != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.moduleType,jdbcType=SMALLINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="MODULE_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.moduleId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.moduleId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="MODULE_TEMPLATE_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.moduleTemplateId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.moduleTemplateId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CONTENT_TYPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.contentType != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.contentType,jdbcType=SMALLINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CONTENT_DATA_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.contentDataId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.contentDataId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CONTENT_TEMPLATE_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.contentTemplateId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.contentTemplateId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="TITLE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.title != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.title,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="SORT = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.sort != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.sort,jdbcType=SMALLINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CONTENT = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.content != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.content,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="trans_id = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.transId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.transId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <insert id="batchInsert" parameterType="map">
+        <!--@mbg.generated-->
+        insert into CTP_CONTENT_ALL
+        (ID, CREATE_ID, CREATE_DATE, MODIFY_ID, MODIFY_DATE, MODULE_TYPE, MODULE_ID, MODULE_TEMPLATE_ID,
+        CONTENT_TYPE, CONTENT_DATA_ID, CONTENT_TEMPLATE_ID, TITLE, SORT, CONTENT, trans_id
+        )
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id,jdbcType=BIGINT}, #{item.createId,jdbcType=BIGINT}, #{item.createDate,jdbcType=TIMESTAMP},
+            #{item.modifyId,jdbcType=BIGINT}, #{item.modifyDate,jdbcType=TIMESTAMP},
+            #{item.moduleType,jdbcType=SMALLINT},
+            #{item.moduleId,jdbcType=BIGINT}, #{item.moduleTemplateId,jdbcType=BIGINT},
+            #{item.contentType,jdbcType=SMALLINT},
+            #{item.contentDataId,jdbcType=BIGINT}, #{item.contentTemplateId,jdbcType=BIGINT},
+            #{item.title,jdbcType=VARCHAR}, #{item.sort,jdbcType=SMALLINT}, #{item.content,jdbcType=LONGVARCHAR},
+            #{item.transId,jdbcType=BIGINT})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" parameterType="cn.biuaxia.odm.generate.domain.CtpContentAll">
+        <!--@mbg.generated-->
+        insert into CTP_CONTENT_ALL
+        (ID, CREATE_ID, CREATE_DATE, MODIFY_ID, MODIFY_DATE, MODULE_TYPE, MODULE_ID, MODULE_TEMPLATE_ID,
+        CONTENT_TYPE, CONTENT_DATA_ID, CONTENT_TEMPLATE_ID, TITLE, SORT, CONTENT, trans_id
+        )
+        values
+        (#{id,jdbcType=BIGINT}, #{createId,jdbcType=BIGINT}, #{createDate,jdbcType=TIMESTAMP},
+        #{modifyId,jdbcType=BIGINT}, #{modifyDate,jdbcType=TIMESTAMP}, #{moduleType,jdbcType=SMALLINT},
+        #{moduleId,jdbcType=BIGINT}, #{moduleTemplateId,jdbcType=BIGINT}, #{contentType,jdbcType=SMALLINT},
+        #{contentDataId,jdbcType=BIGINT}, #{contentTemplateId,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR},
+        #{sort,jdbcType=SMALLINT}, #{content,jdbcType=LONGVARCHAR}, #{transId,jdbcType=BIGINT}
+        )
+        on duplicate key update
+        ID = #{id,jdbcType=BIGINT},
+        CREATE_ID = #{createId,jdbcType=BIGINT},
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+        MODIFY_ID = #{modifyId,jdbcType=BIGINT},
+        MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+        MODULE_TYPE = #{moduleType,jdbcType=SMALLINT},
+        MODULE_ID = #{moduleId,jdbcType=BIGINT},
+        MODULE_TEMPLATE_ID = #{moduleTemplateId,jdbcType=BIGINT},
+        CONTENT_TYPE = #{contentType,jdbcType=SMALLINT},
+        CONTENT_DATA_ID = #{contentDataId,jdbcType=BIGINT},
+        CONTENT_TEMPLATE_ID = #{contentTemplateId,jdbcType=BIGINT},
+        TITLE = #{title,jdbcType=VARCHAR},
+        SORT = #{sort,jdbcType=SMALLINT},
+        CONTENT = #{content,jdbcType=LONGVARCHAR},
+        trans_id = #{transId,jdbcType=BIGINT}
+    </insert>
+    <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.odm.generate.domain.CtpContentAll">
+        <!--@mbg.generated-->
+        insert into CTP_CONTENT_ALL
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="createId != null">
+                CREATE_ID,
+            </if>
+            <if test="createDate != null">
+                CREATE_DATE,
+            </if>
+            <if test="modifyId != null">
+                MODIFY_ID,
+            </if>
+            <if test="modifyDate != null">
+                MODIFY_DATE,
+            </if>
+            <if test="moduleType != null">
+                MODULE_TYPE,
+            </if>
+            <if test="moduleId != null">
+                MODULE_ID,
+            </if>
+            <if test="moduleTemplateId != null">
+                MODULE_TEMPLATE_ID,
+            </if>
+            <if test="contentType != null">
+                CONTENT_TYPE,
+            </if>
+            <if test="contentDataId != null">
+                CONTENT_DATA_ID,
+            </if>
+            <if test="contentTemplateId != null">
+                CONTENT_TEMPLATE_ID,
+            </if>
+            <if test="title != null">
+                TITLE,
+            </if>
+            <if test="sort != null">
+                SORT,
+            </if>
+            <if test="content != null">
+                CONTENT,
+            </if>
+            <if test="transId != null">
+                trans_id,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="createId != null">
+                #{createId,jdbcType=BIGINT},
+            </if>
+            <if test="createDate != null">
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyId != null">
+                #{modifyId,jdbcType=BIGINT},
+            </if>
+            <if test="modifyDate != null">
+                #{modifyDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="moduleType != null">
+                #{moduleType,jdbcType=SMALLINT},
+            </if>
+            <if test="moduleId != null">
+                #{moduleId,jdbcType=BIGINT},
+            </if>
+            <if test="moduleTemplateId != null">
+                #{moduleTemplateId,jdbcType=BIGINT},
+            </if>
+            <if test="contentType != null">
+                #{contentType,jdbcType=SMALLINT},
+            </if>
+            <if test="contentDataId != null">
+                #{contentDataId,jdbcType=BIGINT},
+            </if>
+            <if test="contentTemplateId != null">
+                #{contentTemplateId,jdbcType=BIGINT},
+            </if>
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="sort != null">
+                #{sort,jdbcType=SMALLINT},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="transId != null">
+                #{transId,jdbcType=BIGINT},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                ID = #{id,jdbcType=BIGINT},
+            </if>
+            <if test="createId != null">
+                CREATE_ID = #{createId,jdbcType=BIGINT},
+            </if>
+            <if test="createDate != null">
+                CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyId != null">
+                MODIFY_ID = #{modifyId,jdbcType=BIGINT},
+            </if>
+            <if test="modifyDate != null">
+                MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="moduleType != null">
+                MODULE_TYPE = #{moduleType,jdbcType=SMALLINT},
+            </if>
+            <if test="moduleId != null">
+                MODULE_ID = #{moduleId,jdbcType=BIGINT},
+            </if>
+            <if test="moduleTemplateId != null">
+                MODULE_TEMPLATE_ID = #{moduleTemplateId,jdbcType=BIGINT},
+            </if>
+            <if test="contentType != null">
+                CONTENT_TYPE = #{contentType,jdbcType=SMALLINT},
+            </if>
+            <if test="contentDataId != null">
+                CONTENT_DATA_ID = #{contentDataId,jdbcType=BIGINT},
+            </if>
+            <if test="contentTemplateId != null">
+                CONTENT_TEMPLATE_ID = #{contentTemplateId,jdbcType=BIGINT},
+            </if>
+            <if test="title != null">
+                TITLE = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="sort != null">
+                SORT = #{sort,jdbcType=SMALLINT},
+            </if>
+            <if test="content != null">
+                CONTENT = #{content,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="transId != null">
+                trans_id = #{transId,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+</mapper>

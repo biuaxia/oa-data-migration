@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.odm.generate.mapper.CtpAttachmentMapper">
+    <resultMap id="BaseResultMap" type="cn.biuaxia.odm.generate.domain.CtpAttachment">
+        <!--@mbg.generated-->
+        <!--@Table CTP_ATTACHMENT-->
+        <id column="ID" jdbcType="BIGINT" property="id"/>
+        <result column="REFERENCE" jdbcType="BIGINT" property="reference"/>
+        <result column="SUB_REFERENCE" jdbcType="BIGINT" property="subReference"/>
+        <result column="CATEGORY" jdbcType="INTEGER" property="category"/>
+        <result column="TYPE" jdbcType="INTEGER" property="type"/>
+        <result column="FILENAME" jdbcType="LONGVARCHAR" property="filename"/>
+        <result column="FILE_URL" jdbcType="BIGINT" property="fileUrl"/>
+        <result column="MIME_TYPE" jdbcType="VARCHAR" property="mimeType"/>
+        <result column="CREATEDATE" jdbcType="TIMESTAMP" property="createdate"/>
+        <result column="ATTACHMENT_SIZE" jdbcType="BIGINT" property="attachmentSize"/>
+        <result column="DESCRIPTION" jdbcType="LONGVARCHAR" property="description"/>
+        <result column="GENESIS_ID" jdbcType="BIGINT" property="genesisId"/>
+        <result column="SORT" jdbcType="INTEGER" property="sort"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, REFERENCE, SUB_REFERENCE, CATEGORY, `TYPE`, FILENAME, FILE_URL, MIME_TYPE, CREATEDATE,
+        ATTACHMENT_SIZE, DESCRIPTION, GENESIS_ID, SORT
+    </sql>
+    <update id="updateBatch" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update CTP_ATTACHMENT
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="REFERENCE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.reference,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="SUB_REFERENCE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.subReference,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="CATEGORY = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.category,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+            <trim prefix="`TYPE` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.type,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+            <trim prefix="FILENAME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.filename,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="FILE_URL = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.fileUrl,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="MIME_TYPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.mimeType,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="CREATEDATE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.createdate,jdbcType=TIMESTAMP}
+                </foreach>
+            </trim>
+            <trim prefix="ATTACHMENT_SIZE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.attachmentSize,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="DESCRIPTION = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.description,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="GENESIS_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.genesisId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="SORT = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.sort,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <update id="updateBatchSelective" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update CTP_ATTACHMENT
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="REFERENCE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.reference != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.reference,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="SUB_REFERENCE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.subReference != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.subReference,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CATEGORY = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.category != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.category,jdbcType=INTEGER}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`TYPE` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.type != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.type,jdbcType=INTEGER}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="FILENAME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.filename != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.filename,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="FILE_URL = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.fileUrl != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.fileUrl,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="MIME_TYPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.mimeType != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.mimeType,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CREATEDATE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createdate != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.createdate,jdbcType=TIMESTAMP}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="ATTACHMENT_SIZE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.attachmentSize != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.attachmentSize,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="DESCRIPTION = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.description != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.description,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="GENESIS_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.genesisId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.genesisId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="SORT = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.sort != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.sort,jdbcType=INTEGER}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <insert id="batchInsert" parameterType="map">
+        <!--@mbg.generated-->
+        insert into CTP_ATTACHMENT
+        (ID, REFERENCE, SUB_REFERENCE, CATEGORY, `TYPE`, FILENAME, FILE_URL, MIME_TYPE, CREATEDATE,
+        ATTACHMENT_SIZE, DESCRIPTION, GENESIS_ID, SORT)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id,jdbcType=BIGINT}, #{item.reference,jdbcType=BIGINT}, #{item.subReference,jdbcType=BIGINT},
+            #{item.category,jdbcType=INTEGER}, #{item.type,jdbcType=INTEGER}, #{item.filename,jdbcType=LONGVARCHAR},
+            #{item.fileUrl,jdbcType=BIGINT}, #{item.mimeType,jdbcType=VARCHAR}, #{item.createdate,jdbcType=TIMESTAMP},
+            #{item.attachmentSize,jdbcType=BIGINT}, #{item.description,jdbcType=LONGVARCHAR},
+            #{item.genesisId,jdbcType=BIGINT}, #{item.sort,jdbcType=INTEGER})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" parameterType="cn.biuaxia.odm.generate.domain.CtpAttachment">
+        <!--@mbg.generated-->
+        insert into CTP_ATTACHMENT
+        (ID, REFERENCE, SUB_REFERENCE, CATEGORY, `TYPE`, FILENAME, FILE_URL, MIME_TYPE, CREATEDATE,
+        ATTACHMENT_SIZE, DESCRIPTION, GENESIS_ID, SORT)
+        values
+        (#{id,jdbcType=BIGINT}, #{reference,jdbcType=BIGINT}, #{subReference,jdbcType=BIGINT},
+        #{category,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{filename,jdbcType=LONGVARCHAR},
+        #{fileUrl,jdbcType=BIGINT}, #{mimeType,jdbcType=VARCHAR}, #{createdate,jdbcType=TIMESTAMP},
+        #{attachmentSize,jdbcType=BIGINT}, #{description,jdbcType=LONGVARCHAR}, #{genesisId,jdbcType=BIGINT},
+        #{sort,jdbcType=INTEGER})
+        on duplicate key update
+        ID = #{id,jdbcType=BIGINT},
+        REFERENCE = #{reference,jdbcType=BIGINT},
+        SUB_REFERENCE = #{subReference,jdbcType=BIGINT},
+        CATEGORY = #{category,jdbcType=INTEGER},
+        `TYPE` = #{type,jdbcType=INTEGER},
+        FILENAME = #{filename,jdbcType=LONGVARCHAR},
+        FILE_URL = #{fileUrl,jdbcType=BIGINT},
+        MIME_TYPE = #{mimeType,jdbcType=VARCHAR},
+        CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+        ATTACHMENT_SIZE = #{attachmentSize,jdbcType=BIGINT},
+        DESCRIPTION = #{description,jdbcType=LONGVARCHAR},
+        GENESIS_ID = #{genesisId,jdbcType=BIGINT},
+        SORT = #{sort,jdbcType=INTEGER}
+    </insert>
+    <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.odm.generate.domain.CtpAttachment">
+        <!--@mbg.generated-->
+        insert into CTP_ATTACHMENT
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="reference != null">
+                REFERENCE,
+            </if>
+            <if test="subReference != null">
+                SUB_REFERENCE,
+            </if>
+            <if test="category != null">
+                CATEGORY,
+            </if>
+            <if test="type != null">
+                `TYPE`,
+            </if>
+            <if test="filename != null">
+                FILENAME,
+            </if>
+            <if test="fileUrl != null">
+                FILE_URL,
+            </if>
+            <if test="mimeType != null">
+                MIME_TYPE,
+            </if>
+            <if test="createdate != null">
+                CREATEDATE,
+            </if>
+            <if test="attachmentSize != null">
+                ATTACHMENT_SIZE,
+            </if>
+            <if test="description != null">
+                DESCRIPTION,
+            </if>
+            <if test="genesisId != null">
+                GENESIS_ID,
+            </if>
+            <if test="sort != null">
+                SORT,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="reference != null">
+                #{reference,jdbcType=BIGINT},
+            </if>
+            <if test="subReference != null">
+                #{subReference,jdbcType=BIGINT},
+            </if>
+            <if test="category != null">
+                #{category,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=INTEGER},
+            </if>
+            <if test="filename != null">
+                #{filename,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="fileUrl != null">
+                #{fileUrl,jdbcType=BIGINT},
+            </if>
+            <if test="mimeType != null">
+                #{mimeType,jdbcType=VARCHAR},
+            </if>
+            <if test="createdate != null">
+                #{createdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="attachmentSize != null">
+                #{attachmentSize,jdbcType=BIGINT},
+            </if>
+            <if test="description != null">
+                #{description,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="genesisId != null">
+                #{genesisId,jdbcType=BIGINT},
+            </if>
+            <if test="sort != null">
+                #{sort,jdbcType=INTEGER},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                ID = #{id,jdbcType=BIGINT},
+            </if>
+            <if test="reference != null">
+                REFERENCE = #{reference,jdbcType=BIGINT},
+            </if>
+            <if test="subReference != null">
+                SUB_REFERENCE = #{subReference,jdbcType=BIGINT},
+            </if>
+            <if test="category != null">
+                CATEGORY = #{category,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                `TYPE` = #{type,jdbcType=INTEGER},
+            </if>
+            <if test="filename != null">
+                FILENAME = #{filename,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="fileUrl != null">
+                FILE_URL = #{fileUrl,jdbcType=BIGINT},
+            </if>
+            <if test="mimeType != null">
+                MIME_TYPE = #{mimeType,jdbcType=VARCHAR},
+            </if>
+            <if test="createdate != null">
+                CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="attachmentSize != null">
+                ATTACHMENT_SIZE = #{attachmentSize,jdbcType=BIGINT},
+            </if>
+            <if test="description != null">
+                DESCRIPTION = #{description,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="genesisId != null">
+                GENESIS_ID = #{genesisId,jdbcType=BIGINT},
+            </if>
+            <if test="sort != null">
+                SORT = #{sort,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+</mapper>

@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.odm.generate.mapper.OrgUnitMapper">
+    <resultMap id="BaseResultMap" type="cn.biuaxia.odm.generate.domain.OrgUnit">
+        <!--@mbg.generated-->
+        <!--@Table ORG_UNIT-->
+        <id column="ID" jdbcType="BIGINT" property="id"/>
+        <result column="NAME" jdbcType="LONGVARCHAR" property="name"/>
+        <result column="SECOND_NAME" jdbcType="LONGVARCHAR" property="secondName"/>
+        <result column="CODE" jdbcType="LONGVARCHAR" property="code"/>
+        <result column="SHORT_NAME" jdbcType="LONGVARCHAR" property="shortName"/>
+        <result column="TYPE" jdbcType="LONGVARCHAR" property="type"/>
+        <result column="IS_GROUP" jdbcType="SMALLINT" property="isGroup"/>
+        <result column="PATH" jdbcType="LONGVARCHAR" property="path"/>
+        <result column="IS_INTERNAL" jdbcType="SMALLINT" property="isInternal"/>
+        <result column="SORT_ID" jdbcType="INTEGER" property="sortId"/>
+        <result column="IS_ENABLE" jdbcType="SMALLINT" property="isEnable"/>
+        <result column="IS_DELETED" jdbcType="SMALLINT" property="isDeleted"/>
+        <result column="STATUS" jdbcType="SMALLINT" property="status"/>
+        <result column="LEVEL_SCOPE" jdbcType="INTEGER" property="levelScope"/>
+        <result column="ORG_ACCOUNT_ID" jdbcType="BIGINT" property="orgAccountId"/>
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="DESCRIPTION" jdbcType="LONGVARCHAR" property="description"/>
+        <result column="EXT_ATTR_1" jdbcType="LONGVARCHAR" property="extAttr1"/>
+        <result column="EXT_ATTR_2" jdbcType="LONGVARCHAR" property="extAttr2"/>
+        <result column="EXT_ATTR_3" jdbcType="LONGVARCHAR" property="extAttr3"/>
+        <result column="EXT_ATTR_4" jdbcType="LONGVARCHAR" property="extAttr4"/>
+        <result column="EXT_ATTR_5" jdbcType="LONGVARCHAR" property="extAttr5"/>
+        <result column="EXT_ATTR_6" jdbcType="LONGVARCHAR" property="extAttr6"/>
+        <result column="EXT_ATTR_7" jdbcType="LONGVARCHAR" property="extAttr7"/>
+        <result column="EXT_ATTR_8" jdbcType="LONGVARCHAR" property="extAttr8"/>
+        <result column="EXT_ATTR_9" jdbcType="LONGVARCHAR" property="extAttr9"/>
+        <result column="EXT_ATTR_10" jdbcType="LONGVARCHAR" property="extAttr10"/>
+        <result column="EXT_ATTR_11" jdbcType="INTEGER" property="extAttr11"/>
+        <result column="EXT_ATTR_12" jdbcType="INTEGER" property="extAttr12"/>
+        <result column="EXT_ATTR_13" jdbcType="INTEGER" property="extAttr13"/>
+        <result column="EXT_ATTR_14" jdbcType="INTEGER" property="extAttr14"/>
+        <result column="EXT_ATTR_15" jdbcType="INTEGER" property="extAttr15"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, `NAME`, SECOND_NAME, CODE, SHORT_NAME, `TYPE`, IS_GROUP, `PATH`, IS_INTERNAL,
+        SORT_ID, IS_ENABLE, IS_DELETED, `STATUS`, LEVEL_SCOPE, ORG_ACCOUNT_ID, CREATE_TIME,
+        UPDATE_TIME, DESCRIPTION, EXT_ATTR_1, EXT_ATTR_2, EXT_ATTR_3, EXT_ATTR_4, EXT_ATTR_5,
+        EXT_ATTR_6, EXT_ATTR_7, EXT_ATTR_8, EXT_ATTR_9, EXT_ATTR_10, EXT_ATTR_11, EXT_ATTR_12,
+        EXT_ATTR_13, EXT_ATTR_14, EXT_ATTR_15
+    </sql>
+    <update id="updateBatch" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update ORG_UNIT
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="`NAME` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="SECOND_NAME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.secondName,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="CODE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.code,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="SHORT_NAME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.shortName,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="`TYPE` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.type,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="IS_GROUP = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.isGroup,jdbcType=SMALLINT}
+                </foreach>
+            </trim>
+            <trim prefix="`PATH` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.path,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="IS_INTERNAL = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.isInternal,jdbcType=SMALLINT}
+                </foreach>
+            </trim>
+            <trim prefix="SORT_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.sortId,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+            <trim prefix="IS_ENABLE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.isEnable,jdbcType=SMALLINT}
+                </foreach>
+            </trim>
+            <trim prefix="IS_DELETED = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.isDeleted,jdbcType=SMALLINT}
+                </foreach>
+            </trim>
+            <trim prefix="`STATUS` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.status,jdbcType=SMALLINT}
+                </foreach>
+            </trim>
+            <trim prefix="LEVEL_SCOPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.levelScope,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+            <trim prefix="ORG_ACCOUNT_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.orgAccountId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="CREATE_TIME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=TIMESTAMP}
+                </foreach>
+            </trim>
+            <trim prefix="UPDATE_TIME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=TIMESTAMP}
+                </foreach>
+            </trim>
+            <trim prefix="DESCRIPTION = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.description,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_1 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr1,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_2 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr2,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_3 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr3,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_4 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr4,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_5 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr5,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_6 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr6,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_7 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr7,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_8 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr8,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_9 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr9,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_10 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr10,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_11 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr11,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_12 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr12,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_13 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr13,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_14 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr14,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_15 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr15,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <update id="updateBatchSelective" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update ORG_UNIT
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="`NAME` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.name != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="SECOND_NAME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.secondName != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.secondName,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CODE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.code != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.code,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="SHORT_NAME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.shortName != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.shortName,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`TYPE` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.type != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.type,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="IS_GROUP = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.isGroup != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.isGroup,jdbcType=SMALLINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`PATH` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.path != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.path,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="IS_INTERNAL = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.isInternal != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.isInternal,jdbcType=SMALLINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="SORT_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.sortId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.sortId,jdbcType=INTEGER}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="IS_ENABLE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.isEnable != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.isEnable,jdbcType=SMALLINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="IS_DELETED = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.isDeleted != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.isDeleted,jdbcType=SMALLINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`STATUS` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.status != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.status,jdbcType=SMALLINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="LEVEL_SCOPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.levelScope != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.levelScope,jdbcType=INTEGER}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="ORG_ACCOUNT_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.orgAccountId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.orgAccountId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CREATE_TIME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createTime != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=TIMESTAMP}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="UPDATE_TIME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.updateTime != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=TIMESTAMP}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="DESCRIPTION = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.description != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.description,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_1 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr1 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr1,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_2 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr2 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr2,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_3 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr3 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr3,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_4 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr4 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr4,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_5 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr5 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr5,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_6 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr6 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr6,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_7 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr7 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr7,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_8 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr8 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr8,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_9 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr9 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr9,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_10 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr10 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr10,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_11 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr11 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr11,jdbcType=INTEGER}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_12 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr12 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr12,jdbcType=INTEGER}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_13 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr13 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr13,jdbcType=INTEGER}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_14 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr14 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr14,jdbcType=INTEGER}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXT_ATTR_15 = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.extAttr15 != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.extAttr15,jdbcType=INTEGER}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <insert id="batchInsert" parameterType="map">
+        <!--@mbg.generated-->
+        insert into ORG_UNIT
+        (ID, `NAME`, SECOND_NAME, CODE, SHORT_NAME, `TYPE`, IS_GROUP, `PATH`, IS_INTERNAL,
+        SORT_ID, IS_ENABLE, IS_DELETED, `STATUS`, LEVEL_SCOPE, ORG_ACCOUNT_ID, CREATE_TIME,
+        UPDATE_TIME, DESCRIPTION, EXT_ATTR_1, EXT_ATTR_2, EXT_ATTR_3, EXT_ATTR_4, EXT_ATTR_5,
+        EXT_ATTR_6, EXT_ATTR_7, EXT_ATTR_8, EXT_ATTR_9, EXT_ATTR_10, EXT_ATTR_11, EXT_ATTR_12,
+        EXT_ATTR_13, EXT_ATTR_14, EXT_ATTR_15)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id,jdbcType=BIGINT}, #{item.name,jdbcType=LONGVARCHAR}, #{item.secondName,jdbcType=LONGVARCHAR},
+            #{item.code,jdbcType=LONGVARCHAR}, #{item.shortName,jdbcType=LONGVARCHAR},
+            #{item.type,jdbcType=LONGVARCHAR},
+            #{item.isGroup,jdbcType=SMALLINT}, #{item.path,jdbcType=LONGVARCHAR}, #{item.isInternal,jdbcType=SMALLINT},
+            #{item.sortId,jdbcType=INTEGER}, #{item.isEnable,jdbcType=SMALLINT}, #{item.isDeleted,jdbcType=SMALLINT},
+            #{item.status,jdbcType=SMALLINT}, #{item.levelScope,jdbcType=INTEGER}, #{item.orgAccountId,jdbcType=BIGINT},
+            #{item.createTime,jdbcType=TIMESTAMP}, #{item.updateTime,jdbcType=TIMESTAMP},
+            #{item.description,jdbcType=LONGVARCHAR},
+            #{item.extAttr1,jdbcType=LONGVARCHAR}, #{item.extAttr2,jdbcType=LONGVARCHAR},
+            #{item.extAttr3,jdbcType=LONGVARCHAR},
+            #{item.extAttr4,jdbcType=LONGVARCHAR}, #{item.extAttr5,jdbcType=LONGVARCHAR},
+            #{item.extAttr6,jdbcType=LONGVARCHAR},
+            #{item.extAttr7,jdbcType=LONGVARCHAR}, #{item.extAttr8,jdbcType=LONGVARCHAR},
+            #{item.extAttr9,jdbcType=LONGVARCHAR},
+            #{item.extAttr10,jdbcType=LONGVARCHAR}, #{item.extAttr11,jdbcType=INTEGER},
+            #{item.extAttr12,jdbcType=INTEGER},
+            #{item.extAttr13,jdbcType=INTEGER}, #{item.extAttr14,jdbcType=INTEGER}, #{item.extAttr15,jdbcType=INTEGER}
+            )
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" parameterType="cn.biuaxia.odm.generate.domain.OrgUnit">
+        <!--@mbg.generated-->
+        insert into ORG_UNIT
+        (ID, `NAME`, SECOND_NAME, CODE, SHORT_NAME, `TYPE`, IS_GROUP, `PATH`, IS_INTERNAL,
+        SORT_ID, IS_ENABLE, IS_DELETED, `STATUS`, LEVEL_SCOPE, ORG_ACCOUNT_ID, CREATE_TIME,
+        UPDATE_TIME, DESCRIPTION, EXT_ATTR_1, EXT_ATTR_2, EXT_ATTR_3, EXT_ATTR_4, EXT_ATTR_5,
+        EXT_ATTR_6, EXT_ATTR_7, EXT_ATTR_8, EXT_ATTR_9, EXT_ATTR_10, EXT_ATTR_11, EXT_ATTR_12,
+        EXT_ATTR_13, EXT_ATTR_14, EXT_ATTR_15)
+        values
+        (#{id,jdbcType=BIGINT}, #{name,jdbcType=LONGVARCHAR}, #{secondName,jdbcType=LONGVARCHAR},
+        #{code,jdbcType=LONGVARCHAR}, #{shortName,jdbcType=LONGVARCHAR}, #{type,jdbcType=LONGVARCHAR},
+        #{isGroup,jdbcType=SMALLINT}, #{path,jdbcType=LONGVARCHAR}, #{isInternal,jdbcType=SMALLINT},
+        #{sortId,jdbcType=INTEGER}, #{isEnable,jdbcType=SMALLINT}, #{isDeleted,jdbcType=SMALLINT},
+        #{status,jdbcType=SMALLINT}, #{levelScope,jdbcType=INTEGER}, #{orgAccountId,jdbcType=BIGINT},
+        #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{description,jdbcType=LONGVARCHAR},
+        #{extAttr1,jdbcType=LONGVARCHAR}, #{extAttr2,jdbcType=LONGVARCHAR}, #{extAttr3,jdbcType=LONGVARCHAR},
+        #{extAttr4,jdbcType=LONGVARCHAR}, #{extAttr5,jdbcType=LONGVARCHAR}, #{extAttr6,jdbcType=LONGVARCHAR},
+        #{extAttr7,jdbcType=LONGVARCHAR}, #{extAttr8,jdbcType=LONGVARCHAR}, #{extAttr9,jdbcType=LONGVARCHAR},
+        #{extAttr10,jdbcType=LONGVARCHAR}, #{extAttr11,jdbcType=INTEGER}, #{extAttr12,jdbcType=INTEGER},
+        #{extAttr13,jdbcType=INTEGER}, #{extAttr14,jdbcType=INTEGER}, #{extAttr15,jdbcType=INTEGER}
+        )
+        on duplicate key update
+        ID = #{id,jdbcType=BIGINT},
+        `NAME` = #{name,jdbcType=LONGVARCHAR},
+        SECOND_NAME = #{secondName,jdbcType=LONGVARCHAR},
+        CODE = #{code,jdbcType=LONGVARCHAR},
+        SHORT_NAME = #{shortName,jdbcType=LONGVARCHAR},
+        `TYPE` = #{type,jdbcType=LONGVARCHAR},
+        IS_GROUP = #{isGroup,jdbcType=SMALLINT},
+        `PATH` = #{path,jdbcType=LONGVARCHAR},
+        IS_INTERNAL = #{isInternal,jdbcType=SMALLINT},
+        SORT_ID = #{sortId,jdbcType=INTEGER},
+        IS_ENABLE = #{isEnable,jdbcType=SMALLINT},
+        IS_DELETED = #{isDeleted,jdbcType=SMALLINT},
+        `STATUS` = #{status,jdbcType=SMALLINT},
+        LEVEL_SCOPE = #{levelScope,jdbcType=INTEGER},
+        ORG_ACCOUNT_ID = #{orgAccountId,jdbcType=BIGINT},
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+        DESCRIPTION = #{description,jdbcType=LONGVARCHAR},
+        EXT_ATTR_1 = #{extAttr1,jdbcType=LONGVARCHAR},
+        EXT_ATTR_2 = #{extAttr2,jdbcType=LONGVARCHAR},
+        EXT_ATTR_3 = #{extAttr3,jdbcType=LONGVARCHAR},
+        EXT_ATTR_4 = #{extAttr4,jdbcType=LONGVARCHAR},
+        EXT_ATTR_5 = #{extAttr5,jdbcType=LONGVARCHAR},
+        EXT_ATTR_6 = #{extAttr6,jdbcType=LONGVARCHAR},
+        EXT_ATTR_7 = #{extAttr7,jdbcType=LONGVARCHAR},
+        EXT_ATTR_8 = #{extAttr8,jdbcType=LONGVARCHAR},
+        EXT_ATTR_9 = #{extAttr9,jdbcType=LONGVARCHAR},
+        EXT_ATTR_10 = #{extAttr10,jdbcType=LONGVARCHAR},
+        EXT_ATTR_11 = #{extAttr11,jdbcType=INTEGER},
+        EXT_ATTR_12 = #{extAttr12,jdbcType=INTEGER},
+        EXT_ATTR_13 = #{extAttr13,jdbcType=INTEGER},
+        EXT_ATTR_14 = #{extAttr14,jdbcType=INTEGER},
+        EXT_ATTR_15 = #{extAttr15,jdbcType=INTEGER}
+    </insert>
+    <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.odm.generate.domain.OrgUnit">
+        <!--@mbg.generated-->
+        insert into ORG_UNIT
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="name != null">
+                `NAME`,
+            </if>
+            <if test="secondName != null">
+                SECOND_NAME,
+            </if>
+            <if test="code != null">
+                CODE,
+            </if>
+            <if test="shortName != null">
+                SHORT_NAME,
+            </if>
+            <if test="type != null">
+                `TYPE`,
+            </if>
+            <if test="isGroup != null">
+                IS_GROUP,
+            </if>
+            <if test="path != null">
+                `PATH`,
+            </if>
+            <if test="isInternal != null">
+                IS_INTERNAL,
+            </if>
+            <if test="sortId != null">
+                SORT_ID,
+            </if>
+            <if test="isEnable != null">
+                IS_ENABLE,
+            </if>
+            <if test="isDeleted != null">
+                IS_DELETED,
+            </if>
+            <if test="status != null">
+                `STATUS`,
+            </if>
+            <if test="levelScope != null">
+                LEVEL_SCOPE,
+            </if>
+            <if test="orgAccountId != null">
+                ORG_ACCOUNT_ID,
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="description != null">
+                DESCRIPTION,
+            </if>
+            <if test="extAttr1 != null">
+                EXT_ATTR_1,
+            </if>
+            <if test="extAttr2 != null">
+                EXT_ATTR_2,
+            </if>
+            <if test="extAttr3 != null">
+                EXT_ATTR_3,
+            </if>
+            <if test="extAttr4 != null">
+                EXT_ATTR_4,
+            </if>
+            <if test="extAttr5 != null">
+                EXT_ATTR_5,
+            </if>
+            <if test="extAttr6 != null">
+                EXT_ATTR_6,
+            </if>
+            <if test="extAttr7 != null">
+                EXT_ATTR_7,
+            </if>
+            <if test="extAttr8 != null">
+                EXT_ATTR_8,
+            </if>
+            <if test="extAttr9 != null">
+                EXT_ATTR_9,
+            </if>
+            <if test="extAttr10 != null">
+                EXT_ATTR_10,
+            </if>
+            <if test="extAttr11 != null">
+                EXT_ATTR_11,
+            </if>
+            <if test="extAttr12 != null">
+                EXT_ATTR_12,
+            </if>
+            <if test="extAttr13 != null">
+                EXT_ATTR_13,
+            </if>
+            <if test="extAttr14 != null">
+                EXT_ATTR_14,
+            </if>
+            <if test="extAttr15 != null">
+                EXT_ATTR_15,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="secondName != null">
+                #{secondName,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="code != null">
+                #{code,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="shortName != null">
+                #{shortName,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="isGroup != null">
+                #{isGroup,jdbcType=SMALLINT},
+            </if>
+            <if test="path != null">
+                #{path,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="isInternal != null">
+                #{isInternal,jdbcType=SMALLINT},
+            </if>
+            <if test="sortId != null">
+                #{sortId,jdbcType=INTEGER},
+            </if>
+            <if test="isEnable != null">
+                #{isEnable,jdbcType=SMALLINT},
+            </if>
+            <if test="isDeleted != null">
+                #{isDeleted,jdbcType=SMALLINT},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=SMALLINT},
+            </if>
+            <if test="levelScope != null">
+                #{levelScope,jdbcType=INTEGER},
+            </if>
+            <if test="orgAccountId != null">
+                #{orgAccountId,jdbcType=BIGINT},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="description != null">
+                #{description,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr1 != null">
+                #{extAttr1,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr2 != null">
+                #{extAttr2,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr3 != null">
+                #{extAttr3,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr4 != null">
+                #{extAttr4,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr5 != null">
+                #{extAttr5,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr6 != null">
+                #{extAttr6,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr7 != null">
+                #{extAttr7,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr8 != null">
+                #{extAttr8,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr9 != null">
+                #{extAttr9,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr10 != null">
+                #{extAttr10,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr11 != null">
+                #{extAttr11,jdbcType=INTEGER},
+            </if>
+            <if test="extAttr12 != null">
+                #{extAttr12,jdbcType=INTEGER},
+            </if>
+            <if test="extAttr13 != null">
+                #{extAttr13,jdbcType=INTEGER},
+            </if>
+            <if test="extAttr14 != null">
+                #{extAttr14,jdbcType=INTEGER},
+            </if>
+            <if test="extAttr15 != null">
+                #{extAttr15,jdbcType=INTEGER},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                ID = #{id,jdbcType=BIGINT},
+            </if>
+            <if test="name != null">
+                `NAME` = #{name,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="secondName != null">
+                SECOND_NAME = #{secondName,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="code != null">
+                CODE = #{code,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="shortName != null">
+                SHORT_NAME = #{shortName,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="type != null">
+                `TYPE` = #{type,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="isGroup != null">
+                IS_GROUP = #{isGroup,jdbcType=SMALLINT},
+            </if>
+            <if test="path != null">
+                `PATH` = #{path,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="isInternal != null">
+                IS_INTERNAL = #{isInternal,jdbcType=SMALLINT},
+            </if>
+            <if test="sortId != null">
+                SORT_ID = #{sortId,jdbcType=INTEGER},
+            </if>
+            <if test="isEnable != null">
+                IS_ENABLE = #{isEnable,jdbcType=SMALLINT},
+            </if>
+            <if test="isDeleted != null">
+                IS_DELETED = #{isDeleted,jdbcType=SMALLINT},
+            </if>
+            <if test="status != null">
+                `STATUS` = #{status,jdbcType=SMALLINT},
+            </if>
+            <if test="levelScope != null">
+                LEVEL_SCOPE = #{levelScope,jdbcType=INTEGER},
+            </if>
+            <if test="orgAccountId != null">
+                ORG_ACCOUNT_ID = #{orgAccountId,jdbcType=BIGINT},
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="description != null">
+                DESCRIPTION = #{description,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr1 != null">
+                EXT_ATTR_1 = #{extAttr1,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr2 != null">
+                EXT_ATTR_2 = #{extAttr2,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr3 != null">
+                EXT_ATTR_3 = #{extAttr3,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr4 != null">
+                EXT_ATTR_4 = #{extAttr4,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr5 != null">
+                EXT_ATTR_5 = #{extAttr5,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr6 != null">
+                EXT_ATTR_6 = #{extAttr6,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr7 != null">
+                EXT_ATTR_7 = #{extAttr7,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr8 != null">
+                EXT_ATTR_8 = #{extAttr8,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr9 != null">
+                EXT_ATTR_9 = #{extAttr9,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr10 != null">
+                EXT_ATTR_10 = #{extAttr10,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="extAttr11 != null">
+                EXT_ATTR_11 = #{extAttr11,jdbcType=INTEGER},
+            </if>
+            <if test="extAttr12 != null">
+                EXT_ATTR_12 = #{extAttr12,jdbcType=INTEGER},
+            </if>
+            <if test="extAttr13 != null">
+                EXT_ATTR_13 = #{extAttr13,jdbcType=INTEGER},
+            </if>
+            <if test="extAttr14 != null">
+                EXT_ATTR_14 = #{extAttr14,jdbcType=INTEGER},
+            </if>
+            <if test="extAttr15 != null">
+                EXT_ATTR_15 = #{extAttr15,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+</mapper>

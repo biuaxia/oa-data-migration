@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.odm.generate.mapper.FormResourceMapper">
+    <resultMap id="BaseResultMap" type="cn.biuaxia.odm.generate.domain.FormResource">
+        <!--@mbg.generated-->
+        <!--@Table FORM_RESOURCE-->
+        <id column="ID" jdbcType="BIGINT" property="id"/>
+        <result column="FORM_ID" jdbcType="BIGINT" property="formId"/>
+        <result column="RESOURCE_NAME" jdbcType="VARCHAR" property="resourceName"/>
+        <result column="CONTENT" jdbcType="LONGVARCHAR" property="content"/>
+        <result column="PROPERTY_TYPE" jdbcType="SMALLINT" property="propertyType"/>
+        <result column="PROPERTY_NAME" jdbcType="VARCHAR" property="propertyName"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, FORM_ID, RESOURCE_NAME, CONTENT, PROPERTY_TYPE, PROPERTY_NAME
+    </sql>
+    <update id="updateBatch" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update FORM_RESOURCE
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="FORM_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.formId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="RESOURCE_NAME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.resourceName,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="CONTENT = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.content,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="PROPERTY_TYPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.propertyType,jdbcType=SMALLINT}
+                </foreach>
+            </trim>
+            <trim prefix="PROPERTY_NAME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.propertyName,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <update id="updateBatchSelective" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update FORM_RESOURCE
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="FORM_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.formId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.formId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="RESOURCE_NAME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.resourceName != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.resourceName,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CONTENT = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.content != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.content,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="PROPERTY_TYPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.propertyType != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.propertyType,jdbcType=SMALLINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="PROPERTY_NAME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.propertyName != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.propertyName,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <insert id="batchInsert" parameterType="map">
+        <!--@mbg.generated-->
+        insert into FORM_RESOURCE
+        (ID, FORM_ID, RESOURCE_NAME, CONTENT, PROPERTY_TYPE, PROPERTY_NAME)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id,jdbcType=BIGINT}, #{item.formId,jdbcType=BIGINT}, #{item.resourceName,jdbcType=VARCHAR},
+            #{item.content,jdbcType=LONGVARCHAR}, #{item.propertyType,jdbcType=SMALLINT},
+            #{item.propertyName,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" parameterType="cn.biuaxia.odm.generate.domain.FormResource">
+        <!--@mbg.generated-->
+        insert into FORM_RESOURCE
+        (ID, FORM_ID, RESOURCE_NAME, CONTENT, PROPERTY_TYPE, PROPERTY_NAME)
+        values
+        (#{id,jdbcType=BIGINT}, #{formId,jdbcType=BIGINT}, #{resourceName,jdbcType=VARCHAR},
+        #{content,jdbcType=LONGVARCHAR}, #{propertyType,jdbcType=SMALLINT}, #{propertyName,jdbcType=VARCHAR}
+        )
+        on duplicate key update
+        ID = #{id,jdbcType=BIGINT},
+        FORM_ID = #{formId,jdbcType=BIGINT},
+        RESOURCE_NAME = #{resourceName,jdbcType=VARCHAR},
+        CONTENT = #{content,jdbcType=LONGVARCHAR},
+        PROPERTY_TYPE = #{propertyType,jdbcType=SMALLINT},
+        PROPERTY_NAME = #{propertyName,jdbcType=VARCHAR}
+    </insert>
+    <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.odm.generate.domain.FormResource">
+        <!--@mbg.generated-->
+        insert into FORM_RESOURCE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="formId != null">
+                FORM_ID,
+            </if>
+            <if test="resourceName != null">
+                RESOURCE_NAME,
+            </if>
+            <if test="content != null">
+                CONTENT,
+            </if>
+            <if test="propertyType != null">
+                PROPERTY_TYPE,
+            </if>
+            <if test="propertyName != null">
+                PROPERTY_NAME,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="formId != null">
+                #{formId,jdbcType=BIGINT},
+            </if>
+            <if test="resourceName != null">
+                #{resourceName,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="propertyType != null">
+                #{propertyType,jdbcType=SMALLINT},
+            </if>
+            <if test="propertyName != null">
+                #{propertyName,jdbcType=VARCHAR},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                ID = #{id,jdbcType=BIGINT},
+            </if>
+            <if test="formId != null">
+                FORM_ID = #{formId,jdbcType=BIGINT},
+            </if>
+            <if test="resourceName != null">
+                RESOURCE_NAME = #{resourceName,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                CONTENT = #{content,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="propertyType != null">
+                PROPERTY_TYPE = #{propertyType,jdbcType=SMALLINT},
+            </if>
+            <if test="propertyName != null">
+                PROPERTY_NAME = #{propertyName,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+</mapper>

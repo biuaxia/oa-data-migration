@@ -9,8 +9,14 @@ spring:
 ---
 spring:
   datasource:
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://10.51.8.26\master:1433;database=jxwoa
+    # old oa sqlserver datasource config
+    # driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    # url: jdbc:sqlserver://10.51.8.26\master:1433;database=jxwoa
     # url: jdbc:sqlserver://10.51.8.26;database=jxwoa
-    username: dev_biuaxia
-    password: 2PvR4UEThwFofg
+    # username: dev_biuaxia
+    # password: 2PvR4UEThwFofg
+    # new oa mysql datasource config
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://174.139.46.51:3306/oa_seeyon_jxt
+    username: oa_seeyon_jxt
+    password: CiPRzS8efGKRLDTT

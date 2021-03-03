@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.odm.generate.mapper.CtpFileMapper">
+    <resultMap id="BaseResultMap" type="cn.biuaxia.odm.generate.domain.CtpFile">
+        <!--@mbg.generated-->
+        <!--@Table CTP_FILE-->
+        <id column="ID" jdbcType="BIGINT" property="id"/>
+        <result column="CATEGORY" jdbcType="INTEGER" property="category"/>
+        <result column="TYPE" jdbcType="INTEGER" property="type"/>
+        <result column="FILENAME" jdbcType="VARCHAR" property="filename"/>
+        <result column="MIME_TYPE" jdbcType="VARCHAR" property="mimeType"/>
+        <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="CREATE_MEMBER" jdbcType="BIGINT" property="createMember"/>
+        <result column="FILE_SIZE" jdbcType="BIGINT" property="fileSize"/>
+        <result column="DESCRIPTION" jdbcType="LONGVARCHAR" property="description"/>
+        <result column="UPDATE_DATE" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="ACCOUNT_ID" jdbcType="BIGINT" property="accountId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, CATEGORY, `TYPE`, FILENAME, MIME_TYPE, CREATE_DATE, CREATE_MEMBER, FILE_SIZE,
+        DESCRIPTION, UPDATE_DATE, ACCOUNT_ID
+    </sql>
+    <update id="updateBatch" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update CTP_FILE
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="CATEGORY = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.category,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+            <trim prefix="`TYPE` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.type,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+            <trim prefix="FILENAME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.filename,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="MIME_TYPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.mimeType,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="CREATE_DATE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.createDate,jdbcType=TIMESTAMP}
+                </foreach>
+            </trim>
+            <trim prefix="CREATE_MEMBER = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.createMember,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="FILE_SIZE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.fileSize,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="DESCRIPTION = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.description,jdbcType=LONGVARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="UPDATE_DATE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.updateDate,jdbcType=TIMESTAMP}
+                </foreach>
+            </trim>
+            <trim prefix="ACCOUNT_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.accountId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <update id="updateBatchSelective" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update CTP_FILE
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="CATEGORY = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.category != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.category,jdbcType=INTEGER}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`TYPE` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.type != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.type,jdbcType=INTEGER}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="FILENAME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.filename != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.filename,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="MIME_TYPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.mimeType != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.mimeType,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CREATE_DATE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createDate != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.createDate,jdbcType=TIMESTAMP}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CREATE_MEMBER = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createMember != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.createMember,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="FILE_SIZE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.fileSize != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.fileSize,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="DESCRIPTION = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.description != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.description,jdbcType=LONGVARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="UPDATE_DATE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.updateDate != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.updateDate,jdbcType=TIMESTAMP}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="ACCOUNT_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.accountId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.accountId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <insert id="batchInsert" parameterType="map">
+        <!--@mbg.generated-->
+        insert into CTP_FILE
+        (ID, CATEGORY, `TYPE`, FILENAME, MIME_TYPE, CREATE_DATE, CREATE_MEMBER, FILE_SIZE,
+        DESCRIPTION, UPDATE_DATE, ACCOUNT_ID)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id,jdbcType=BIGINT}, #{item.category,jdbcType=INTEGER}, #{item.type,jdbcType=INTEGER},
+            #{item.filename,jdbcType=VARCHAR}, #{item.mimeType,jdbcType=VARCHAR}, #{item.createDate,jdbcType=TIMESTAMP},
+            #{item.createMember,jdbcType=BIGINT}, #{item.fileSize,jdbcType=BIGINT},
+            #{item.description,jdbcType=LONGVARCHAR},
+            #{item.updateDate,jdbcType=TIMESTAMP}, #{item.accountId,jdbcType=BIGINT})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" parameterType="cn.biuaxia.odm.generate.domain.CtpFile">
+        <!--@mbg.generated-->
+        insert into CTP_FILE
+        (ID, CATEGORY, `TYPE`, FILENAME, MIME_TYPE, CREATE_DATE, CREATE_MEMBER, FILE_SIZE,
+        DESCRIPTION, UPDATE_DATE, ACCOUNT_ID)
+        values
+        (#{id,jdbcType=BIGINT}, #{category,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{filename,jdbcType=VARCHAR},
+        #{mimeType,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{createMember,jdbcType=BIGINT},
+        #{fileSize,jdbcType=BIGINT}, #{description,jdbcType=LONGVARCHAR}, #{updateDate,jdbcType=TIMESTAMP},
+        #{accountId,jdbcType=BIGINT})
+        on duplicate key update
+        ID = #{id,jdbcType=BIGINT},
+        CATEGORY = #{category,jdbcType=INTEGER},
+        `TYPE` = #{type,jdbcType=INTEGER},
+        FILENAME = #{filename,jdbcType=VARCHAR},
+        MIME_TYPE = #{mimeType,jdbcType=VARCHAR},
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+        CREATE_MEMBER = #{createMember,jdbcType=BIGINT},
+        FILE_SIZE = #{fileSize,jdbcType=BIGINT},
+        DESCRIPTION = #{description,jdbcType=LONGVARCHAR},
+        UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+        ACCOUNT_ID = #{accountId,jdbcType=BIGINT}
+    </insert>
+    <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.odm.generate.domain.CtpFile">
+        <!--@mbg.generated-->
+        insert into CTP_FILE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="category != null">
+                CATEGORY,
+            </if>
+            <if test="type != null">
+                `TYPE`,
+            </if>
+            <if test="filename != null">
+                FILENAME,
+            </if>
+            <if test="mimeType != null">
+                MIME_TYPE,
+            </if>
+            <if test="createDate != null">
+                CREATE_DATE,
+            </if>
+            <if test="createMember != null">
+                CREATE_MEMBER,
+            </if>
+            <if test="fileSize != null">
+                FILE_SIZE,
+            </if>
+            <if test="description != null">
+                DESCRIPTION,
+            </if>
+            <if test="updateDate != null">
+                UPDATE_DATE,
+            </if>
+            <if test="accountId != null">
+                ACCOUNT_ID,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="category != null">
+                #{category,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=INTEGER},
+            </if>
+            <if test="filename != null">
+                #{filename,jdbcType=VARCHAR},
+            </if>
+            <if test="mimeType != null">
+                #{mimeType,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null">
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createMember != null">
+                #{createMember,jdbcType=BIGINT},
+            </if>
+            <if test="fileSize != null">
+                #{fileSize,jdbcType=BIGINT},
+            </if>
+            <if test="description != null">
+                #{description,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="accountId != null">
+                #{accountId,jdbcType=BIGINT},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                ID = #{id,jdbcType=BIGINT},
+            </if>
+            <if test="category != null">
+                CATEGORY = #{category,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                `TYPE` = #{type,jdbcType=INTEGER},
+            </if>
+            <if test="filename != null">
+                FILENAME = #{filename,jdbcType=VARCHAR},
+            </if>
+            <if test="mimeType != null">
+                MIME_TYPE = #{mimeType,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null">
+                CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createMember != null">
+                CREATE_MEMBER = #{createMember,jdbcType=BIGINT},
+            </if>
+            <if test="fileSize != null">
+                FILE_SIZE = #{fileSize,jdbcType=BIGINT},
+            </if>
+            <if test="description != null">
+                DESCRIPTION = #{description,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="updateDate != null">
+                UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="accountId != null">
+                ACCOUNT_ID = #{accountId,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+</mapper>

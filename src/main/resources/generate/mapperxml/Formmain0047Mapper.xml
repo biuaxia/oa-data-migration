@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.odm.generate.mapper.Formmain0047Mapper">
+    <resultMap id="BaseResultMap" type="cn.biuaxia.odm.generate.domain.Formmain0047">
+        <!--@mbg.generated-->
+        <!--@Table formmain_0047-->
+        <result column="ID" jdbcType="DECIMAL" property="id"/>
+        <result column="state" jdbcType="INTEGER" property="state"/>
+        <result column="start_member_id" jdbcType="VARCHAR" property="startMemberId"/>
+        <result column="start_date" jdbcType="TIMESTAMP" property="startDate"/>
+        <result column="approve_member_id" jdbcType="VARCHAR" property="approveMemberId"/>
+        <result column="approve_date" jdbcType="TIMESTAMP" property="approveDate"/>
+        <result column="finishedflag" jdbcType="INTEGER" property="finishedflag"/>
+        <result column="ratifyflag" jdbcType="INTEGER" property="ratifyflag"/>
+        <result column="ratify_member_id" jdbcType="VARCHAR" property="ratifyMemberId"/>
+        <result column="ratify_date" jdbcType="TIMESTAMP" property="ratifyDate"/>
+        <result column="sort" jdbcType="INTEGER" property="sort"/>
+        <result column="modify_member_id" jdbcType="VARCHAR" property="modifyMemberId"/>
+        <result column="modify_date" jdbcType="TIMESTAMP" property="modifyDate"/>
+        <result column="receive_unit" jdbcType="VARCHAR" property="receiveUnit"/>
+        <result column="field0001" jdbcType="TIMESTAMP" property="field0001"/>
+        <result column="field0002" jdbcType="VARCHAR" property="field0002"/>
+        <result column="field0003" jdbcType="VARCHAR" property="field0003"/>
+        <result column="field0004" jdbcType="VARCHAR" property="field0004"/>
+        <result column="field0005" jdbcType="VARCHAR" property="field0005"/>
+        <result column="field0006" jdbcType="VARCHAR" property="field0006"/>
+        <result column="field0007" jdbcType="VARCHAR" property="field0007"/>
+        <result column="field0008" jdbcType="VARCHAR" property="field0008"/>
+        <result column="field0009" jdbcType="VARCHAR" property="field0009"/>
+        <result column="field0010" jdbcType="VARCHAR" property="field0010"/>
+        <result column="field0011" jdbcType="VARCHAR" property="field0011"/>
+        <result column="field0012" jdbcType="VARCHAR" property="field0012"/>
+        <result column="field0013" jdbcType="VARCHAR" property="field0013"/>
+        <result column="field0014" jdbcType="VARCHAR" property="field0014"/>
+        <result column="field0015" jdbcType="VARCHAR" property="field0015"/>
+        <result column="field0016" jdbcType="VARCHAR" property="field0016"/>
+        <result column="field0017" jdbcType="VARCHAR" property="field0017"/>
+        <result column="field0018" jdbcType="VARCHAR" property="field0018"/>
+        <result column="field0019" jdbcType="VARCHAR" property="field0019"/>
+        <result column="field0020" jdbcType="VARCHAR" property="field0020"/>
+        <result column="field0021" jdbcType="VARCHAR" property="field0021"/>
+        <result column="field0022" jdbcType="VARCHAR" property="field0022"/>
+        <result column="field0023" jdbcType="VARCHAR" property="field0023"/>
+        <result column="field0024" jdbcType="VARCHAR" property="field0024"/>
+        <result column="field0025" jdbcType="VARCHAR" property="field0025"/>
+        <result column="field0026" jdbcType="VARCHAR" property="field0026"/>
+        <result column="field0027" jdbcType="VARCHAR" property="field0027"/>
+        <result column="field0028" jdbcType="VARCHAR" property="field0028"/>
+        <result column="field0029" jdbcType="VARCHAR" property="field0029"/>
+        <result column="field0030" jdbcType="VARCHAR" property="field0030"/>
+        <result column="field0031" jdbcType="VARCHAR" property="field0031"/>
+        <result column="field0032" jdbcType="VARCHAR" property="field0032"/>
+        <result column="field0033" jdbcType="VARCHAR" property="field0033"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, `state`, start_member_id, start_date, approve_member_id, approve_date, finishedflag,
+        ratifyflag, ratify_member_id, ratify_date, sort, modify_member_id, modify_date, receive_unit,
+        field0001, field0002, field0003, field0004, field0005, field0006, field0007, field0008,
+        field0009, field0010, field0011, field0012, field0013, field0014, field0015, field0016,
+        field0017, field0018, field0019, field0020, field0021, field0022, field0023, field0024,
+        field0025, field0026, field0027, field0028, field0029, field0030, field0031, field0032,
+        field0033
+    </sql>
+    <insert id="batchInsert" parameterType="map">
+        <!--@mbg.generated-->
+        insert into formmain_0047
+        (ID, `state`, start_member_id, start_date, approve_member_id, approve_date, finishedflag,
+        ratifyflag, ratify_member_id, ratify_date, sort, modify_member_id, modify_date,
+        receive_unit, field0001, field0002, field0003, field0004, field0005, field0006,
+        field0007, field0008, field0009, field0010, field0011, field0012, field0013, field0014,
+        field0015, field0016, field0017, field0018, field0019, field0020, field0021, field0022,
+        field0023, field0024, field0025, field0026, field0027, field0028, field0029, field0030,
+        field0031, field0032, field0033)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id,jdbcType=DECIMAL}, #{item.state,jdbcType=INTEGER}, #{item.startMemberId,jdbcType=VARCHAR},
+            #{item.startDate,jdbcType=TIMESTAMP}, #{item.approveMemberId,jdbcType=VARCHAR},
+            #{item.approveDate,jdbcType=TIMESTAMP}, #{item.finishedflag,jdbcType=INTEGER},
+            #{item.ratifyflag,jdbcType=INTEGER}, #{item.ratifyMemberId,jdbcType=VARCHAR},
+            #{item.ratifyDate,jdbcType=TIMESTAMP},
+            #{item.sort,jdbcType=INTEGER}, #{item.modifyMemberId,jdbcType=VARCHAR},
+            #{item.modifyDate,jdbcType=TIMESTAMP},
+            #{item.receiveUnit,jdbcType=VARCHAR}, #{item.field0001,jdbcType=TIMESTAMP},
+            #{item.field0002,jdbcType=VARCHAR},
+            #{item.field0003,jdbcType=VARCHAR}, #{item.field0004,jdbcType=VARCHAR}, #{item.field0005,jdbcType=VARCHAR},
+            #{item.field0006,jdbcType=VARCHAR}, #{item.field0007,jdbcType=VARCHAR}, #{item.field0008,jdbcType=VARCHAR},
+            #{item.field0009,jdbcType=VARCHAR}, #{item.field0010,jdbcType=VARCHAR}, #{item.field0011,jdbcType=VARCHAR},
+            #{item.field0012,jdbcType=VARCHAR}, #{item.field0013,jdbcType=VARCHAR}, #{item.field0014,jdbcType=VARCHAR},
+            #{item.field0015,jdbcType=VARCHAR}, #{item.field0016,jdbcType=VARCHAR}, #{item.field0017,jdbcType=VARCHAR},
+            #{item.field0018,jdbcType=VARCHAR}, #{item.field0019,jdbcType=VARCHAR}, #{item.field0020,jdbcType=VARCHAR},
+            #{item.field0021,jdbcType=VARCHAR}, #{item.field0022,jdbcType=VARCHAR}, #{item.field0023,jdbcType=VARCHAR},
+            #{item.field0024,jdbcType=VARCHAR}, #{item.field0025,jdbcType=VARCHAR}, #{item.field0026,jdbcType=VARCHAR},
+            #{item.field0027,jdbcType=VARCHAR}, #{item.field0028,jdbcType=VARCHAR}, #{item.field0029,jdbcType=VARCHAR},
+            #{item.field0030,jdbcType=VARCHAR}, #{item.field0031,jdbcType=VARCHAR}, #{item.field0032,jdbcType=VARCHAR},
+            #{item.field0033,jdbcType=VARCHAR})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" parameterType="cn.biuaxia.odm.generate.domain.Formmain0047">
+        <!--@mbg.generated-->
+        insert into formmain_0047
+        (ID, `state`, start_member_id, start_date, approve_member_id, approve_date, finishedflag,
+        ratifyflag, ratify_member_id, ratify_date, sort, modify_member_id, modify_date,
+        receive_unit, field0001, field0002, field0003, field0004, field0005, field0006,
+        field0007, field0008, field0009, field0010, field0011, field0012, field0013, field0014,
+        field0015, field0016, field0017, field0018, field0019, field0020, field0021, field0022,
+        field0023, field0024, field0025, field0026, field0027, field0028, field0029, field0030,
+        field0031, field0032, field0033)
+        values
+        (#{id,jdbcType=DECIMAL}, #{state,jdbcType=INTEGER}, #{startMemberId,jdbcType=VARCHAR},
+        #{startDate,jdbcType=TIMESTAMP}, #{approveMemberId,jdbcType=VARCHAR}, #{approveDate,jdbcType=TIMESTAMP},
+        #{finishedflag,jdbcType=INTEGER}, #{ratifyflag,jdbcType=INTEGER}, #{ratifyMemberId,jdbcType=VARCHAR},
+        #{ratifyDate,jdbcType=TIMESTAMP}, #{sort,jdbcType=INTEGER}, #{modifyMemberId,jdbcType=VARCHAR},
+        #{modifyDate,jdbcType=TIMESTAMP}, #{receiveUnit,jdbcType=VARCHAR}, #{field0001,jdbcType=TIMESTAMP},
+        #{field0002,jdbcType=VARCHAR}, #{field0003,jdbcType=VARCHAR}, #{field0004,jdbcType=VARCHAR},
+        #{field0005,jdbcType=VARCHAR}, #{field0006,jdbcType=VARCHAR}, #{field0007,jdbcType=VARCHAR},
+        #{field0008,jdbcType=VARCHAR}, #{field0009,jdbcType=VARCHAR}, #{field0010,jdbcType=VARCHAR},
+        #{field0011,jdbcType=VARCHAR}, #{field0012,jdbcType=VARCHAR}, #{field0013,jdbcType=VARCHAR},
+        #{field0014,jdbcType=VARCHAR}, #{field0015,jdbcType=VARCHAR}, #{field0016,jdbcType=VARCHAR},
+        #{field0017,jdbcType=VARCHAR}, #{field0018,jdbcType=VARCHAR}, #{field0019,jdbcType=VARCHAR},
+        #{field0020,jdbcType=VARCHAR}, #{field0021,jdbcType=VARCHAR}, #{field0022,jdbcType=VARCHAR},
+        #{field0023,jdbcType=VARCHAR}, #{field0024,jdbcType=VARCHAR}, #{field0025,jdbcType=VARCHAR},
+        #{field0026,jdbcType=VARCHAR}, #{field0027,jdbcType=VARCHAR}, #{field0028,jdbcType=VARCHAR},
+        #{field0029,jdbcType=VARCHAR}, #{field0030,jdbcType=VARCHAR}, #{field0031,jdbcType=VARCHAR},
+        #{field0032,jdbcType=VARCHAR}, #{field0033,jdbcType=VARCHAR})
+        on duplicate key update
+        ID = #{id,jdbcType=DECIMAL},
+        `state` = #{state,jdbcType=INTEGER},
+        start_member_id = #{startMemberId,jdbcType=VARCHAR},
+        start_date = #{startDate,jdbcType=TIMESTAMP},
+        approve_member_id = #{approveMemberId,jdbcType=VARCHAR},
+        approve_date = #{approveDate,jdbcType=TIMESTAMP},
+        finishedflag = #{finishedflag,jdbcType=INTEGER},
+        ratifyflag = #{ratifyflag,jdbcType=INTEGER},
+        ratify_member_id = #{ratifyMemberId,jdbcType=VARCHAR},
+        ratify_date = #{ratifyDate,jdbcType=TIMESTAMP},
+        sort = #{sort,jdbcType=INTEGER},
+        modify_member_id = #{modifyMemberId,jdbcType=VARCHAR},
+        modify_date = #{modifyDate,jdbcType=TIMESTAMP},
+        receive_unit = #{receiveUnit,jdbcType=VARCHAR},
+        field0001 = #{field0001,jdbcType=TIMESTAMP},
+        field0002 = #{field0002,jdbcType=VARCHAR},
+        field0003 = #{field0003,jdbcType=VARCHAR},
+        field0004 = #{field0004,jdbcType=VARCHAR},
+        field0005 = #{field0005,jdbcType=VARCHAR},
+        field0006 = #{field0006,jdbcType=VARCHAR},
+        field0007 = #{field0007,jdbcType=VARCHAR},
+        field0008 = #{field0008,jdbcType=VARCHAR},
+        field0009 = #{field0009,jdbcType=VARCHAR},
+        field0010 = #{field0010,jdbcType=VARCHAR},
+        field0011 = #{field0011,jdbcType=VARCHAR},
+        field0012 = #{field0012,jdbcType=VARCHAR},
+        field0013 = #{field0013,jdbcType=VARCHAR},
+        field0014 = #{field0014,jdbcType=VARCHAR},
+        field0015 = #{field0015,jdbcType=VARCHAR},
+        field0016 = #{field0016,jdbcType=VARCHAR},
+        field0017 = #{field0017,jdbcType=VARCHAR},
+        field0018 = #{field0018,jdbcType=VARCHAR},
+        field0019 = #{field0019,jdbcType=VARCHAR},
+        field0020 = #{field0020,jdbcType=VARCHAR},
+        field0021 = #{field0021,jdbcType=VARCHAR},
+        field0022 = #{field0022,jdbcType=VARCHAR},
+        field0023 = #{field0023,jdbcType=VARCHAR},
+        field0024 = #{field0024,jdbcType=VARCHAR},
+        field0025 = #{field0025,jdbcType=VARCHAR},
+        field0026 = #{field0026,jdbcType=VARCHAR},
+        field0027 = #{field0027,jdbcType=VARCHAR},
+        field0028 = #{field0028,jdbcType=VARCHAR},
+        field0029 = #{field0029,jdbcType=VARCHAR},
+        field0030 = #{field0030,jdbcType=VARCHAR},
+        field0031 = #{field0031,jdbcType=VARCHAR},
+        field0032 = #{field0032,jdbcType=VARCHAR},
+        field0033 = #{field0033,jdbcType=VARCHAR}
+    </insert>
+    <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.odm.generate.domain.Formmain0047">
+        <!--@mbg.generated-->
+        insert into formmain_0047
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="state != null">
+                `state`,
+            </if>
+            <if test="startMemberId != null">
+                start_member_id,
+            </if>
+            <if test="startDate != null">
+                start_date,
+            </if>
+            <if test="approveMemberId != null">
+                approve_member_id,
+            </if>
+            <if test="approveDate != null">
+                approve_date,
+            </if>
+            <if test="finishedflag != null">
+                finishedflag,
+            </if>
+            <if test="ratifyflag != null">
+                ratifyflag,
+            </if>
+            <if test="ratifyMemberId != null">
+                ratify_member_id,
+            </if>
+            <if test="ratifyDate != null">
+                ratify_date,
+            </if>
+            <if test="sort != null">
+                sort,
+            </if>
+            <if test="modifyMemberId != null">
+                modify_member_id,
+            </if>
+            <if test="modifyDate != null">
+                modify_date,
+            </if>
+            <if test="receiveUnit != null">
+                receive_unit,
+            </if>
+            <if test="field0001 != null">
+                field0001,
+            </if>
+            <if test="field0002 != null">
+                field0002,
+            </if>
+            <if test="field0003 != null">
+                field0003,
+            </if>
+            <if test="field0004 != null">
+                field0004,
+            </if>
+            <if test="field0005 != null">
+                field0005,
+            </if>
+            <if test="field0006 != null">
+                field0006,
+            </if>
+            <if test="field0007 != null">
+                field0007,
+            </if>
+            <if test="field0008 != null">
+                field0008,
+            </if>
+            <if test="field0009 != null">
+                field0009,
+            </if>
+            <if test="field0010 != null">
+                field0010,
+            </if>
+            <if test="field0011 != null">
+                field0011,
+            </if>
+            <if test="field0012 != null">
+                field0012,
+            </if>
+            <if test="field0013 != null">
+                field0013,
+            </if>
+            <if test="field0014 != null">
+                field0014,
+            </if>
+            <if test="field0015 != null">
+                field0015,
+            </if>
+            <if test="field0016 != null">
+                field0016,
+            </if>
+            <if test="field0017 != null">
+                field0017,
+            </if>
+            <if test="field0018 != null">
+                field0018,
+            </if>
+            <if test="field0019 != null">
+                field0019,
+            </if>
+            <if test="field0020 != null">
+                field0020,
+            </if>
+            <if test="field0021 != null">
+                field0021,
+            </if>
+            <if test="field0022 != null">
+                field0022,
+            </if>
+            <if test="field0023 != null">
+                field0023,
+            </if>
+            <if test="field0024 != null">
+                field0024,
+            </if>
+            <if test="field0025 != null">
+                field0025,
+            </if>
+            <if test="field0026 != null">
+                field0026,
+            </if>
+            <if test="field0027 != null">
+                field0027,
+            </if>
+            <if test="field0028 != null">
+                field0028,
+            </if>
+            <if test="field0029 != null">
+                field0029,
+            </if>
+            <if test="field0030 != null">
+                field0030,
+            </if>
+            <if test="field0031 != null">
+                field0031,
+            </if>
+            <if test="field0032 != null">
+                field0032,
+            </if>
+            <if test="field0033 != null">
+                field0033,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=DECIMAL},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=INTEGER},
+            </if>
+            <if test="startMemberId != null">
+                #{startMemberId,jdbcType=VARCHAR},
+            </if>
+            <if test="startDate != null">
+                #{startDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="approveMemberId != null">
+                #{approveMemberId,jdbcType=VARCHAR},
+            </if>
+            <if test="approveDate != null">
+                #{approveDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishedflag != null">
+                #{finishedflag,jdbcType=INTEGER},
+            </if>
+            <if test="ratifyflag != null">
+                #{ratifyflag,jdbcType=INTEGER},
+            </if>
+            <if test="ratifyMemberId != null">
+                #{ratifyMemberId,jdbcType=VARCHAR},
+            </if>
+            <if test="ratifyDate != null">
+                #{ratifyDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="sort != null">
+                #{sort,jdbcType=INTEGER},
+            </if>
+            <if test="modifyMemberId != null">
+                #{modifyMemberId,jdbcType=VARCHAR},
+            </if>
+            <if test="modifyDate != null">
+                #{modifyDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="receiveUnit != null">
+                #{receiveUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="field0001 != null">
+                #{field0001,jdbcType=TIMESTAMP},
+            </if>
+            <if test="field0002 != null">
+                #{field0002,jdbcType=VARCHAR},
+            </if>
+            <if test="field0003 != null">
+                #{field0003,jdbcType=VARCHAR},
+            </if>
+            <if test="field0004 != null">
+                #{field0004,jdbcType=VARCHAR},
+            </if>
+            <if test="field0005 != null">
+                #{field0005,jdbcType=VARCHAR},
+            </if>
+            <if test="field0006 != null">
+                #{field0006,jdbcType=VARCHAR},
+            </if>
+            <if test="field0007 != null">
+                #{field0007,jdbcType=VARCHAR},
+            </if>
+            <if test="field0008 != null">
+                #{field0008,jdbcType=VARCHAR},
+            </if>
+            <if test="field0009 != null">
+                #{field0009,jdbcType=VARCHAR},
+            </if>
+            <if test="field0010 != null">
+                #{field0010,jdbcType=VARCHAR},
+            </if>
+            <if test="field0011 != null">
+                #{field0011,jdbcType=VARCHAR},
+            </if>
+            <if test="field0012 != null">
+                #{field0012,jdbcType=VARCHAR},
+            </if>
+            <if test="field0013 != null">
+                #{field0013,jdbcType=VARCHAR},
+            </if>
+            <if test="field0014 != null">
+                #{field0014,jdbcType=VARCHAR},
+            </if>
+            <if test="field0015 != null">
+                #{field0015,jdbcType=VARCHAR},
+            </if>
+            <if test="field0016 != null">
+                #{field0016,jdbcType=VARCHAR},
+            </if>
+            <if test="field0017 != null">
+                #{field0017,jdbcType=VARCHAR},
+            </if>
+            <if test="field0018 != null">
+                #{field0018,jdbcType=VARCHAR},
+            </if>
+            <if test="field0019 != null">
+                #{field0019,jdbcType=VARCHAR},
+            </if>
+            <if test="field0020 != null">
+                #{field0020,jdbcType=VARCHAR},
+            </if>
+            <if test="field0021 != null">
+                #{field0021,jdbcType=VARCHAR},
+            </if>
+            <if test="field0022 != null">
+                #{field0022,jdbcType=VARCHAR},
+            </if>
+            <if test="field0023 != null">
+                #{field0023,jdbcType=VARCHAR},
+            </if>
+            <if test="field0024 != null">
+                #{field0024,jdbcType=VARCHAR},
+            </if>
+            <if test="field0025 != null">
+                #{field0025,jdbcType=VARCHAR},
+            </if>
+            <if test="field0026 != null">
+                #{field0026,jdbcType=VARCHAR},
+            </if>
+            <if test="field0027 != null">
+                #{field0027,jdbcType=VARCHAR},
+            </if>
+            <if test="field0028 != null">
+                #{field0028,jdbcType=VARCHAR},
+            </if>
+            <if test="field0029 != null">
+                #{field0029,jdbcType=VARCHAR},
+            </if>
+            <if test="field0030 != null">
+                #{field0030,jdbcType=VARCHAR},
+            </if>
+            <if test="field0031 != null">
+                #{field0031,jdbcType=VARCHAR},
+            </if>
+            <if test="field0032 != null">
+                #{field0032,jdbcType=VARCHAR},
+            </if>
+            <if test="field0033 != null">
+                #{field0033,jdbcType=VARCHAR},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                ID = #{id,jdbcType=DECIMAL},
+            </if>
+            <if test="state != null">
+                `state` = #{state,jdbcType=INTEGER},
+            </if>
+            <if test="startMemberId != null">
+                start_member_id = #{startMemberId,jdbcType=VARCHAR},
+            </if>
+            <if test="startDate != null">
+                start_date = #{startDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="approveMemberId != null">
+                approve_member_id = #{approveMemberId,jdbcType=VARCHAR},
+            </if>
+            <if test="approveDate != null">
+                approve_date = #{approveDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishedflag != null">
+                finishedflag = #{finishedflag,jdbcType=INTEGER},
+            </if>
+            <if test="ratifyflag != null">
+                ratifyflag = #{ratifyflag,jdbcType=INTEGER},
+            </if>
+            <if test="ratifyMemberId != null">
+                ratify_member_id = #{ratifyMemberId,jdbcType=VARCHAR},
+            </if>
+            <if test="ratifyDate != null">
+                ratify_date = #{ratifyDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="sort != null">
+                sort = #{sort,jdbcType=INTEGER},
+            </if>
+            <if test="modifyMemberId != null">
+                modify_member_id = #{modifyMemberId,jdbcType=VARCHAR},
+            </if>
+            <if test="modifyDate != null">
+                modify_date = #{modifyDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="receiveUnit != null">
+                receive_unit = #{receiveUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="field0001 != null">
+                field0001 = #{field0001,jdbcType=TIMESTAMP},
+            </if>
+            <if test="field0002 != null">
+                field0002 = #{field0002,jdbcType=VARCHAR},
+            </if>
+            <if test="field0003 != null">
+                field0003 = #{field0003,jdbcType=VARCHAR},
+            </if>
+            <if test="field0004 != null">
+                field0004 = #{field0004,jdbcType=VARCHAR},
+            </if>
+            <if test="field0005 != null">
+                field0005 = #{field0005,jdbcType=VARCHAR},
+            </if>
+            <if test="field0006 != null">
+                field0006 = #{field0006,jdbcType=VARCHAR},
+            </if>
+            <if test="field0007 != null">
+                field0007 = #{field0007,jdbcType=VARCHAR},
+            </if>
+            <if test="field0008 != null">
+                field0008 = #{field0008,jdbcType=VARCHAR},
+            </if>
+            <if test="field0009 != null">
+                field0009 = #{field0009,jdbcType=VARCHAR},
+            </if>
+            <if test="field0010 != null">
+                field0010 = #{field0010,jdbcType=VARCHAR},
+            </if>
+            <if test="field0011 != null">
+                field0011 = #{field0011,jdbcType=VARCHAR},
+            </if>
+            <if test="field0012 != null">
+                field0012 = #{field0012,jdbcType=VARCHAR},
+            </if>
+            <if test="field0013 != null">
+                field0013 = #{field0013,jdbcType=VARCHAR},
+            </if>
+            <if test="field0014 != null">
+                field0014 = #{field0014,jdbcType=VARCHAR},
+            </if>
+            <if test="field0015 != null">
+                field0015 = #{field0015,jdbcType=VARCHAR},
+            </if>
+            <if test="field0016 != null">
+                field0016 = #{field0016,jdbcType=VARCHAR},
+            </if>
+            <if test="field0017 != null">
+                field0017 = #{field0017,jdbcType=VARCHAR},
+            </if>
+            <if test="field0018 != null">
+                field0018 = #{field0018,jdbcType=VARCHAR},
+            </if>
+            <if test="field0019 != null">
+                field0019 = #{field0019,jdbcType=VARCHAR},
+            </if>
+            <if test="field0020 != null">
+                field0020 = #{field0020,jdbcType=VARCHAR},
+            </if>
+            <if test="field0021 != null">
+                field0021 = #{field0021,jdbcType=VARCHAR},
+            </if>
+            <if test="field0022 != null">
+                field0022 = #{field0022,jdbcType=VARCHAR},
+            </if>
+            <if test="field0023 != null">
+                field0023 = #{field0023,jdbcType=VARCHAR},
+            </if>
+            <if test="field0024 != null">
+                field0024 = #{field0024,jdbcType=VARCHAR},
+            </if>
+            <if test="field0025 != null">
+                field0025 = #{field0025,jdbcType=VARCHAR},
+            </if>
+            <if test="field0026 != null">
+                field0026 = #{field0026,jdbcType=VARCHAR},
+            </if>
+            <if test="field0027 != null">
+                field0027 = #{field0027,jdbcType=VARCHAR},
+            </if>
+            <if test="field0028 != null">
+                field0028 = #{field0028,jdbcType=VARCHAR},
+            </if>
+            <if test="field0029 != null">
+                field0029 = #{field0029,jdbcType=VARCHAR},
+            </if>
+            <if test="field0030 != null">
+                field0030 = #{field0030,jdbcType=VARCHAR},
+            </if>
+            <if test="field0031 != null">
+                field0031 = #{field0031,jdbcType=VARCHAR},
+            </if>
+            <if test="field0032 != null">
+                field0032 = #{field0032,jdbcType=VARCHAR},
+            </if>
+            <if test="field0033 != null">
+                field0033 = #{field0033,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+</mapper>

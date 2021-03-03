@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.odm.generate.mapper.CtpEnumItemCnMapper">
+    <resultMap id="BaseResultMap" type="cn.biuaxia.odm.generate.domain.CtpEnumItemCn">
+        <!--@mbg.generated-->
+        <!--@Table CTP_ENUM_ITEM_CN-->
+        <id column="ID" jdbcType="BIGINT" property="id"/>
+        <result column="REF_ENUMID" jdbcType="BIGINT" property="refEnumid"/>
+        <result column="SHOWVALUE" jdbcType="VARCHAR" property="showvalue"/>
+        <result column="ENUMVALUE" jdbcType="VARCHAR" property="enumvalue"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, REF_ENUMID, SHOWVALUE, ENUMVALUE
+    </sql>
+    <update id="updateBatch" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update CTP_ENUM_ITEM_CN
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="REF_ENUMID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.refEnumid,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="SHOWVALUE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.showvalue,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="ENUMVALUE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.enumvalue,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <update id="updateBatchSelective" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update CTP_ENUM_ITEM_CN
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="REF_ENUMID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.refEnumid != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.refEnumid,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="SHOWVALUE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.showvalue != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.showvalue,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="ENUMVALUE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.enumvalue != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.enumvalue,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <insert id="batchInsert" parameterType="map">
+        <!--@mbg.generated-->
+        insert into CTP_ENUM_ITEM_CN
+        (ID, REF_ENUMID, SHOWVALUE, ENUMVALUE)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id,jdbcType=BIGINT}, #{item.refEnumid,jdbcType=BIGINT}, #{item.showvalue,jdbcType=VARCHAR},
+            #{item.enumvalue,jdbcType=VARCHAR})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" parameterType="cn.biuaxia.odm.generate.domain.CtpEnumItemCn">
+        <!--@mbg.generated-->
+        insert into CTP_ENUM_ITEM_CN
+        (ID, REF_ENUMID, SHOWVALUE, ENUMVALUE)
+        values
+        (#{id,jdbcType=BIGINT}, #{refEnumid,jdbcType=BIGINT}, #{showvalue,jdbcType=VARCHAR},
+        #{enumvalue,jdbcType=VARCHAR})
+        on duplicate key update
+        ID = #{id,jdbcType=BIGINT},
+        REF_ENUMID = #{refEnumid,jdbcType=BIGINT},
+        SHOWVALUE = #{showvalue,jdbcType=VARCHAR},
+        ENUMVALUE = #{enumvalue,jdbcType=VARCHAR}
+    </insert>
+    <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.odm.generate.domain.CtpEnumItemCn">
+        <!--@mbg.generated-->
+        insert into CTP_ENUM_ITEM_CN
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="refEnumid != null">
+                REF_ENUMID,
+            </if>
+            <if test="showvalue != null">
+                SHOWVALUE,
+            </if>
+            <if test="enumvalue != null">
+                ENUMVALUE,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="refEnumid != null">
+                #{refEnumid,jdbcType=BIGINT},
+            </if>
+            <if test="showvalue != null">
+                #{showvalue,jdbcType=VARCHAR},
+            </if>
+            <if test="enumvalue != null">
+                #{enumvalue,jdbcType=VARCHAR},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                ID = #{id,jdbcType=BIGINT},
+            </if>
+            <if test="refEnumid != null">
+                REF_ENUMID = #{refEnumid,jdbcType=BIGINT},
+            </if>
+            <if test="showvalue != null">
+                SHOWVALUE = #{showvalue,jdbcType=VARCHAR},
+            </if>
+            <if test="enumvalue != null">
+                ENUMVALUE = #{enumvalue,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+</mapper>

@@ -20,6 +20,7 @@
         <mybatis-plus-boot-starter.version>3.4.2</mybatis-plus-boot-starter.version>
         <tika-core.version>1.25</tika-core.version>
         <hutool-all.version>5.5.9</hutool-all.version>
+        <dynamic-datasource-spring-boot-starter.version>3.3.1</dynamic-datasource-spring-boot-starter.version>
     </properties>
 
     <dependencies>
@@ -73,6 +74,12 @@
             <version>${mssql-jdbc.version}</version>
         </dependency>
 
+        <!--mysql driver-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
         <!--Mybatis-plus starter-->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -93,6 +100,13 @@
             <artifactId>hutool-all</artifactId>
             <version>${hutool-all.version}</version>
         </dependency>
+
+        <!--多数据源-->
+        <!--<dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>${dynamic-datasource-spring-boot-starter.version}</version>
+        </dependency>-->
 
     </dependencies>
 

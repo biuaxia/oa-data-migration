@@ -19,3 +19,4 @@ public interface EdocSummaryService extends IService<EdocSummary> {
     int insertOrUpdateSelective(EdocSummary record);
 
 }
+
