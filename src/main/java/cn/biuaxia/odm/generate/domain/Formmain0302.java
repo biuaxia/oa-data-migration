@@ -19,6 +19,7 @@ import java.util.Date;
 @NoArgsConstructor
 @TableName(value = "formmain_0302")
 public class Formmain0302 implements Serializable {
+
     @TableId(value = "ID", type = IdType.INPUT)
     private BigDecimal id;
 

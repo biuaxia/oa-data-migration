@@ -1,6 +1,7 @@
 package cn.biuaxia.odm.generate.domain;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +18,8 @@ import java.util.Date;
 @NoArgsConstructor
 @TableName(value = "formmain_0089")
 public class Formmain0089 implements Serializable {
-    @TableField(value = "ID")
+
+    @TableId(value = "ID")
     private BigDecimal id;
 
     @TableField(value = "`state`")

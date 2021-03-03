@@ -18,6 +18,7 @@ import java.util.Date;
 @NoArgsConstructor
 @TableName(value = "EDOC_SUMMARY")
 public class EdocSummary implements Serializable {
+
     @TableId(value = "ID", type = IdType.INPUT)
     private Long id;
 

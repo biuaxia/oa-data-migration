@@ -17,6 +17,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @TableName(value = "FORM_RESOURCE")
 public class FormResource implements Serializable {
+    
     @TableId(value = "ID", type = IdType.INPUT)
     private Long id;
 

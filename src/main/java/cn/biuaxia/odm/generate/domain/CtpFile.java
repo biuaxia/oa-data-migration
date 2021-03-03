@@ -18,6 +18,7 @@ import java.util.Date;
 @NoArgsConstructor
 @TableName(value = "CTP_FILE")
 public class CtpFile implements Serializable {
+
     @TableId(value = "ID", type = IdType.INPUT)
     private Long id;
 

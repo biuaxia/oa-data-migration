@@ -18,6 +18,7 @@ import java.util.Date;
 @NoArgsConstructor
 @TableName(value = "ORG_MEMBER")
 public class OrgMember implements Serializable {
+    
     @TableId(value = "ID", type = IdType.INPUT)
     private Long id;
 

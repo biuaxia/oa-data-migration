@@ -17,6 +17,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @TableName(value = "CTP_ENUM_ITEM_CN")
 public class CtpEnumItemCn implements Serializable {
+    
     @TableId(value = "ID", type = IdType.INPUT)
     private Long id;
 
