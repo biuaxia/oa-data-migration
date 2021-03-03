@@ -1,0 +1,1353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.odm.generate.mapper.ColSummaryMapper">
+  <resultMap id="BaseResultMap" type="cn.biuaxia.odm.generate.domain.ColSummary">
+    <!--@mbg.generated-->
+    <!--@Table COL_SUMMARY-->
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="STATE" jdbcType="SMALLINT" property="state" />
+    <result column="SUBJECT" jdbcType="VARCHAR" property="subject" />
+    <result column="DEADLINE" jdbcType="BIGINT" property="deadline" />
+    <result column="COL_TYPE" jdbcType="SMALLINT" property="colType" />
+    <result column="CAN_ARCHIVE" jdbcType="SMALLINT" property="canArchive" />
+    <result column="CAN_MODIFY" jdbcType="SMALLINT" property="canModify" />
+    <result column="CAN_DUE_REMINDER" jdbcType="SMALLINT" property="canDueReminder" />
+    <result column="CAN_FORWARD" jdbcType="SMALLINT" property="canForward" />
+    <result column="CAN_EDIT" jdbcType="SMALLINT" property="canEdit" />
+    <result column="CAN_TRACK" jdbcType="SMALLINT" property="canTrack" />
+    <result column="REMIND_INTERVAL" jdbcType="BIGINT" property="remindInterval" />
+    <result column="PROJECT_ID" jdbcType="BIGINT" property="projectId" />
+    <result column="IMPORTANT_LEVEL" jdbcType="SMALLINT" property="importantLevel" />
+    <result column="RESENT_TIME" jdbcType="SMALLINT" property="resentTime" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="START_DATE" jdbcType="TIMESTAMP" property="startDate" />
+    <result column="FINISH_DATE" jdbcType="TIMESTAMP" property="finishDate" />
+    <result column="IS_AUDITED" jdbcType="SMALLINT" property="isAudited" />
+    <result column="ARCHIVE_ID" jdbcType="BIGINT" property="archiveId" />
+    <result column="START_MEMBER_ID" jdbcType="BIGINT" property="startMemberId" />
+    <result column="PROCESS_ID" jdbcType="VARCHAR" property="processId" />
+    <result column="CASE_ID" jdbcType="BIGINT" property="caseId" />
+    <result column="ADVANCE_REMIND" jdbcType="BIGINT" property="advanceRemind" />
+    <result column="IDENTIFIER" jdbcType="VARCHAR" property="identifier" />
+    <result column="FORWARD_MEMBER" jdbcType="VARCHAR" property="forwardMember" />
+    <result column="TEMPLETE_ID" jdbcType="BIGINT" property="templeteId" />
+    <result column="WORKFLOW_RULE" jdbcType="LONGVARCHAR" property="workflowRule" />
+    <result column="WEBSERVICE_CODE" jdbcType="VARCHAR" property="webserviceCode" />
+    <result column="BODY_TYPE" jdbcType="VARCHAR" property="bodyType" />
+    <result column="FORM_RECORDID" jdbcType="BIGINT" property="formRecordid" />
+    <result column="FORMID" jdbcType="BIGINT" property="formid" />
+    <result column="FORM_APPID" jdbcType="BIGINT" property="formAppid" />
+    <result column="ORG_DEPARTMENT_ID" jdbcType="BIGINT" property="orgDepartmentId" />
+    <result column="ORG_ACCOUNT_ID" jdbcType="BIGINT" property="orgAccountId" />
+    <result column="SOURCE" jdbcType="VARCHAR" property="source" />
+    <result column="PARENTFORM_SUMMARYID" jdbcType="BIGINT" property="parentformSummaryid" />
+    <result column="NEWFLOW_TYPE" jdbcType="SMALLINT" property="newflowType" />
+    <result column="CAN_EDIT_ATTACHMENT" jdbcType="SMALLINT" property="canEditAttachment" />
+    <result column="VOUCH" jdbcType="SMALLINT" property="vouch" />
+    <result column="OVER_WORKTIME" jdbcType="BIGINT" property="overWorktime" />
+    <result column="RUN_WORKTIME" jdbcType="BIGINT" property="runWorktime" />
+    <result column="OVER_TIME" jdbcType="BIGINT" property="overTime" />
+    <result column="RUN_TIME" jdbcType="BIGINT" property="runTime" />
+    <result column="CAN_AUTOSTOPFLOW" jdbcType="SMALLINT" property="canAutostopflow" />
+    <result column="IS_COVER_TIME" jdbcType="SMALLINT" property="isCoverTime" />
+    <result column="DEADLINE_DATETIME" jdbcType="TIMESTAMP" property="deadlineDatetime" />
+    <result column="CURRENT_NODES_INFO" jdbcType="VARCHAR" property="currentNodesInfo" />
+    <result column="CAN_MERGE_DEAL" jdbcType="SMALLINT" property="canMergeDeal" />
+    <result column="ADVANCE_PIGEONHOLE" jdbcType="LONGVARCHAR" property="advancePigeonhole" />
+    <result column="secret_related_level" jdbcType="SMALLINT" property="secretRelatedLevel" />
+    <result column="GOVDOC_TYPE" jdbcType="VARCHAR" property="govdocType" />
+    <result column="is_quick_send" jdbcType="SMALLINT" property="isQuickSend" />
+    <result column="SECRET_LEVEL" jdbcType="SMALLINT" property="secretLevel" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, `STATE`, SUBJECT, DEADLINE, COL_TYPE, CAN_ARCHIVE, CAN_MODIFY, CAN_DUE_REMINDER, 
+    CAN_FORWARD, CAN_EDIT, CAN_TRACK, REMIND_INTERVAL, PROJECT_ID, IMPORTANT_LEVEL, RESENT_TIME, 
+    CREATE_DATE, START_DATE, FINISH_DATE, IS_AUDITED, ARCHIVE_ID, START_MEMBER_ID, PROCESS_ID, 
+    CASE_ID, ADVANCE_REMIND, IDENTIFIER, FORWARD_MEMBER, TEMPLETE_ID, WORKFLOW_RULE, 
+    WEBSERVICE_CODE, BODY_TYPE, FORM_RECORDID, FORMID, FORM_APPID, ORG_DEPARTMENT_ID, 
+    ORG_ACCOUNT_ID, `SOURCE`, PARENTFORM_SUMMARYID, NEWFLOW_TYPE, CAN_EDIT_ATTACHMENT, 
+    VOUCH, OVER_WORKTIME, RUN_WORKTIME, OVER_TIME, RUN_TIME, CAN_AUTOSTOPFLOW, IS_COVER_TIME, 
+    DEADLINE_DATETIME, CURRENT_NODES_INFO, CAN_MERGE_DEAL, ADVANCE_PIGEONHOLE, secret_related_level, 
+    GOVDOC_TYPE, is_quick_send, SECRET_LEVEL
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update COL_SUMMARY
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="`STATE` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.state,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="SUBJECT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.subject,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="DEADLINE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.deadline,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="COL_TYPE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.colType,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="CAN_ARCHIVE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.canArchive,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="CAN_MODIFY = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.canModify,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="CAN_DUE_REMINDER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.canDueReminder,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="CAN_FORWARD = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.canForward,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="CAN_EDIT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.canEdit,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="CAN_TRACK = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.canTrack,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="REMIND_INTERVAL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.remindInterval,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="PROJECT_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.projectId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="IMPORTANT_LEVEL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.importantLevel,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="RESENT_TIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.resentTime,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="CREATE_DATE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.createDate,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="START_DATE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.startDate,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="FINISH_DATE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.finishDate,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="IS_AUDITED = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.isAudited,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="ARCHIVE_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.archiveId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="START_MEMBER_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.startMemberId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="PROCESS_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.processId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="CASE_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.caseId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="ADVANCE_REMIND = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.advanceRemind,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="IDENTIFIER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.identifier,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="FORWARD_MEMBER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.forwardMember,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="TEMPLETE_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.templeteId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="WORKFLOW_RULE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.workflowRule,jdbcType=LONGVARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="WEBSERVICE_CODE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.webserviceCode,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="BODY_TYPE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.bodyType,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="FORM_RECORDID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.formRecordid,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="FORMID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.formid,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="FORM_APPID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.formAppid,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="ORG_DEPARTMENT_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.orgDepartmentId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="ORG_ACCOUNT_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.orgAccountId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="`SOURCE` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.source,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="PARENTFORM_SUMMARYID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.parentformSummaryid,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="NEWFLOW_TYPE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.newflowType,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="CAN_EDIT_ATTACHMENT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.canEditAttachment,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="VOUCH = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.vouch,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="OVER_WORKTIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.overWorktime,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="RUN_WORKTIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.runWorktime,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="OVER_TIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.overTime,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="RUN_TIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.runTime,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="CAN_AUTOSTOPFLOW = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.canAutostopflow,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="IS_COVER_TIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.isCoverTime,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="DEADLINE_DATETIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.deadlineDatetime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="CURRENT_NODES_INFO = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.currentNodesInfo,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="CAN_MERGE_DEAL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.canMergeDeal,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="ADVANCE_PIGEONHOLE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.advancePigeonhole,jdbcType=LONGVARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="secret_related_level = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.secretRelatedLevel,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="GOVDOC_TYPE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.govdocType,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="is_quick_send = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.isQuickSend,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+      <trim prefix="SECRET_LEVEL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=BIGINT} then #{item.secretLevel,jdbcType=SMALLINT}
+        </foreach>
+      </trim>
+    </trim>
+    where ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update COL_SUMMARY
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="`STATE` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.state != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.state,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="SUBJECT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.subject != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.subject,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="DEADLINE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.deadline != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.deadline,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="COL_TYPE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.colType != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.colType,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CAN_ARCHIVE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.canArchive != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.canArchive,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CAN_MODIFY = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.canModify != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.canModify,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CAN_DUE_REMINDER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.canDueReminder != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.canDueReminder,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CAN_FORWARD = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.canForward != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.canForward,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CAN_EDIT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.canEdit != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.canEdit,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CAN_TRACK = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.canTrack != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.canTrack,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="REMIND_INTERVAL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.remindInterval != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.remindInterval,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="PROJECT_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.projectId != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.projectId,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="IMPORTANT_LEVEL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.importantLevel != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.importantLevel,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="RESENT_TIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.resentTime != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.resentTime,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CREATE_DATE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.createDate != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.createDate,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="START_DATE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.startDate != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.startDate,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FINISH_DATE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.finishDate != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.finishDate,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="IS_AUDITED = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.isAudited != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.isAudited,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="ARCHIVE_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.archiveId != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.archiveId,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="START_MEMBER_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.startMemberId != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.startMemberId,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="PROCESS_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.processId != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.processId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CASE_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.caseId != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.caseId,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="ADVANCE_REMIND = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.advanceRemind != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.advanceRemind,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="IDENTIFIER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.identifier != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.identifier,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FORWARD_MEMBER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.forwardMember != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.forwardMember,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="TEMPLETE_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.templeteId != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.templeteId,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="WORKFLOW_RULE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.workflowRule != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.workflowRule,jdbcType=LONGVARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="WEBSERVICE_CODE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.webserviceCode != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.webserviceCode,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="BODY_TYPE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.bodyType != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.bodyType,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FORM_RECORDID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.formRecordid != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.formRecordid,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FORMID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.formid != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.formid,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FORM_APPID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.formAppid != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.formAppid,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="ORG_DEPARTMENT_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.orgDepartmentId != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.orgDepartmentId,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="ORG_ACCOUNT_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.orgAccountId != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.orgAccountId,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="`SOURCE` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.source != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.source,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="PARENTFORM_SUMMARYID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.parentformSummaryid != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.parentformSummaryid,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="NEWFLOW_TYPE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.newflowType != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.newflowType,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CAN_EDIT_ATTACHMENT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.canEditAttachment != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.canEditAttachment,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="VOUCH = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.vouch != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.vouch,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="OVER_WORKTIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.overWorktime != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.overWorktime,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="RUN_WORKTIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.runWorktime != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.runWorktime,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="OVER_TIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.overTime != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.overTime,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="RUN_TIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.runTime != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.runTime,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CAN_AUTOSTOPFLOW = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.canAutostopflow != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.canAutostopflow,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="IS_COVER_TIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.isCoverTime != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.isCoverTime,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="DEADLINE_DATETIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.deadlineDatetime != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.deadlineDatetime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CURRENT_NODES_INFO = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.currentNodesInfo != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.currentNodesInfo,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CAN_MERGE_DEAL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.canMergeDeal != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.canMergeDeal,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="ADVANCE_PIGEONHOLE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.advancePigeonhole != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.advancePigeonhole,jdbcType=LONGVARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="secret_related_level = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.secretRelatedLevel != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.secretRelatedLevel,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="GOVDOC_TYPE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.govdocType != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.govdocType,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="is_quick_send = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.isQuickSend != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.isQuickSend,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="SECRET_LEVEL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.secretLevel != null">
+            when ID = #{item.id,jdbcType=BIGINT} then #{item.secretLevel,jdbcType=SMALLINT}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into COL_SUMMARY
+    (ID, `STATE`, SUBJECT, DEADLINE, COL_TYPE, CAN_ARCHIVE, CAN_MODIFY, CAN_DUE_REMINDER, 
+      CAN_FORWARD, CAN_EDIT, CAN_TRACK, REMIND_INTERVAL, PROJECT_ID, IMPORTANT_LEVEL, 
+      RESENT_TIME, CREATE_DATE, START_DATE, FINISH_DATE, IS_AUDITED, ARCHIVE_ID, START_MEMBER_ID, 
+      PROCESS_ID, CASE_ID, ADVANCE_REMIND, IDENTIFIER, FORWARD_MEMBER, TEMPLETE_ID, WORKFLOW_RULE, 
+      WEBSERVICE_CODE, BODY_TYPE, FORM_RECORDID, FORMID, FORM_APPID, ORG_DEPARTMENT_ID, 
+      ORG_ACCOUNT_ID, `SOURCE`, PARENTFORM_SUMMARYID, NEWFLOW_TYPE, CAN_EDIT_ATTACHMENT, 
+      VOUCH, OVER_WORKTIME, RUN_WORKTIME, OVER_TIME, RUN_TIME, CAN_AUTOSTOPFLOW, IS_COVER_TIME, 
+      DEADLINE_DATETIME, CURRENT_NODES_INFO, CAN_MERGE_DEAL, ADVANCE_PIGEONHOLE, secret_related_level, 
+      GOVDOC_TYPE, is_quick_send, SECRET_LEVEL)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=BIGINT}, #{item.state,jdbcType=SMALLINT}, #{item.subject,jdbcType=VARCHAR}, 
+        #{item.deadline,jdbcType=BIGINT}, #{item.colType,jdbcType=SMALLINT}, #{item.canArchive,jdbcType=SMALLINT}, 
+        #{item.canModify,jdbcType=SMALLINT}, #{item.canDueReminder,jdbcType=SMALLINT}, 
+        #{item.canForward,jdbcType=SMALLINT}, #{item.canEdit,jdbcType=SMALLINT}, #{item.canTrack,jdbcType=SMALLINT}, 
+        #{item.remindInterval,jdbcType=BIGINT}, #{item.projectId,jdbcType=BIGINT}, #{item.importantLevel,jdbcType=SMALLINT}, 
+        #{item.resentTime,jdbcType=SMALLINT}, #{item.createDate,jdbcType=TIMESTAMP}, #{item.startDate,jdbcType=TIMESTAMP}, 
+        #{item.finishDate,jdbcType=TIMESTAMP}, #{item.isAudited,jdbcType=SMALLINT}, #{item.archiveId,jdbcType=BIGINT}, 
+        #{item.startMemberId,jdbcType=BIGINT}, #{item.processId,jdbcType=VARCHAR}, #{item.caseId,jdbcType=BIGINT}, 
+        #{item.advanceRemind,jdbcType=BIGINT}, #{item.identifier,jdbcType=VARCHAR}, #{item.forwardMember,jdbcType=VARCHAR}, 
+        #{item.templeteId,jdbcType=BIGINT}, #{item.workflowRule,jdbcType=LONGVARCHAR}, 
+        #{item.webserviceCode,jdbcType=VARCHAR}, #{item.bodyType,jdbcType=VARCHAR}, #{item.formRecordid,jdbcType=BIGINT}, 
+        #{item.formid,jdbcType=BIGINT}, #{item.formAppid,jdbcType=BIGINT}, #{item.orgDepartmentId,jdbcType=BIGINT}, 
+        #{item.orgAccountId,jdbcType=BIGINT}, #{item.source,jdbcType=VARCHAR}, #{item.parentformSummaryid,jdbcType=BIGINT}, 
+        #{item.newflowType,jdbcType=SMALLINT}, #{item.canEditAttachment,jdbcType=SMALLINT}, 
+        #{item.vouch,jdbcType=SMALLINT}, #{item.overWorktime,jdbcType=BIGINT}, #{item.runWorktime,jdbcType=BIGINT}, 
+        #{item.overTime,jdbcType=BIGINT}, #{item.runTime,jdbcType=BIGINT}, #{item.canAutostopflow,jdbcType=SMALLINT}, 
+        #{item.isCoverTime,jdbcType=SMALLINT}, #{item.deadlineDatetime,jdbcType=TIMESTAMP}, 
+        #{item.currentNodesInfo,jdbcType=VARCHAR}, #{item.canMergeDeal,jdbcType=SMALLINT}, 
+        #{item.advancePigeonhole,jdbcType=LONGVARCHAR}, #{item.secretRelatedLevel,jdbcType=SMALLINT}, 
+        #{item.govdocType,jdbcType=VARCHAR}, #{item.isQuickSend,jdbcType=SMALLINT}, #{item.secretLevel,jdbcType=SMALLINT}
+        )
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="cn.biuaxia.odm.generate.domain.ColSummary">
+    <!--@mbg.generated-->
+    insert into COL_SUMMARY
+    (ID, `STATE`, SUBJECT, DEADLINE, COL_TYPE, CAN_ARCHIVE, CAN_MODIFY, CAN_DUE_REMINDER, 
+      CAN_FORWARD, CAN_EDIT, CAN_TRACK, REMIND_INTERVAL, PROJECT_ID, IMPORTANT_LEVEL, 
+      RESENT_TIME, CREATE_DATE, START_DATE, FINISH_DATE, IS_AUDITED, ARCHIVE_ID, START_MEMBER_ID, 
+      PROCESS_ID, CASE_ID, ADVANCE_REMIND, IDENTIFIER, FORWARD_MEMBER, TEMPLETE_ID, WORKFLOW_RULE, 
+      WEBSERVICE_CODE, BODY_TYPE, FORM_RECORDID, FORMID, FORM_APPID, ORG_DEPARTMENT_ID, 
+      ORG_ACCOUNT_ID, `SOURCE`, PARENTFORM_SUMMARYID, NEWFLOW_TYPE, CAN_EDIT_ATTACHMENT, 
+      VOUCH, OVER_WORKTIME, RUN_WORKTIME, OVER_TIME, RUN_TIME, CAN_AUTOSTOPFLOW, IS_COVER_TIME, 
+      DEADLINE_DATETIME, CURRENT_NODES_INFO, CAN_MERGE_DEAL, ADVANCE_PIGEONHOLE, secret_related_level, 
+      GOVDOC_TYPE, is_quick_send, SECRET_LEVEL)
+    values
+    (#{id,jdbcType=BIGINT}, #{state,jdbcType=SMALLINT}, #{subject,jdbcType=VARCHAR}, 
+      #{deadline,jdbcType=BIGINT}, #{colType,jdbcType=SMALLINT}, #{canArchive,jdbcType=SMALLINT}, 
+      #{canModify,jdbcType=SMALLINT}, #{canDueReminder,jdbcType=SMALLINT}, #{canForward,jdbcType=SMALLINT}, 
+      #{canEdit,jdbcType=SMALLINT}, #{canTrack,jdbcType=SMALLINT}, #{remindInterval,jdbcType=BIGINT}, 
+      #{projectId,jdbcType=BIGINT}, #{importantLevel,jdbcType=SMALLINT}, #{resentTime,jdbcType=SMALLINT}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{startDate,jdbcType=TIMESTAMP}, #{finishDate,jdbcType=TIMESTAMP}, 
+      #{isAudited,jdbcType=SMALLINT}, #{archiveId,jdbcType=BIGINT}, #{startMemberId,jdbcType=BIGINT}, 
+      #{processId,jdbcType=VARCHAR}, #{caseId,jdbcType=BIGINT}, #{advanceRemind,jdbcType=BIGINT}, 
+      #{identifier,jdbcType=VARCHAR}, #{forwardMember,jdbcType=VARCHAR}, #{templeteId,jdbcType=BIGINT}, 
+      #{workflowRule,jdbcType=LONGVARCHAR}, #{webserviceCode,jdbcType=VARCHAR}, #{bodyType,jdbcType=VARCHAR}, 
+      #{formRecordid,jdbcType=BIGINT}, #{formid,jdbcType=BIGINT}, #{formAppid,jdbcType=BIGINT}, 
+      #{orgDepartmentId,jdbcType=BIGINT}, #{orgAccountId,jdbcType=BIGINT}, #{source,jdbcType=VARCHAR}, 
+      #{parentformSummaryid,jdbcType=BIGINT}, #{newflowType,jdbcType=SMALLINT}, #{canEditAttachment,jdbcType=SMALLINT}, 
+      #{vouch,jdbcType=SMALLINT}, #{overWorktime,jdbcType=BIGINT}, #{runWorktime,jdbcType=BIGINT}, 
+      #{overTime,jdbcType=BIGINT}, #{runTime,jdbcType=BIGINT}, #{canAutostopflow,jdbcType=SMALLINT}, 
+      #{isCoverTime,jdbcType=SMALLINT}, #{deadlineDatetime,jdbcType=TIMESTAMP}, #{currentNodesInfo,jdbcType=VARCHAR}, 
+      #{canMergeDeal,jdbcType=SMALLINT}, #{advancePigeonhole,jdbcType=LONGVARCHAR}, #{secretRelatedLevel,jdbcType=SMALLINT}, 
+      #{govdocType,jdbcType=VARCHAR}, #{isQuickSend,jdbcType=SMALLINT}, #{secretLevel,jdbcType=SMALLINT}
+      )
+    on duplicate key update 
+    ID = #{id,jdbcType=BIGINT}, 
+    `STATE` = #{state,jdbcType=SMALLINT}, 
+    SUBJECT = #{subject,jdbcType=VARCHAR}, 
+    DEADLINE = #{deadline,jdbcType=BIGINT}, 
+    COL_TYPE = #{colType,jdbcType=SMALLINT}, 
+    CAN_ARCHIVE = #{canArchive,jdbcType=SMALLINT}, 
+    CAN_MODIFY = #{canModify,jdbcType=SMALLINT}, 
+    CAN_DUE_REMINDER = #{canDueReminder,jdbcType=SMALLINT}, 
+    CAN_FORWARD = #{canForward,jdbcType=SMALLINT}, 
+    CAN_EDIT = #{canEdit,jdbcType=SMALLINT}, 
+    CAN_TRACK = #{canTrack,jdbcType=SMALLINT}, 
+    REMIND_INTERVAL = #{remindInterval,jdbcType=BIGINT}, 
+    PROJECT_ID = #{projectId,jdbcType=BIGINT}, 
+    IMPORTANT_LEVEL = #{importantLevel,jdbcType=SMALLINT}, 
+    RESENT_TIME = #{resentTime,jdbcType=SMALLINT}, 
+    CREATE_DATE = #{createDate,jdbcType=TIMESTAMP}, 
+    START_DATE = #{startDate,jdbcType=TIMESTAMP}, 
+    FINISH_DATE = #{finishDate,jdbcType=TIMESTAMP}, 
+    IS_AUDITED = #{isAudited,jdbcType=SMALLINT}, 
+    ARCHIVE_ID = #{archiveId,jdbcType=BIGINT}, 
+    START_MEMBER_ID = #{startMemberId,jdbcType=BIGINT}, 
+    PROCESS_ID = #{processId,jdbcType=VARCHAR}, 
+    CASE_ID = #{caseId,jdbcType=BIGINT}, 
+    ADVANCE_REMIND = #{advanceRemind,jdbcType=BIGINT}, 
+    IDENTIFIER = #{identifier,jdbcType=VARCHAR}, 
+    FORWARD_MEMBER = #{forwardMember,jdbcType=VARCHAR}, 
+    TEMPLETE_ID = #{templeteId,jdbcType=BIGINT}, 
+    WORKFLOW_RULE = #{workflowRule,jdbcType=LONGVARCHAR}, 
+    WEBSERVICE_CODE = #{webserviceCode,jdbcType=VARCHAR}, 
+    BODY_TYPE = #{bodyType,jdbcType=VARCHAR}, 
+    FORM_RECORDID = #{formRecordid,jdbcType=BIGINT}, 
+    FORMID = #{formid,jdbcType=BIGINT}, 
+    FORM_APPID = #{formAppid,jdbcType=BIGINT}, 
+    ORG_DEPARTMENT_ID = #{orgDepartmentId,jdbcType=BIGINT}, 
+    ORG_ACCOUNT_ID = #{orgAccountId,jdbcType=BIGINT}, 
+    `SOURCE` = #{source,jdbcType=VARCHAR}, 
+    PARENTFORM_SUMMARYID = #{parentformSummaryid,jdbcType=BIGINT}, 
+    NEWFLOW_TYPE = #{newflowType,jdbcType=SMALLINT}, 
+    CAN_EDIT_ATTACHMENT = #{canEditAttachment,jdbcType=SMALLINT}, 
+    VOUCH = #{vouch,jdbcType=SMALLINT}, 
+    OVER_WORKTIME = #{overWorktime,jdbcType=BIGINT}, 
+    RUN_WORKTIME = #{runWorktime,jdbcType=BIGINT}, 
+    OVER_TIME = #{overTime,jdbcType=BIGINT}, 
+    RUN_TIME = #{runTime,jdbcType=BIGINT}, 
+    CAN_AUTOSTOPFLOW = #{canAutostopflow,jdbcType=SMALLINT}, 
+    IS_COVER_TIME = #{isCoverTime,jdbcType=SMALLINT}, 
+    DEADLINE_DATETIME = #{deadlineDatetime,jdbcType=TIMESTAMP}, 
+    CURRENT_NODES_INFO = #{currentNodesInfo,jdbcType=VARCHAR}, 
+    CAN_MERGE_DEAL = #{canMergeDeal,jdbcType=SMALLINT}, 
+    ADVANCE_PIGEONHOLE = #{advancePigeonhole,jdbcType=LONGVARCHAR}, 
+    secret_related_level = #{secretRelatedLevel,jdbcType=SMALLINT}, 
+    GOVDOC_TYPE = #{govdocType,jdbcType=VARCHAR}, 
+    is_quick_send = #{isQuickSend,jdbcType=SMALLINT}, 
+    SECRET_LEVEL = #{secretLevel,jdbcType=SMALLINT}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.odm.generate.domain.ColSummary">
+    <!--@mbg.generated-->
+    insert into COL_SUMMARY
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="state != null">
+        `STATE`,
+      </if>
+      <if test="subject != null">
+        SUBJECT,
+      </if>
+      <if test="deadline != null">
+        DEADLINE,
+      </if>
+      <if test="colType != null">
+        COL_TYPE,
+      </if>
+      <if test="canArchive != null">
+        CAN_ARCHIVE,
+      </if>
+      <if test="canModify != null">
+        CAN_MODIFY,
+      </if>
+      <if test="canDueReminder != null">
+        CAN_DUE_REMINDER,
+      </if>
+      <if test="canForward != null">
+        CAN_FORWARD,
+      </if>
+      <if test="canEdit != null">
+        CAN_EDIT,
+      </if>
+      <if test="canTrack != null">
+        CAN_TRACK,
+      </if>
+      <if test="remindInterval != null">
+        REMIND_INTERVAL,
+      </if>
+      <if test="projectId != null">
+        PROJECT_ID,
+      </if>
+      <if test="importantLevel != null">
+        IMPORTANT_LEVEL,
+      </if>
+      <if test="resentTime != null">
+        RESENT_TIME,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="startDate != null">
+        START_DATE,
+      </if>
+      <if test="finishDate != null">
+        FINISH_DATE,
+      </if>
+      <if test="isAudited != null">
+        IS_AUDITED,
+      </if>
+      <if test="archiveId != null">
+        ARCHIVE_ID,
+      </if>
+      <if test="startMemberId != null">
+        START_MEMBER_ID,
+      </if>
+      <if test="processId != null">
+        PROCESS_ID,
+      </if>
+      <if test="caseId != null">
+        CASE_ID,
+      </if>
+      <if test="advanceRemind != null">
+        ADVANCE_REMIND,
+      </if>
+      <if test="identifier != null">
+        IDENTIFIER,
+      </if>
+      <if test="forwardMember != null">
+        FORWARD_MEMBER,
+      </if>
+      <if test="templeteId != null">
+        TEMPLETE_ID,
+      </if>
+      <if test="workflowRule != null">
+        WORKFLOW_RULE,
+      </if>
+      <if test="webserviceCode != null">
+        WEBSERVICE_CODE,
+      </if>
+      <if test="bodyType != null">
+        BODY_TYPE,
+      </if>
+      <if test="formRecordid != null">
+        FORM_RECORDID,
+      </if>
+      <if test="formid != null">
+        FORMID,
+      </if>
+      <if test="formAppid != null">
+        FORM_APPID,
+      </if>
+      <if test="orgDepartmentId != null">
+        ORG_DEPARTMENT_ID,
+      </if>
+      <if test="orgAccountId != null">
+        ORG_ACCOUNT_ID,
+      </if>
+      <if test="source != null">
+        `SOURCE`,
+      </if>
+      <if test="parentformSummaryid != null">
+        PARENTFORM_SUMMARYID,
+      </if>
+      <if test="newflowType != null">
+        NEWFLOW_TYPE,
+      </if>
+      <if test="canEditAttachment != null">
+        CAN_EDIT_ATTACHMENT,
+      </if>
+      <if test="vouch != null">
+        VOUCH,
+      </if>
+      <if test="overWorktime != null">
+        OVER_WORKTIME,
+      </if>
+      <if test="runWorktime != null">
+        RUN_WORKTIME,
+      </if>
+      <if test="overTime != null">
+        OVER_TIME,
+      </if>
+      <if test="runTime != null">
+        RUN_TIME,
+      </if>
+      <if test="canAutostopflow != null">
+        CAN_AUTOSTOPFLOW,
+      </if>
+      <if test="isCoverTime != null">
+        IS_COVER_TIME,
+      </if>
+      <if test="deadlineDatetime != null">
+        DEADLINE_DATETIME,
+      </if>
+      <if test="currentNodesInfo != null">
+        CURRENT_NODES_INFO,
+      </if>
+      <if test="canMergeDeal != null">
+        CAN_MERGE_DEAL,
+      </if>
+      <if test="advancePigeonhole != null">
+        ADVANCE_PIGEONHOLE,
+      </if>
+      <if test="secretRelatedLevel != null">
+        secret_related_level,
+      </if>
+      <if test="govdocType != null">
+        GOVDOC_TYPE,
+      </if>
+      <if test="isQuickSend != null">
+        is_quick_send,
+      </if>
+      <if test="secretLevel != null">
+        SECRET_LEVEL,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=SMALLINT},
+      </if>
+      <if test="subject != null">
+        #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="deadline != null">
+        #{deadline,jdbcType=BIGINT},
+      </if>
+      <if test="colType != null">
+        #{colType,jdbcType=SMALLINT},
+      </if>
+      <if test="canArchive != null">
+        #{canArchive,jdbcType=SMALLINT},
+      </if>
+      <if test="canModify != null">
+        #{canModify,jdbcType=SMALLINT},
+      </if>
+      <if test="canDueReminder != null">
+        #{canDueReminder,jdbcType=SMALLINT},
+      </if>
+      <if test="canForward != null">
+        #{canForward,jdbcType=SMALLINT},
+      </if>
+      <if test="canEdit != null">
+        #{canEdit,jdbcType=SMALLINT},
+      </if>
+      <if test="canTrack != null">
+        #{canTrack,jdbcType=SMALLINT},
+      </if>
+      <if test="remindInterval != null">
+        #{remindInterval,jdbcType=BIGINT},
+      </if>
+      <if test="projectId != null">
+        #{projectId,jdbcType=BIGINT},
+      </if>
+      <if test="importantLevel != null">
+        #{importantLevel,jdbcType=SMALLINT},
+      </if>
+      <if test="resentTime != null">
+        #{resentTime,jdbcType=SMALLINT},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="finishDate != null">
+        #{finishDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAudited != null">
+        #{isAudited,jdbcType=SMALLINT},
+      </if>
+      <if test="archiveId != null">
+        #{archiveId,jdbcType=BIGINT},
+      </if>
+      <if test="startMemberId != null">
+        #{startMemberId,jdbcType=BIGINT},
+      </if>
+      <if test="processId != null">
+        #{processId,jdbcType=VARCHAR},
+      </if>
+      <if test="caseId != null">
+        #{caseId,jdbcType=BIGINT},
+      </if>
+      <if test="advanceRemind != null">
+        #{advanceRemind,jdbcType=BIGINT},
+      </if>
+      <if test="identifier != null">
+        #{identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="forwardMember != null">
+        #{forwardMember,jdbcType=VARCHAR},
+      </if>
+      <if test="templeteId != null">
+        #{templeteId,jdbcType=BIGINT},
+      </if>
+      <if test="workflowRule != null">
+        #{workflowRule,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="webserviceCode != null">
+        #{webserviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bodyType != null">
+        #{bodyType,jdbcType=VARCHAR},
+      </if>
+      <if test="formRecordid != null">
+        #{formRecordid,jdbcType=BIGINT},
+      </if>
+      <if test="formid != null">
+        #{formid,jdbcType=BIGINT},
+      </if>
+      <if test="formAppid != null">
+        #{formAppid,jdbcType=BIGINT},
+      </if>
+      <if test="orgDepartmentId != null">
+        #{orgDepartmentId,jdbcType=BIGINT},
+      </if>
+      <if test="orgAccountId != null">
+        #{orgAccountId,jdbcType=BIGINT},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="parentformSummaryid != null">
+        #{parentformSummaryid,jdbcType=BIGINT},
+      </if>
+      <if test="newflowType != null">
+        #{newflowType,jdbcType=SMALLINT},
+      </if>
+      <if test="canEditAttachment != null">
+        #{canEditAttachment,jdbcType=SMALLINT},
+      </if>
+      <if test="vouch != null">
+        #{vouch,jdbcType=SMALLINT},
+      </if>
+      <if test="overWorktime != null">
+        #{overWorktime,jdbcType=BIGINT},
+      </if>
+      <if test="runWorktime != null">
+        #{runWorktime,jdbcType=BIGINT},
+      </if>
+      <if test="overTime != null">
+        #{overTime,jdbcType=BIGINT},
+      </if>
+      <if test="runTime != null">
+        #{runTime,jdbcType=BIGINT},
+      </if>
+      <if test="canAutostopflow != null">
+        #{canAutostopflow,jdbcType=SMALLINT},
+      </if>
+      <if test="isCoverTime != null">
+        #{isCoverTime,jdbcType=SMALLINT},
+      </if>
+      <if test="deadlineDatetime != null">
+        #{deadlineDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="currentNodesInfo != null">
+        #{currentNodesInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="canMergeDeal != null">
+        #{canMergeDeal,jdbcType=SMALLINT},
+      </if>
+      <if test="advancePigeonhole != null">
+        #{advancePigeonhole,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="secretRelatedLevel != null">
+        #{secretRelatedLevel,jdbcType=SMALLINT},
+      </if>
+      <if test="govdocType != null">
+        #{govdocType,jdbcType=VARCHAR},
+      </if>
+      <if test="isQuickSend != null">
+        #{isQuickSend,jdbcType=SMALLINT},
+      </if>
+      <if test="secretLevel != null">
+        #{secretLevel,jdbcType=SMALLINT},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        ID = #{id,jdbcType=BIGINT},
+      </if>
+      <if test="state != null">
+        `STATE` = #{state,jdbcType=SMALLINT},
+      </if>
+      <if test="subject != null">
+        SUBJECT = #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="deadline != null">
+        DEADLINE = #{deadline,jdbcType=BIGINT},
+      </if>
+      <if test="colType != null">
+        COL_TYPE = #{colType,jdbcType=SMALLINT},
+      </if>
+      <if test="canArchive != null">
+        CAN_ARCHIVE = #{canArchive,jdbcType=SMALLINT},
+      </if>
+      <if test="canModify != null">
+        CAN_MODIFY = #{canModify,jdbcType=SMALLINT},
+      </if>
+      <if test="canDueReminder != null">
+        CAN_DUE_REMINDER = #{canDueReminder,jdbcType=SMALLINT},
+      </if>
+      <if test="canForward != null">
+        CAN_FORWARD = #{canForward,jdbcType=SMALLINT},
+      </if>
+      <if test="canEdit != null">
+        CAN_EDIT = #{canEdit,jdbcType=SMALLINT},
+      </if>
+      <if test="canTrack != null">
+        CAN_TRACK = #{canTrack,jdbcType=SMALLINT},
+      </if>
+      <if test="remindInterval != null">
+        REMIND_INTERVAL = #{remindInterval,jdbcType=BIGINT},
+      </if>
+      <if test="projectId != null">
+        PROJECT_ID = #{projectId,jdbcType=BIGINT},
+      </if>
+      <if test="importantLevel != null">
+        IMPORTANT_LEVEL = #{importantLevel,jdbcType=SMALLINT},
+      </if>
+      <if test="resentTime != null">
+        RESENT_TIME = #{resentTime,jdbcType=SMALLINT},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="startDate != null">
+        START_DATE = #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="finishDate != null">
+        FINISH_DATE = #{finishDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAudited != null">
+        IS_AUDITED = #{isAudited,jdbcType=SMALLINT},
+      </if>
+      <if test="archiveId != null">
+        ARCHIVE_ID = #{archiveId,jdbcType=BIGINT},
+      </if>
+      <if test="startMemberId != null">
+        START_MEMBER_ID = #{startMemberId,jdbcType=BIGINT},
+      </if>
+      <if test="processId != null">
+        PROCESS_ID = #{processId,jdbcType=VARCHAR},
+      </if>
+      <if test="caseId != null">
+        CASE_ID = #{caseId,jdbcType=BIGINT},
+      </if>
+      <if test="advanceRemind != null">
+        ADVANCE_REMIND = #{advanceRemind,jdbcType=BIGINT},
+      </if>
+      <if test="identifier != null">
+        IDENTIFIER = #{identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="forwardMember != null">
+        FORWARD_MEMBER = #{forwardMember,jdbcType=VARCHAR},
+      </if>
+      <if test="templeteId != null">
+        TEMPLETE_ID = #{templeteId,jdbcType=BIGINT},
+      </if>
+      <if test="workflowRule != null">
+        WORKFLOW_RULE = #{workflowRule,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="webserviceCode != null">
+        WEBSERVICE_CODE = #{webserviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bodyType != null">
+        BODY_TYPE = #{bodyType,jdbcType=VARCHAR},
+      </if>
+      <if test="formRecordid != null">
+        FORM_RECORDID = #{formRecordid,jdbcType=BIGINT},
+      </if>
+      <if test="formid != null">
+        FORMID = #{formid,jdbcType=BIGINT},
+      </if>
+      <if test="formAppid != null">
+        FORM_APPID = #{formAppid,jdbcType=BIGINT},
+      </if>
+      <if test="orgDepartmentId != null">
+        ORG_DEPARTMENT_ID = #{orgDepartmentId,jdbcType=BIGINT},
+      </if>
+      <if test="orgAccountId != null">
+        ORG_ACCOUNT_ID = #{orgAccountId,jdbcType=BIGINT},
+      </if>
+      <if test="source != null">
+        `SOURCE` = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="parentformSummaryid != null">
+        PARENTFORM_SUMMARYID = #{parentformSummaryid,jdbcType=BIGINT},
+      </if>
+      <if test="newflowType != null">
+        NEWFLOW_TYPE = #{newflowType,jdbcType=SMALLINT},
+      </if>
+      <if test="canEditAttachment != null">
+        CAN_EDIT_ATTACHMENT = #{canEditAttachment,jdbcType=SMALLINT},
+      </if>
+      <if test="vouch != null">
+        VOUCH = #{vouch,jdbcType=SMALLINT},
+      </if>
+      <if test="overWorktime != null">
+        OVER_WORKTIME = #{overWorktime,jdbcType=BIGINT},
+      </if>
+      <if test="runWorktime != null">
+        RUN_WORKTIME = #{runWorktime,jdbcType=BIGINT},
+      </if>
+      <if test="overTime != null">
+        OVER_TIME = #{overTime,jdbcType=BIGINT},
+      </if>
+      <if test="runTime != null">
+        RUN_TIME = #{runTime,jdbcType=BIGINT},
+      </if>
+      <if test="canAutostopflow != null">
+        CAN_AUTOSTOPFLOW = #{canAutostopflow,jdbcType=SMALLINT},
+      </if>
+      <if test="isCoverTime != null">
+        IS_COVER_TIME = #{isCoverTime,jdbcType=SMALLINT},
+      </if>
+      <if test="deadlineDatetime != null">
+        DEADLINE_DATETIME = #{deadlineDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="currentNodesInfo != null">
+        CURRENT_NODES_INFO = #{currentNodesInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="canMergeDeal != null">
+        CAN_MERGE_DEAL = #{canMergeDeal,jdbcType=SMALLINT},
+      </if>
+      <if test="advancePigeonhole != null">
+        ADVANCE_PIGEONHOLE = #{advancePigeonhole,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="secretRelatedLevel != null">
+        secret_related_level = #{secretRelatedLevel,jdbcType=SMALLINT},
+      </if>
+      <if test="govdocType != null">
+        GOVDOC_TYPE = #{govdocType,jdbcType=VARCHAR},
+      </if>
+      <if test="isQuickSend != null">
+        is_quick_send = #{isQuickSend,jdbcType=SMALLINT},
+      </if>
+      <if test="secretLevel != null">
+        SECRET_LEVEL = #{secretLevel,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface CtpFileService extends IService<CtpFile> {
 
     int updateBatch(List<CtpFile> list);

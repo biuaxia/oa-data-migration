@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface Formmain0854Service extends IService<Formmain0854> {
 
     int updateBatch(List<Formmain0854> list);

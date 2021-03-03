@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface Formmain0010Service extends IService<Formmain0010> {
 
     int batchInsert(List<Formmain0010> list);

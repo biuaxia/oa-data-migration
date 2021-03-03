@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface CtpEnumItemService extends IService<CtpEnumItem> {
 
     int updateBatch(List<CtpEnumItem> list);

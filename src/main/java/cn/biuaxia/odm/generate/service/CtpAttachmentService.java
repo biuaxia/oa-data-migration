@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface CtpAttachmentService extends IService<CtpAttachment> {
 
     int updateBatch(List<CtpAttachment> list);
