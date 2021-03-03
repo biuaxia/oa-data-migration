@@ -19,6 +19,39 @@ import java.util.Date;
 @TableName(value = "CTP_TEMPLATE")
 public class CtpTemplate implements Serializable {
 
+    public static final String COL_ID = "ID";
+    public static final String COL_CATEGORY_ID = "CATEGORY_ID";
+    public static final String COL_MODULE_TYPE = "MODULE_TYPE";
+    public static final String COL_SUB_MODULE_TYPE = "SUB_MODULE_TYPE";
+    public static final String COL_TYPE = "TYPE";
+    public static final String COL_SUBJECT = "SUBJECT";
+    public static final String COL_IS_SYSTEM = "IS_SYSTEM";
+    public static final String COL_MEMBER_ID = "MEMBER_ID";
+    public static final String COL_CREATE_DATE = "CREATE_DATE";
+    public static final String COL_MODIFY_MEMBER = "MODIFY_MEMBER";
+    public static final String COL_MODIFY_DATE = "MODIFY_DATE";
+    public static final String COL_SUMMARY = "SUMMARY";
+    public static final String COL_WORKFLOW_ID = "WORKFLOW_ID";
+    public static final String COL_BODY = "BODY";
+    public static final String COL_BODY_TYPE = "BODY_TYPE";
+    public static final String COL_STATE = "STATE";
+    public static final String COL_IS_DELETE = "IS_DELETE";
+    public static final String COL_DESCRIPTION = "DESCRIPTION";
+    public static final String COL_ORG_ACCOUNT_ID = "ORG_ACCOUNT_ID";
+    public static final String COL_IDENTIFIER = "IDENTIFIER";
+    public static final String COL_PROJECT_ID = "PROJECT_ID";
+    public static final String COL_FORM_PARENTID = "FORM_PARENTID";
+    public static final String COL_TEMPLETE_NUMBER = "TEMPLETE_NUMBER";
+    public static final String COL_COL_SUBJECT = "COL_SUBJECT";
+    public static final String COL_STANDARD_DURATION = "STANDARD_DURATION";
+    public static final String COL_SORT = "SORT";
+    public static final String COL_CAN_SUPERVISE = "CAN_SUPERVISE";
+    public static final String COL_CAN_TRACK_WORKFLOW = "CAN_TRACK_WORKFLOW";
+    public static final String COL_SECRET_RELATED_LEVEL = "secret_related_level";
+    public static final String COL_MARK_INFO = "MARK_INFO";
+    public static final String COL_TAOHONG_TEMPLETE = "TAOHONG_TEMPLETE";
+    public static final String COL_SECRET_LEVEL = "SECRET_LEVEL";
+    private static final long serialVersionUID = 1L;
     @TableId(value = "ID", type = IdType.INPUT)
     private Long id;
 
@@ -114,70 +147,4 @@ public class CtpTemplate implements Serializable {
 
     @TableField(value = "SECRET_LEVEL")
     private Short secretLevel;
-
-    private static final long serialVersionUID = 1L;
-
-    public static final String COL_ID = "ID";
-
-    public static final String COL_CATEGORY_ID = "CATEGORY_ID";
-
-    public static final String COL_MODULE_TYPE = "MODULE_TYPE";
-
-    public static final String COL_SUB_MODULE_TYPE = "SUB_MODULE_TYPE";
-
-    public static final String COL_TYPE = "TYPE";
-
-    public static final String COL_SUBJECT = "SUBJECT";
-
-    public static final String COL_IS_SYSTEM = "IS_SYSTEM";
-
-    public static final String COL_MEMBER_ID = "MEMBER_ID";
-
-    public static final String COL_CREATE_DATE = "CREATE_DATE";
-
-    public static final String COL_MODIFY_MEMBER = "MODIFY_MEMBER";
-
-    public static final String COL_MODIFY_DATE = "MODIFY_DATE";
-
-    public static final String COL_SUMMARY = "SUMMARY";
-
-    public static final String COL_WORKFLOW_ID = "WORKFLOW_ID";
-
-    public static final String COL_BODY = "BODY";
-
-    public static final String COL_BODY_TYPE = "BODY_TYPE";
-
-    public static final String COL_STATE = "STATE";
-
-    public static final String COL_IS_DELETE = "IS_DELETE";
-
-    public static final String COL_DESCRIPTION = "DESCRIPTION";
-
-    public static final String COL_ORG_ACCOUNT_ID = "ORG_ACCOUNT_ID";
-
-    public static final String COL_IDENTIFIER = "IDENTIFIER";
-
-    public static final String COL_PROJECT_ID = "PROJECT_ID";
-
-    public static final String COL_FORM_PARENTID = "FORM_PARENTID";
-
-    public static final String COL_TEMPLETE_NUMBER = "TEMPLETE_NUMBER";
-
-    public static final String COL_COL_SUBJECT = "COL_SUBJECT";
-
-    public static final String COL_STANDARD_DURATION = "STANDARD_DURATION";
-
-    public static final String COL_SORT = "SORT";
-
-    public static final String COL_CAN_SUPERVISE = "CAN_SUPERVISE";
-
-    public static final String COL_CAN_TRACK_WORKFLOW = "CAN_TRACK_WORKFLOW";
-
-    public static final String COL_SECRET_RELATED_LEVEL = "secret_related_level";
-
-    public static final String COL_MARK_INFO = "MARK_INFO";
-
-    public static final String COL_TAOHONG_TEMPLETE = "TAOHONG_TEMPLETE";
-
-    public static final String COL_SECRET_LEVEL = "SECRET_LEVEL";
 }

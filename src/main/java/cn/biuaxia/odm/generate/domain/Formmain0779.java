@@ -20,6 +20,72 @@ import java.util.Date;
 @TableName(value = "formmain_0779")
 public class Formmain0779 implements Serializable {
 
+    public static final String COL_ID = "ID";
+    public static final String COL_STATE = "state";
+    public static final String COL_START_MEMBER_ID = "start_member_id";
+    public static final String COL_START_DATE = "start_date";
+    public static final String COL_APPROVE_MEMBER_ID = "approve_member_id";
+    public static final String COL_APPROVE_DATE = "approve_date";
+    public static final String COL_FINISHEDFLAG = "finishedflag";
+    public static final String COL_RATIFYFLAG = "ratifyflag";
+    public static final String COL_RATIFY_MEMBER_ID = "ratify_member_id";
+    public static final String COL_RATIFY_DATE = "ratify_date";
+    public static final String COL_SORT = "sort";
+    public static final String COL_MODIFY_MEMBER_ID = "modify_member_id";
+    public static final String COL_MODIFY_DATE = "modify_date";
+    public static final String COL_RECEIVE_UNIT = "receive_unit";
+    public static final String COL_FIELD0001 = "field0001";
+    public static final String COL_FIELD0002 = "field0002";
+    public static final String COL_FIELD0003 = "field0003";
+    public static final String COL_FIELD0004 = "field0004";
+    public static final String COL_FIELD0005 = "field0005";
+    public static final String COL_FIELD0006 = "field0006";
+    public static final String COL_FIELD0007 = "field0007";
+    public static final String COL_FIELD0008 = "field0008";
+    public static final String COL_FIELD0009 = "field0009";
+    public static final String COL_FIELD0010 = "field0010";
+    public static final String COL_FIELD0011 = "field0011";
+    public static final String COL_FIELD0012 = "field0012";
+    public static final String COL_FIELD0013 = "field0013";
+    public static final String COL_FIELD0014 = "field0014";
+    public static final String COL_FIELD0015 = "field0015";
+    public static final String COL_FIELD0016 = "field0016";
+    public static final String COL_FIELD0018 = "field0018";
+    public static final String COL_FIELD0019 = "field0019";
+    public static final String COL_FIELD0020 = "field0020";
+    public static final String COL_FIELD0021 = "field0021";
+    public static final String COL_FIELD0022 = "field0022";
+    public static final String COL_FIELD0023 = "field0023";
+    public static final String COL_FIELD0024 = "field0024";
+    public static final String COL_FIELD0025 = "field0025";
+    public static final String COL_FIELD0027 = "field0027";
+    public static final String COL_FIELD0028 = "field0028";
+    public static final String COL_FIELD0029 = "field0029";
+    public static final String COL_FIELD0026 = "field0026";
+    public static final String COL_FIELD0030 = "field0030";
+    public static final String COL_FIELD0036 = "field0036";
+    public static final String COL_FIELD0037 = "field0037";
+    public static final String COL_FIELD0038 = "field0038";
+    public static final String COL_FIELD0039 = "field0039";
+    public static final String COL_FIELD0035 = "field0035";
+    public static final String COL_FIELD0033 = "field0033";
+    public static final String COL_FIELD0017 = "field0017";
+    public static final String COL_FIELD0040 = "field0040";
+    public static final String COL_FIELD0041 = "field0041";
+    public static final String COL_FIELD0042 = "field0042";
+    public static final String COL_FIELD0043 = "field0043";
+    public static final String COL_FIELD0044 = "field0044";
+    public static final String COL_FIELD0045 = "field0045";
+    public static final String COL_FIELD0046 = "field0046";
+    public static final String COL_FIELD0032 = "field0032";
+    public static final String COL_FIELD0047 = "field0047";
+    public static final String COL_FIELD0048 = "field0048";
+    public static final String COL_FIELD0034 = "field0034";
+    public static final String COL_FIELD0031 = "field0031";
+    public static final String COL_FIELD0049 = "field0049";
+    public static final String COL_FIELD0050 = "field0050";
+    public static final String COL_FIELD0051 = "field0051";
+    private static final long serialVersionUID = 1L;
     @TableId(value = "ID", type = IdType.INPUT)
     private BigDecimal id;
 
@@ -214,136 +280,4 @@ public class Formmain0779 implements Serializable {
 
     @TableField(value = "field0051")
     private String field0051;
-
-    private static final long serialVersionUID = 1L;
-
-    public static final String COL_ID = "ID";
-
-    public static final String COL_STATE = "state";
-
-    public static final String COL_START_MEMBER_ID = "start_member_id";
-
-    public static final String COL_START_DATE = "start_date";
-
-    public static final String COL_APPROVE_MEMBER_ID = "approve_member_id";
-
-    public static final String COL_APPROVE_DATE = "approve_date";
-
-    public static final String COL_FINISHEDFLAG = "finishedflag";
-
-    public static final String COL_RATIFYFLAG = "ratifyflag";
-
-    public static final String COL_RATIFY_MEMBER_ID = "ratify_member_id";
-
-    public static final String COL_RATIFY_DATE = "ratify_date";
-
-    public static final String COL_SORT = "sort";
-
-    public static final String COL_MODIFY_MEMBER_ID = "modify_member_id";
-
-    public static final String COL_MODIFY_DATE = "modify_date";
-
-    public static final String COL_RECEIVE_UNIT = "receive_unit";
-
-    public static final String COL_FIELD0001 = "field0001";
-
-    public static final String COL_FIELD0002 = "field0002";
-
-    public static final String COL_FIELD0003 = "field0003";
-
-    public static final String COL_FIELD0004 = "field0004";
-
-    public static final String COL_FIELD0005 = "field0005";
-
-    public static final String COL_FIELD0006 = "field0006";
-
-    public static final String COL_FIELD0007 = "field0007";
-
-    public static final String COL_FIELD0008 = "field0008";
-
-    public static final String COL_FIELD0009 = "field0009";
-
-    public static final String COL_FIELD0010 = "field0010";
-
-    public static final String COL_FIELD0011 = "field0011";
-
-    public static final String COL_FIELD0012 = "field0012";
-
-    public static final String COL_FIELD0013 = "field0013";
-
-    public static final String COL_FIELD0014 = "field0014";
-
-    public static final String COL_FIELD0015 = "field0015";
-
-    public static final String COL_FIELD0016 = "field0016";
-
-    public static final String COL_FIELD0018 = "field0018";
-
-    public static final String COL_FIELD0019 = "field0019";
-
-    public static final String COL_FIELD0020 = "field0020";
-
-    public static final String COL_FIELD0021 = "field0021";
-
-    public static final String COL_FIELD0022 = "field0022";
-
-    public static final String COL_FIELD0023 = "field0023";
-
-    public static final String COL_FIELD0024 = "field0024";
-
-    public static final String COL_FIELD0025 = "field0025";
-
-    public static final String COL_FIELD0027 = "field0027";
-
-    public static final String COL_FIELD0028 = "field0028";
-
-    public static final String COL_FIELD0029 = "field0029";
-
-    public static final String COL_FIELD0026 = "field0026";
-
-    public static final String COL_FIELD0030 = "field0030";
-
-    public static final String COL_FIELD0036 = "field0036";
-
-    public static final String COL_FIELD0037 = "field0037";
-
-    public static final String COL_FIELD0038 = "field0038";
-
-    public static final String COL_FIELD0039 = "field0039";
-
-    public static final String COL_FIELD0035 = "field0035";
-
-    public static final String COL_FIELD0033 = "field0033";
-
-    public static final String COL_FIELD0017 = "field0017";
-
-    public static final String COL_FIELD0040 = "field0040";
-
-    public static final String COL_FIELD0041 = "field0041";
-
-    public static final String COL_FIELD0042 = "field0042";
-
-    public static final String COL_FIELD0043 = "field0043";
-
-    public static final String COL_FIELD0044 = "field0044";
-
-    public static final String COL_FIELD0045 = "field0045";
-
-    public static final String COL_FIELD0046 = "field0046";
-
-    public static final String COL_FIELD0032 = "field0032";
-
-    public static final String COL_FIELD0047 = "field0047";
-
-    public static final String COL_FIELD0048 = "field0048";
-
-    public static final String COL_FIELD0034 = "field0034";
-
-    public static final String COL_FIELD0031 = "field0031";
-
-    public static final String COL_FIELD0049 = "field0049";
-
-    public static final String COL_FIELD0050 = "field0050";
-
-    public static final String COL_FIELD0051 = "field0051";
 }

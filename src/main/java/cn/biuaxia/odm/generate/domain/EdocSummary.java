@@ -19,6 +19,99 @@ import java.util.Date;
 @TableName(value = "EDOC_SUMMARY")
 public class EdocSummary implements Serializable {
 
+    public static final String COL_ID = "ID";
+    public static final String COL_IDENTIFIER = "IDENTIFIER";
+    public static final String COL_HAS_ARCHIVE = "HAS_ARCHIVE";
+    public static final String COL_EDOC_TYPE = "EDOC_TYPE";
+    public static final String COL_DEADLINE = "DEADLINE";
+    public static final String COL_CAN_TRACK = "CAN_TRACK";
+    public static final String COL_COMMENTS = "COMMENTS";
+    public static final String COL_PROCESS_ID = "PROCESS_ID";
+    public static final String COL_CASE_ID = "CASE_ID";
+    public static final String COL_FORM_ID = "FORM_ID";
+    public static final String COL_CREATE_TIME = "CREATE_TIME";
+    public static final String COL_START_USER_ID = "START_USER_ID";
+    public static final String COL_START_TIME = "START_TIME";
+    public static final String COL_CREATE_PERSON = "CREATE_PERSON";
+    public static final String COL_COMPLETE_TIME = "COMPLETE_TIME";
+    public static final String COL_STATE = "STATE";
+    public static final String COL_SUBJECT = "SUBJECT";
+    public static final String COL_DOC_TYPE = "DOC_TYPE";
+    public static final String COL_SEND_TYPE = "SEND_TYPE";
+    public static final String COL_DOC_MARK = "DOC_MARK";
+    public static final String COL_SERIAL_NO = "SERIAL_NO";
+    public static final String COL_SECRET_LEVEL = "SECRET_LEVEL";
+    public static final String COL_URGENT_LEVEL = "URGENT_LEVEL";
+    public static final String COL_SEND_UNIT = "SEND_UNIT";
+    public static final String COL_SEND_UNIT_ID = "SEND_UNIT_ID";
+    public static final String COL_ISSUER = "ISSUER";
+    public static final String COL_SIGNING_DATE = "SIGNING_DATE";
+    public static final String COL_SEND_TO = "SEND_TO";
+    public static final String COL_SEND_TO_ID = "SEND_TO_ID";
+    public static final String COL_COPY_TO = "COPY_TO";
+    public static final String COL_COPY_TO_ID = "COPY_TO_ID";
+    public static final String COL_REPORT_TO = "REPORT_TO";
+    public static final String COL_REPORT_TO_ID = "REPORT_TO_ID";
+    public static final String COL_KEYWORDS = "KEYWORDS";
+    public static final String COL_PRINT_UNIT = "PRINT_UNIT";
+    public static final String COL_COPIES = "COPIES";
+    public static final String COL_PRINTER = "PRINTER";
+    public static final String COL_ADVANCE_REMIND = "ADVANCE_REMIND";
+    public static final String COL_TEMPLETE_ID = "TEMPLETE_ID";
+    public static final String COL_WORKFLOW_RULE = "WORKFLOW_RULE";
+    public static final String COL_PACK_DATE = "PACK_DATE";
+    public static final String COL_ISUNIT = "ISUNIT";
+    public static final String COL_DOC_MARK2 = "DOC_MARK2";
+    public static final String COL_SEND_UNIT2 = "SEND_UNIT2";
+    public static final String COL_SEND_UNIT_ID2 = "SEND_UNIT_ID2";
+    public static final String COL_SEND_TO2 = "SEND_TO2";
+    public static final String COL_SEND_TO_ID2 = "SEND_TO_ID2";
+    public static final String COL_COPY_TO2 = "COPY_TO2";
+    public static final String COL_COPY_TO_ID2 = "COPY_TO_ID2";
+    public static final String COL_REPORT_TO2 = "REPORT_TO2";
+    public static final String COL_REPORT_TO_ID2 = "REPORT_TO_ID2";
+    public static final String COL_COPIES2 = "COPIES2";
+    public static final String COL_ORG_DEPARTMENT_ID = "ORG_DEPARTMENT_ID";
+    public static final String COL_ORG_ACCOUNT_ID = "ORG_ACCOUNT_ID";
+    public static final String COL_UPDATE_TIME = "UPDATE_TIME";
+    public static final String COL_ARCHIVE_ID = "ARCHIVE_ID";
+    public static final String COL_PROCESS_TYPE = "PROCESS_TYPE";
+    public static final String COL_SUB_EDOC_TYPE = "SUB_EDOC_TYPE";
+    public static final String COL_FILESM = "FILESM";
+    public static final String COL_FILEFZ = "FILEFZ";
+    public static final String COL_PARTY = "PARTY";
+    public static final String COL_ADMINISTRATIVE = "ADMINISTRATIVE";
+    public static final String COL_SEND_DEPARTMENT = "SEND_DEPARTMENT";
+    public static final String COL_SEND_DEPARTMENT2 = "SEND_DEPARTMENT2";
+    public static final String COL_SEND_DEPARTMENT_ID = "SEND_DEPARTMENT_ID";
+    public static final String COL_SEND_DEPARTMENT_ID2 = "SEND_DEPARTMENT_ID2";
+    public static final String COL_ATTACHMENTS = "ATTACHMENTS";
+    public static final String COL_OVER_WORKTIME = "OVER_WORKTIME";
+    public static final String COL_RUN_WORKTIME = "RUN_WORKTIME";
+    public static final String COL_OVER_TIME = "OVER_TIME";
+    public static final String COL_RUN_TIME = "RUN_TIME";
+    public static final String COL_KEEP_PERIOD = "KEEP_PERIOD";
+    public static final String COL_IS_COVER_TIME = "IS_COVER_TIME";
+    public static final String COL_RECEIPT_DATE = "RECEIPT_DATE";
+    public static final String COL_REGISTRATION_DATE = "REGISTRATION_DATE";
+    public static final String COL_AUDITOR = "AUDITOR";
+    public static final String COL_REVIEW = "REVIEW";
+    public static final String COL_UNDERTAKER = "UNDERTAKER";
+    public static final String COL_PHONE = "PHONE";
+    public static final String COL_DEADLINE_DATETIME = "DEADLINE_DATETIME";
+    public static final String COL_IS_QUICK_SEND = "IS_QUICK_SEND";
+    public static final String COL_CURRENT_NODES_INFO = "CURRENT_NODES_INFO";
+    public static final String COL_UNDERTAKENOFFICE = "UNDERTAKENOFFICE";
+    public static final String COL_UNDERTAKENOFFICE_ID = "UNDERTAKENOFFICE_ID";
+    public static final String COL_UNIT_LEVEL = "UNIT_LEVEL";
+    public static final String COL_GOVCODE = "govcode";
+    public static final String COL_SECRET_RELATED_LEVEL = "secret_related_level";
+    public static final String COL_TRANSFER_STATUS = "TRANSFER_STATUS";
+    public static final String COL_GOVDOC_TYPE = "govdoc_type";
+    public static final String COL_SIGN_PERSON = "sign_person";
+    public static final String COL_SIGN_ACCOUNT_ID = "sign_Account_Id";
+    public static final String COL_EDOC_SECRET_LEVEL = "EDOC_SECRET_LEVEL";
+    private static final long serialVersionUID = 1L;
     @TableId(value = "ID", type = IdType.INPUT)
     private Long id;
 
@@ -294,190 +387,4 @@ public class EdocSummary implements Serializable {
 
     @TableField(value = "EDOC_SECRET_LEVEL")
     private Short edocSecretLevel;
-
-    private static final long serialVersionUID = 1L;
-
-    public static final String COL_ID = "ID";
-
-    public static final String COL_IDENTIFIER = "IDENTIFIER";
-
-    public static final String COL_HAS_ARCHIVE = "HAS_ARCHIVE";
-
-    public static final String COL_EDOC_TYPE = "EDOC_TYPE";
-
-    public static final String COL_DEADLINE = "DEADLINE";
-
-    public static final String COL_CAN_TRACK = "CAN_TRACK";
-
-    public static final String COL_COMMENTS = "COMMENTS";
-
-    public static final String COL_PROCESS_ID = "PROCESS_ID";
-
-    public static final String COL_CASE_ID = "CASE_ID";
-
-    public static final String COL_FORM_ID = "FORM_ID";
-
-    public static final String COL_CREATE_TIME = "CREATE_TIME";
-
-    public static final String COL_START_USER_ID = "START_USER_ID";
-
-    public static final String COL_START_TIME = "START_TIME";
-
-    public static final String COL_CREATE_PERSON = "CREATE_PERSON";
-
-    public static final String COL_COMPLETE_TIME = "COMPLETE_TIME";
-
-    public static final String COL_STATE = "STATE";
-
-    public static final String COL_SUBJECT = "SUBJECT";
-
-    public static final String COL_DOC_TYPE = "DOC_TYPE";
-
-    public static final String COL_SEND_TYPE = "SEND_TYPE";
-
-    public static final String COL_DOC_MARK = "DOC_MARK";
-
-    public static final String COL_SERIAL_NO = "SERIAL_NO";
-
-    public static final String COL_SECRET_LEVEL = "SECRET_LEVEL";
-
-    public static final String COL_URGENT_LEVEL = "URGENT_LEVEL";
-
-    public static final String COL_SEND_UNIT = "SEND_UNIT";
-
-    public static final String COL_SEND_UNIT_ID = "SEND_UNIT_ID";
-
-    public static final String COL_ISSUER = "ISSUER";
-
-    public static final String COL_SIGNING_DATE = "SIGNING_DATE";
-
-    public static final String COL_SEND_TO = "SEND_TO";
-
-    public static final String COL_SEND_TO_ID = "SEND_TO_ID";
-
-    public static final String COL_COPY_TO = "COPY_TO";
-
-    public static final String COL_COPY_TO_ID = "COPY_TO_ID";
-
-    public static final String COL_REPORT_TO = "REPORT_TO";
-
-    public static final String COL_REPORT_TO_ID = "REPORT_TO_ID";
-
-    public static final String COL_KEYWORDS = "KEYWORDS";
-
-    public static final String COL_PRINT_UNIT = "PRINT_UNIT";
-
-    public static final String COL_COPIES = "COPIES";
-
-    public static final String COL_PRINTER = "PRINTER";
-
-    public static final String COL_ADVANCE_REMIND = "ADVANCE_REMIND";
-
-    public static final String COL_TEMPLETE_ID = "TEMPLETE_ID";
-
-    public static final String COL_WORKFLOW_RULE = "WORKFLOW_RULE";
-
-    public static final String COL_PACK_DATE = "PACK_DATE";
-
-    public static final String COL_ISUNIT = "ISUNIT";
-
-    public static final String COL_DOC_MARK2 = "DOC_MARK2";
-
-    public static final String COL_SEND_UNIT2 = "SEND_UNIT2";
-
-    public static final String COL_SEND_UNIT_ID2 = "SEND_UNIT_ID2";
-
-    public static final String COL_SEND_TO2 = "SEND_TO2";
-
-    public static final String COL_SEND_TO_ID2 = "SEND_TO_ID2";
-
-    public static final String COL_COPY_TO2 = "COPY_TO2";
-
-    public static final String COL_COPY_TO_ID2 = "COPY_TO_ID2";
-
-    public static final String COL_REPORT_TO2 = "REPORT_TO2";
-
-    public static final String COL_REPORT_TO_ID2 = "REPORT_TO_ID2";
-
-    public static final String COL_COPIES2 = "COPIES2";
-
-    public static final String COL_ORG_DEPARTMENT_ID = "ORG_DEPARTMENT_ID";
-
-    public static final String COL_ORG_ACCOUNT_ID = "ORG_ACCOUNT_ID";
-
-    public static final String COL_UPDATE_TIME = "UPDATE_TIME";
-
-    public static final String COL_ARCHIVE_ID = "ARCHIVE_ID";
-
-    public static final String COL_PROCESS_TYPE = "PROCESS_TYPE";
-
-    public static final String COL_SUB_EDOC_TYPE = "SUB_EDOC_TYPE";
-
-    public static final String COL_FILESM = "FILESM";
-
-    public static final String COL_FILEFZ = "FILEFZ";
-
-    public static final String COL_PARTY = "PARTY";
-
-    public static final String COL_ADMINISTRATIVE = "ADMINISTRATIVE";
-
-    public static final String COL_SEND_DEPARTMENT = "SEND_DEPARTMENT";
-
-    public static final String COL_SEND_DEPARTMENT2 = "SEND_DEPARTMENT2";
-
-    public static final String COL_SEND_DEPARTMENT_ID = "SEND_DEPARTMENT_ID";
-
-    public static final String COL_SEND_DEPARTMENT_ID2 = "SEND_DEPARTMENT_ID2";
-
-    public static final String COL_ATTACHMENTS = "ATTACHMENTS";
-
-    public static final String COL_OVER_WORKTIME = "OVER_WORKTIME";
-
-    public static final String COL_RUN_WORKTIME = "RUN_WORKTIME";
-
-    public static final String COL_OVER_TIME = "OVER_TIME";
-
-    public static final String COL_RUN_TIME = "RUN_TIME";
-
-    public static final String COL_KEEP_PERIOD = "KEEP_PERIOD";
-
-    public static final String COL_IS_COVER_TIME = "IS_COVER_TIME";
-
-    public static final String COL_RECEIPT_DATE = "RECEIPT_DATE";
-
-    public static final String COL_REGISTRATION_DATE = "REGISTRATION_DATE";
-
-    public static final String COL_AUDITOR = "AUDITOR";
-
-    public static final String COL_REVIEW = "REVIEW";
-
-    public static final String COL_UNDERTAKER = "UNDERTAKER";
-
-    public static final String COL_PHONE = "PHONE";
-
-    public static final String COL_DEADLINE_DATETIME = "DEADLINE_DATETIME";
-
-    public static final String COL_IS_QUICK_SEND = "IS_QUICK_SEND";
-
-    public static final String COL_CURRENT_NODES_INFO = "CURRENT_NODES_INFO";
-
-    public static final String COL_UNDERTAKENOFFICE = "UNDERTAKENOFFICE";
-
-    public static final String COL_UNDERTAKENOFFICE_ID = "UNDERTAKENOFFICE_ID";
-
-    public static final String COL_UNIT_LEVEL = "UNIT_LEVEL";
-
-    public static final String COL_GOVCODE = "govcode";
-
-    public static final String COL_SECRET_RELATED_LEVEL = "secret_related_level";
-
-    public static final String COL_TRANSFER_STATUS = "TRANSFER_STATUS";
-
-    public static final String COL_GOVDOC_TYPE = "govdoc_type";
-
-    public static final String COL_SIGN_PERSON = "sign_person";
-
-    public static final String COL_SIGN_ACCOUNT_ID = "sign_Account_Id";
-
-    public static final String COL_EDOC_SECRET_LEVEL = "EDOC_SECRET_LEVEL";
 }

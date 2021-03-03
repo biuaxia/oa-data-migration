@@ -20,6 +20,22 @@ import java.util.Date;
 @TableName(value = "formmain_0906")
 public class Formmain0906 implements Serializable {
 
+    public static final String COL_ID = "ID";
+    public static final String COL_STATE = "state";
+    public static final String COL_START_MEMBER_ID = "start_member_id";
+    public static final String COL_START_DATE = "start_date";
+    public static final String COL_APPROVE_MEMBER_ID = "approve_member_id";
+    public static final String COL_APPROVE_DATE = "approve_date";
+    public static final String COL_FINISHEDFLAG = "finishedflag";
+    public static final String COL_RATIFYFLAG = "ratifyflag";
+    public static final String COL_RATIFY_MEMBER_ID = "ratify_member_id";
+    public static final String COL_RATIFY_DATE = "ratify_date";
+    public static final String COL_SORT = "sort";
+    public static final String COL_MODIFY_MEMBER_ID = "modify_member_id";
+    public static final String COL_MODIFY_DATE = "modify_date";
+    public static final String COL_RECEIVE_UNIT = "receive_unit";
+    public static final String COL_FIELD0001 = "field0001";
+    private static final long serialVersionUID = 1L;
     @TableId(value = "ID", type = IdType.INPUT)
     private BigDecimal id;
 
@@ -64,36 +80,4 @@ public class Formmain0906 implements Serializable {
 
     @TableField(value = "field0001")
     private String field0001;
-
-    private static final long serialVersionUID = 1L;
-
-    public static final String COL_ID = "ID";
-
-    public static final String COL_STATE = "state";
-
-    public static final String COL_START_MEMBER_ID = "start_member_id";
-
-    public static final String COL_START_DATE = "start_date";
-
-    public static final String COL_APPROVE_MEMBER_ID = "approve_member_id";
-
-    public static final String COL_APPROVE_DATE = "approve_date";
-
-    public static final String COL_FINISHEDFLAG = "finishedflag";
-
-    public static final String COL_RATIFYFLAG = "ratifyflag";
-
-    public static final String COL_RATIFY_MEMBER_ID = "ratify_member_id";
-
-    public static final String COL_RATIFY_DATE = "ratify_date";
-
-    public static final String COL_SORT = "sort";
-
-    public static final String COL_MODIFY_MEMBER_ID = "modify_member_id";
-
-    public static final String COL_MODIFY_DATE = "modify_date";
-
-    public static final String COL_RECEIVE_UNIT = "receive_unit";
-
-    public static final String COL_FIELD0001 = "field0001";
 }

@@ -19,6 +19,20 @@ import java.util.Date;
 @TableName(value = "CTP_ATTACHMENT")
 public class CtpAttachment implements Serializable {
 
+    public static final String COL_ID = "ID";
+    public static final String COL_REFERENCE = "REFERENCE";
+    public static final String COL_SUB_REFERENCE = "SUB_REFERENCE";
+    public static final String COL_CATEGORY = "CATEGORY";
+    public static final String COL_TYPE = "TYPE";
+    public static final String COL_FILENAME = "FILENAME";
+    public static final String COL_FILE_URL = "FILE_URL";
+    public static final String COL_MIME_TYPE = "MIME_TYPE";
+    public static final String COL_CREATEDATE = "CREATEDATE";
+    public static final String COL_ATTACHMENT_SIZE = "ATTACHMENT_SIZE";
+    public static final String COL_DESCRIPTION = "DESCRIPTION";
+    public static final String COL_GENESIS_ID = "GENESIS_ID";
+    public static final String COL_SORT = "SORT";
+    private static final long serialVersionUID = 1L;
     @TableId(value = "ID", type = IdType.INPUT)
     private Long id;
 
@@ -57,32 +71,4 @@ public class CtpAttachment implements Serializable {
 
     @TableField(value = "SORT")
     private Integer sort;
-
-    private static final long serialVersionUID = 1L;
-
-    public static final String COL_ID = "ID";
-
-    public static final String COL_REFERENCE = "REFERENCE";
-
-    public static final String COL_SUB_REFERENCE = "SUB_REFERENCE";
-
-    public static final String COL_CATEGORY = "CATEGORY";
-
-    public static final String COL_TYPE = "TYPE";
-
-    public static final String COL_FILENAME = "FILENAME";
-
-    public static final String COL_FILE_URL = "FILE_URL";
-
-    public static final String COL_MIME_TYPE = "MIME_TYPE";
-
-    public static final String COL_CREATEDATE = "CREATEDATE";
-
-    public static final String COL_ATTACHMENT_SIZE = "ATTACHMENT_SIZE";
-
-    public static final String COL_DESCRIPTION = "DESCRIPTION";
-
-    public static final String COL_GENESIS_ID = "GENESIS_ID";
-
-    public static final String COL_SORT = "SORT";
 }

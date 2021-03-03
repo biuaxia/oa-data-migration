@@ -19,6 +19,18 @@ import java.util.Date;
 @TableName(value = "CTP_FILE")
 public class CtpFile implements Serializable {
 
+    public static final String COL_ID = "ID";
+    public static final String COL_CATEGORY = "CATEGORY";
+    public static final String COL_TYPE = "TYPE";
+    public static final String COL_FILENAME = "FILENAME";
+    public static final String COL_MIME_TYPE = "MIME_TYPE";
+    public static final String COL_CREATE_DATE = "CREATE_DATE";
+    public static final String COL_CREATE_MEMBER = "CREATE_MEMBER";
+    public static final String COL_FILE_SIZE = "FILE_SIZE";
+    public static final String COL_DESCRIPTION = "DESCRIPTION";
+    public static final String COL_UPDATE_DATE = "UPDATE_DATE";
+    public static final String COL_ACCOUNT_ID = "ACCOUNT_ID";
+    private static final long serialVersionUID = 1L;
     @TableId(value = "ID", type = IdType.INPUT)
     private Long id;
 
@@ -51,28 +63,4 @@ public class CtpFile implements Serializable {
 
     @TableField(value = "ACCOUNT_ID")
     private Long accountId;
-
-    private static final long serialVersionUID = 1L;
-
-    public static final String COL_ID = "ID";
-
-    public static final String COL_CATEGORY = "CATEGORY";
-
-    public static final String COL_TYPE = "TYPE";
-
-    public static final String COL_FILENAME = "FILENAME";
-
-    public static final String COL_MIME_TYPE = "MIME_TYPE";
-
-    public static final String COL_CREATE_DATE = "CREATE_DATE";
-
-    public static final String COL_CREATE_MEMBER = "CREATE_MEMBER";
-
-    public static final String COL_FILE_SIZE = "FILE_SIZE";
-
-    public static final String COL_DESCRIPTION = "DESCRIPTION";
-
-    public static final String COL_UPDATE_DATE = "UPDATE_DATE";
-
-    public static final String COL_ACCOUNT_ID = "ACCOUNT_ID";
 }

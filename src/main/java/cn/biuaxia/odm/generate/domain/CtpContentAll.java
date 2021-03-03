@@ -19,6 +19,22 @@ import java.util.Date;
 @TableName(value = "CTP_CONTENT_ALL")
 public class CtpContentAll implements Serializable {
 
+    public static final String COL_ID = "ID";
+    public static final String COL_CREATE_ID = "CREATE_ID";
+    public static final String COL_CREATE_DATE = "CREATE_DATE";
+    public static final String COL_MODIFY_ID = "MODIFY_ID";
+    public static final String COL_MODIFY_DATE = "MODIFY_DATE";
+    public static final String COL_MODULE_TYPE = "MODULE_TYPE";
+    public static final String COL_MODULE_ID = "MODULE_ID";
+    public static final String COL_MODULE_TEMPLATE_ID = "MODULE_TEMPLATE_ID";
+    public static final String COL_CONTENT_TYPE = "CONTENT_TYPE";
+    public static final String COL_CONTENT_DATA_ID = "CONTENT_DATA_ID";
+    public static final String COL_CONTENT_TEMPLATE_ID = "CONTENT_TEMPLATE_ID";
+    public static final String COL_TITLE = "TITLE";
+    public static final String COL_SORT = "SORT";
+    public static final String COL_CONTENT = "CONTENT";
+    public static final String COL_TRANS_ID = "trans_id";
+    private static final long serialVersionUID = 1L;
     @TableId(value = "ID", type = IdType.INPUT)
     private Long id;
 
@@ -63,36 +79,4 @@ public class CtpContentAll implements Serializable {
 
     @TableField(value = "trans_id")
     private Long transId;
-
-    private static final long serialVersionUID = 1L;
-
-    public static final String COL_ID = "ID";
-
-    public static final String COL_CREATE_ID = "CREATE_ID";
-
-    public static final String COL_CREATE_DATE = "CREATE_DATE";
-
-    public static final String COL_MODIFY_ID = "MODIFY_ID";
-
-    public static final String COL_MODIFY_DATE = "MODIFY_DATE";
-
-    public static final String COL_MODULE_TYPE = "MODULE_TYPE";
-
-    public static final String COL_MODULE_ID = "MODULE_ID";
-
-    public static final String COL_MODULE_TEMPLATE_ID = "MODULE_TEMPLATE_ID";
-
-    public static final String COL_CONTENT_TYPE = "CONTENT_TYPE";
-
-    public static final String COL_CONTENT_DATA_ID = "CONTENT_DATA_ID";
-
-    public static final String COL_CONTENT_TEMPLATE_ID = "CONTENT_TEMPLATE_ID";
-
-    public static final String COL_TITLE = "TITLE";
-
-    public static final String COL_SORT = "SORT";
-
-    public static final String COL_CONTENT = "CONTENT";
-
-    public static final String COL_TRANS_ID = "trans_id";
 }
