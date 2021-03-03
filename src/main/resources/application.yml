@@ -15,6 +15,7 @@ spring:
     # url: jdbc:sqlserver://10.51.8.26;database=jxwoa
     # username: dev_biuaxia
     # password: 2PvR4UEThwFofg
+
     # new oa mysql datasource config
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://174.139.46.51:3306/oa_seeyon_jxt
