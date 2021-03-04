@@ -1,0 +1,1916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.odm.generate.mapper.KmImissiveReceiveMainMapper">
+  <resultMap id="BaseResultMap" type="cn.biuaxia.odm.generate.domain.KmImissiveReceiveMain">
+    <!--@mbg.generated-->
+    <!--@Table km_imissive_receive_main-->
+    <id column="fd_id" jdbcType="VARCHAR" property="fdId" />
+    <result column="fd_is_topiced" jdbcType="BIT" property="fdIsTopiced" />
+    <result column="fd_is_supervised" jdbcType="BIT" property="fdIsSupervised" />
+    <result column="fd_supervise_flag" jdbcType="BIT" property="fdSuperviseFlag" />
+    <result column="fd_reserve_one" jdbcType="VARCHAR" property="fdReserveOne" />
+    <result column="fd_reserve_two" jdbcType="VARCHAR" property="fdReserveTwo" />
+    <result column="doc_delete_flag" jdbcType="INTEGER" property="docDeleteFlag" />
+    <result column="doc_delete_time" jdbcType="TIMESTAMP" property="docDeleteTime" />
+    <result column="doc_delete_by" jdbcType="VARCHAR" property="docDeleteBy" />
+    <result column="fd_reserve_three" jdbcType="VARCHAR" property="fdReserveThree" />
+    <result column="fd_reserve_four" jdbcType="VARCHAR" property="fdReserveFour" />
+    <result column="fd_reserve_five" jdbcType="VARCHAR" property="fdReserveFive" />
+    <result column="fd_isfrom_out" jdbcType="BIT" property="fdIsfromOut" />
+    <result column="fd_is_change_pdf" jdbcType="VARCHAR" property="fdIsChangePdf" />
+    <result column="fd_old_data" jdbcType="BIT" property="fdOldData" />
+    <result column="fd_main_id" jdbcType="VARCHAR" property="fdMainId" />
+    <result column="fd_need_content" jdbcType="VARCHAR" property="fdNeedContent" />
+    <result column="fd_detail_id" jdbcType="VARCHAR" property="fdDetailId" />
+    <result column="fd_third_id" jdbcType="VARCHAR" property="fdThirdId" />
+    <result column="fd_is_advice" jdbcType="BIT" property="fdIsAdvice" />
+    <result column="fd_is_return" jdbcType="BIT" property="fdIsReturn" />
+    <result column="fd_is_writesignopinion" jdbcType="BIT" property="fdIsWritesignopinion" />
+    <result column="fd_readsend_opinion" jdbcType="BIT" property="fdReadsendOpinion" />
+    <result column="fd_deliver_type" jdbcType="VARCHAR" property="fdDeliverType" />
+    <result column="fd_receive_time" jdbcType="TIMESTAMP" property="fdReceiveTime" />
+    <result column="fd_receive_num" jdbcType="VARCHAR" property="fdReceiveNum" />
+    <result column="fd_doc_flow" jdbcType="VARCHAR" property="fdDocFlow" />
+    <result column="fd_flow_no" jdbcType="VARCHAR" property="fdFlowNo" />
+    <result column="fd_no_rule" jdbcType="VARCHAR" property="fdNoRule" />
+    <result column="fd_record_time" jdbcType="TIMESTAMP" property="fdRecordTime" />
+    <result column="fd_sign_time" jdbcType="TIMESTAMP" property="fdSignTime" />
+    <result column="fd_out_sendto" jdbcType="VARCHAR" property="fdOutSendto" />
+    <result column="fd_share_num" jdbcType="INTEGER" property="fdShareNum" />
+    <result column="fd_last_modified_time" jdbcType="TIMESTAMP" property="fdLastModifiedTime" />
+    <result column="fd_recorder" jdbcType="VARCHAR" property="fdRecorder" />
+    <result column="fd_signer" jdbcType="VARCHAR" property="fdSigner" />
+    <result column="fd_receive_unit" jdbcType="VARCHAR" property="fdReceiveUnit" />
+    <result column="auth_area_id" jdbcType="VARCHAR" property="authAreaId" />
+    <result column="doc_subject" jdbcType="VARCHAR" property="docSubject" />
+    <result column="fd_template_id" jdbcType="VARCHAR" property="fdTemplateId" />
+    <result column="fd_number_main_id" jdbcType="VARCHAR" property="fdNumberMainId" />
+    <result column="fd_table_head" jdbcType="VARCHAR" property="fdTableHead" />
+    <result column="fd_doc_num" jdbcType="VARCHAR" property="fdDocNum" />
+    <result column="fd_content" jdbcType="VARCHAR" property="fdContent" />
+    <result column="fd_handle_result" jdbcType="VARCHAR" property="fdHandleResult" />
+    <result column="fd_use_form" jdbcType="BIT" property="fdUseForm" />
+    <result column="extend_file_path" jdbcType="VARCHAR" property="extendFilePath" />
+    <result column="extend_data_xml" jdbcType="LONGVARCHAR" property="extendDataXml" />
+    <result column="doc_read_count" jdbcType="BIGINT" property="docReadCount" />
+    <result column="auth_att_nodownload" jdbcType="BIT" property="authAttNodownload" />
+    <result column="auth_att_nocopy" jdbcType="BIT" property="authAttNocopy" />
+    <result column="auth_att_noprint" jdbcType="BIT" property="authAttNoprint" />
+    <result column="auth_reader_flag" jdbcType="BIT" property="authReaderFlag" />
+    <result column="doc_status" jdbcType="VARCHAR" property="docStatus" />
+    <result column="doc_alter_time" jdbcType="TIMESTAMP" property="docAlterTime" />
+    <result column="doc_publish_time" jdbcType="TIMESTAMP" property="docPublishTime" />
+    <result column="doc_publish_time_upper" jdbcType="VARCHAR" property="docPublishTimeUpper" />
+    <result column="doc_publish_time_num" jdbcType="VARCHAR" property="docPublishTimeNum" />
+    <result column="doc_create_time" jdbcType="TIMESTAMP" property="docCreateTime" />
+    <result column="fd_dead_time" jdbcType="TIMESTAMP" property="fdDeadTime" />
+    <result column="fd_model_name" jdbcType="VARCHAR" property="fdModelName" />
+    <result column="fd_model_id" jdbcType="VARCHAR" property="fdModelId" />
+    <result column="fd_is_filing" jdbcType="BIT" property="fdIsFiling" />
+    <result column="fd_filing_time" jdbcType="TIMESTAMP" property="fdFilingTime" />
+    <result column="fd_change_reader_flag" jdbcType="BIT" property="fdChangeReaderFlag" />
+    <result column="fd_rbp_flag" jdbcType="BIT" property="fdRbpFlag" />
+    <result column="fd_change_att" jdbcType="BIT" property="fdChangeAtt" />
+    <result column="fd_filinger_id" jdbcType="VARCHAR" property="fdFilingerId" />
+    <result column="doc_create_id" jdbcType="VARCHAR" property="docCreateId" />
+    <result column="fd_secret_grade" jdbcType="VARCHAR" property="fdSecretGrade" />
+    <result column="fd_emergency_grade" jdbcType="VARCHAR" property="fdEmergencyGrade" />
+    <result column="fd_sendto_unit" jdbcType="VARCHAR" property="fdSendtoUnit" />
+    <result column="fd_secret_grade_str" jdbcType="VARCHAR" property="fdSecretGradeStr" />
+    <result column="fd_emergency_grade_str" jdbcType="VARCHAR" property="fdEmergencyGradeStr" />
+    <result column="fd_doc_type_str" jdbcType="VARCHAR" property="fdDocTypeStr" />
+    <result column="fd_doc_type" jdbcType="VARCHAR" property="fdDocType" />
+    <result column="doc_alteror_id" jdbcType="VARCHAR" property="docAlterorId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    fd_id, fd_is_topiced, fd_is_supervised, fd_supervise_flag, fd_reserve_one, fd_reserve_two, 
+    doc_delete_flag, doc_delete_time, doc_delete_by, fd_reserve_three, fd_reserve_four, 
+    fd_reserve_five, fd_isfrom_out, fd_is_change_pdf, fd_old_data, fd_main_id, fd_need_content, 
+    fd_detail_id, fd_third_id, fd_is_advice, fd_is_return, fd_is_writesignopinion, fd_readsend_opinion, 
+    fd_deliver_type, fd_receive_time, fd_receive_num, fd_doc_flow, fd_flow_no, fd_no_rule, 
+    fd_record_time, fd_sign_time, fd_out_sendto, fd_share_num, fd_last_modified_time, 
+    fd_recorder, fd_signer, fd_receive_unit, auth_area_id, doc_subject, fd_template_id, 
+    fd_number_main_id, fd_table_head, fd_doc_num, fd_content, fd_handle_result, fd_use_form, 
+    extend_file_path, extend_data_xml, doc_read_count, auth_att_nodownload, auth_att_nocopy, 
+    auth_att_noprint, auth_reader_flag, doc_status, doc_alter_time, doc_publish_time, 
+    doc_publish_time_upper, doc_publish_time_num, doc_create_time, fd_dead_time, fd_model_name, 
+    fd_model_id, fd_is_filing, fd_filing_time, fd_change_reader_flag, fd_rbp_flag, fd_change_att, 
+    fd_filinger_id, doc_create_id, fd_secret_grade, fd_emergency_grade, fd_sendto_unit, 
+    fd_secret_grade_str, fd_emergency_grade_str, fd_doc_type_str, fd_doc_type, doc_alteror_id
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update km_imissive_receive_main
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="fd_is_topiced = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsTopiced,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_is_supervised = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsSupervised,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_supervise_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdSuperviseFlag,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_reserve_one = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReserveOne,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_reserve_two = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReserveTwo,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="doc_delete_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docDeleteFlag,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="doc_delete_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docDeleteTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="doc_delete_by = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docDeleteBy,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_reserve_three = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReserveThree,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_reserve_four = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReserveFour,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_reserve_five = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReserveFive,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_isfrom_out = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsfromOut,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_is_change_pdf = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsChangePdf,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_old_data = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdOldData,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_main_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdMainId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_need_content = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdNeedContent,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_detail_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDetailId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_third_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdThirdId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_is_advice = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsAdvice,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_is_return = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsReturn,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_is_writesignopinion = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsWritesignopinion,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_readsend_opinion = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReadsendOpinion,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_deliver_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDeliverType,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_receive_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReceiveTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="fd_receive_num = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReceiveNum,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_doc_flow = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDocFlow,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_flow_no = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdFlowNo,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_no_rule = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdNoRule,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_record_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdRecordTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="fd_sign_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdSignTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="fd_out_sendto = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdOutSendto,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_share_num = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdShareNum,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="fd_last_modified_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdLastModifiedTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="fd_recorder = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdRecorder,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_signer = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdSigner,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_receive_unit = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReceiveUnit,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="auth_area_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.authAreaId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="doc_subject = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docSubject,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_template_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdTemplateId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_number_main_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdNumberMainId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_table_head = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdTableHead,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_doc_num = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDocNum,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_content = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdContent,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_handle_result = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdHandleResult,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_use_form = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdUseForm,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="extend_file_path = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.extendFilePath,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="extend_data_xml = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.extendDataXml,jdbcType=LONGVARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="doc_read_count = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docReadCount,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="auth_att_nodownload = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.authAttNodownload,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="auth_att_nocopy = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.authAttNocopy,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="auth_att_noprint = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.authAttNoprint,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="auth_reader_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.authReaderFlag,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="doc_status = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docStatus,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="doc_alter_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docAlterTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="doc_publish_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docPublishTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="doc_publish_time_upper = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docPublishTimeUpper,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="doc_publish_time_num = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docPublishTimeNum,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="doc_create_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docCreateTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="fd_dead_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDeadTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="fd_model_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdModelName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_model_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdModelId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_is_filing = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsFiling,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_filing_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdFilingTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="fd_change_reader_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdChangeReaderFlag,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_rbp_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdRbpFlag,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_change_att = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdChangeAtt,jdbcType=BIT}
+        </foreach>
+      </trim>
+      <trim prefix="fd_filinger_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdFilingerId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="doc_create_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docCreateId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_secret_grade = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdSecretGrade,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_emergency_grade = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdEmergencyGrade,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_sendto_unit = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdSendtoUnit,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_secret_grade_str = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdSecretGradeStr,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_emergency_grade_str = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdEmergencyGradeStr,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_doc_type_str = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDocTypeStr,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="fd_doc_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDocType,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="doc_alteror_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docAlterorId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where fd_id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.fdId,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update km_imissive_receive_main
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="fd_is_topiced = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdIsTopiced != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsTopiced,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_is_supervised = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdIsSupervised != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsSupervised,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_supervise_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdSuperviseFlag != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdSuperviseFlag,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_reserve_one = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdReserveOne != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReserveOne,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_reserve_two = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdReserveTwo != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReserveTwo,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_delete_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docDeleteFlag != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docDeleteFlag,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_delete_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docDeleteTime != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docDeleteTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_delete_by = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docDeleteBy != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docDeleteBy,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_reserve_three = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdReserveThree != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReserveThree,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_reserve_four = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdReserveFour != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReserveFour,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_reserve_five = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdReserveFive != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReserveFive,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_isfrom_out = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdIsfromOut != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsfromOut,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_is_change_pdf = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdIsChangePdf != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsChangePdf,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_old_data = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdOldData != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdOldData,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_main_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdMainId != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdMainId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_need_content = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdNeedContent != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdNeedContent,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_detail_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdDetailId != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDetailId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_third_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdThirdId != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdThirdId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_is_advice = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdIsAdvice != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsAdvice,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_is_return = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdIsReturn != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsReturn,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_is_writesignopinion = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdIsWritesignopinion != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsWritesignopinion,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_readsend_opinion = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdReadsendOpinion != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReadsendOpinion,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_deliver_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdDeliverType != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDeliverType,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_receive_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdReceiveTime != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReceiveTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_receive_num = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdReceiveNum != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReceiveNum,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_doc_flow = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdDocFlow != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDocFlow,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_flow_no = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdFlowNo != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdFlowNo,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_no_rule = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdNoRule != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdNoRule,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_record_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdRecordTime != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdRecordTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_sign_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdSignTime != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdSignTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_out_sendto = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdOutSendto != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdOutSendto,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_share_num = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdShareNum != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdShareNum,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_last_modified_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdLastModifiedTime != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdLastModifiedTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_recorder = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdRecorder != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdRecorder,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_signer = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdSigner != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdSigner,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_receive_unit = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdReceiveUnit != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdReceiveUnit,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="auth_area_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.authAreaId != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.authAreaId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_subject = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docSubject != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docSubject,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_template_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdTemplateId != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdTemplateId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_number_main_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdNumberMainId != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdNumberMainId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_table_head = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdTableHead != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdTableHead,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_doc_num = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdDocNum != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDocNum,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_content = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdContent != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdContent,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_handle_result = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdHandleResult != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdHandleResult,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_use_form = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdUseForm != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdUseForm,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="extend_file_path = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.extendFilePath != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.extendFilePath,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="extend_data_xml = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.extendDataXml != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.extendDataXml,jdbcType=LONGVARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_read_count = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docReadCount != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docReadCount,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="auth_att_nodownload = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.authAttNodownload != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.authAttNodownload,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="auth_att_nocopy = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.authAttNocopy != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.authAttNocopy,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="auth_att_noprint = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.authAttNoprint != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.authAttNoprint,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="auth_reader_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.authReaderFlag != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.authReaderFlag,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_status = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docStatus != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docStatus,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_alter_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docAlterTime != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docAlterTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_publish_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docPublishTime != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docPublishTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_publish_time_upper = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docPublishTimeUpper != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docPublishTimeUpper,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_publish_time_num = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docPublishTimeNum != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docPublishTimeNum,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_create_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docCreateTime != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docCreateTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_dead_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdDeadTime != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDeadTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_model_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdModelName != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdModelName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_model_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdModelId != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdModelId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_is_filing = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdIsFiling != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdIsFiling,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_filing_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdFilingTime != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdFilingTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_change_reader_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdChangeReaderFlag != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdChangeReaderFlag,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_rbp_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdRbpFlag != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdRbpFlag,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_change_att = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdChangeAtt != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdChangeAtt,jdbcType=BIT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_filinger_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdFilingerId != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdFilingerId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_create_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docCreateId != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docCreateId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_secret_grade = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdSecretGrade != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdSecretGrade,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_emergency_grade = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdEmergencyGrade != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdEmergencyGrade,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_sendto_unit = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdSendtoUnit != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdSendtoUnit,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_secret_grade_str = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdSecretGradeStr != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdSecretGradeStr,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_emergency_grade_str = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdEmergencyGradeStr != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdEmergencyGradeStr,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_doc_type_str = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdDocTypeStr != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDocTypeStr,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fd_doc_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fdDocType != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.fdDocType,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="doc_alteror_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.docAlterorId != null">
+            when fd_id = #{item.fdId,jdbcType=VARCHAR} then #{item.docAlterorId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where fd_id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.fdId,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into km_imissive_receive_main
+    (fd_id, fd_is_topiced, fd_is_supervised, fd_supervise_flag, fd_reserve_one, fd_reserve_two, 
+      doc_delete_flag, doc_delete_time, doc_delete_by, fd_reserve_three, fd_reserve_four, 
+      fd_reserve_five, fd_isfrom_out, fd_is_change_pdf, fd_old_data, fd_main_id, fd_need_content, 
+      fd_detail_id, fd_third_id, fd_is_advice, fd_is_return, fd_is_writesignopinion, 
+      fd_readsend_opinion, fd_deliver_type, fd_receive_time, fd_receive_num, fd_doc_flow, 
+      fd_flow_no, fd_no_rule, fd_record_time, fd_sign_time, fd_out_sendto, fd_share_num, 
+      fd_last_modified_time, fd_recorder, fd_signer, fd_receive_unit, auth_area_id, doc_subject, 
+      fd_template_id, fd_number_main_id, fd_table_head, fd_doc_num, fd_content, fd_handle_result, 
+      fd_use_form, extend_file_path, extend_data_xml, doc_read_count, auth_att_nodownload, 
+      auth_att_nocopy, auth_att_noprint, auth_reader_flag, doc_status, doc_alter_time, 
+      doc_publish_time, doc_publish_time_upper, doc_publish_time_num, doc_create_time, 
+      fd_dead_time, fd_model_name, fd_model_id, fd_is_filing, fd_filing_time, fd_change_reader_flag, 
+      fd_rbp_flag, fd_change_att, fd_filinger_id, doc_create_id, fd_secret_grade, fd_emergency_grade, 
+      fd_sendto_unit, fd_secret_grade_str, fd_emergency_grade_str, fd_doc_type_str, fd_doc_type, 
+      doc_alteror_id)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.fdId,jdbcType=VARCHAR}, #{item.fdIsTopiced,jdbcType=BIT}, #{item.fdIsSupervised,jdbcType=BIT}, 
+        #{item.fdSuperviseFlag,jdbcType=BIT}, #{item.fdReserveOne,jdbcType=VARCHAR}, #{item.fdReserveTwo,jdbcType=VARCHAR}, 
+        #{item.docDeleteFlag,jdbcType=INTEGER}, #{item.docDeleteTime,jdbcType=TIMESTAMP}, 
+        #{item.docDeleteBy,jdbcType=VARCHAR}, #{item.fdReserveThree,jdbcType=VARCHAR}, 
+        #{item.fdReserveFour,jdbcType=VARCHAR}, #{item.fdReserveFive,jdbcType=VARCHAR}, 
+        #{item.fdIsfromOut,jdbcType=BIT}, #{item.fdIsChangePdf,jdbcType=VARCHAR}, #{item.fdOldData,jdbcType=BIT}, 
+        #{item.fdMainId,jdbcType=VARCHAR}, #{item.fdNeedContent,jdbcType=VARCHAR}, #{item.fdDetailId,jdbcType=VARCHAR}, 
+        #{item.fdThirdId,jdbcType=VARCHAR}, #{item.fdIsAdvice,jdbcType=BIT}, #{item.fdIsReturn,jdbcType=BIT}, 
+        #{item.fdIsWritesignopinion,jdbcType=BIT}, #{item.fdReadsendOpinion,jdbcType=BIT}, 
+        #{item.fdDeliverType,jdbcType=VARCHAR}, #{item.fdReceiveTime,jdbcType=TIMESTAMP}, 
+        #{item.fdReceiveNum,jdbcType=VARCHAR}, #{item.fdDocFlow,jdbcType=VARCHAR}, #{item.fdFlowNo,jdbcType=VARCHAR}, 
+        #{item.fdNoRule,jdbcType=VARCHAR}, #{item.fdRecordTime,jdbcType=TIMESTAMP}, #{item.fdSignTime,jdbcType=TIMESTAMP}, 
+        #{item.fdOutSendto,jdbcType=VARCHAR}, #{item.fdShareNum,jdbcType=INTEGER}, #{item.fdLastModifiedTime,jdbcType=TIMESTAMP}, 
+        #{item.fdRecorder,jdbcType=VARCHAR}, #{item.fdSigner,jdbcType=VARCHAR}, #{item.fdReceiveUnit,jdbcType=VARCHAR}, 
+        #{item.authAreaId,jdbcType=VARCHAR}, #{item.docSubject,jdbcType=VARCHAR}, #{item.fdTemplateId,jdbcType=VARCHAR}, 
+        #{item.fdNumberMainId,jdbcType=VARCHAR}, #{item.fdTableHead,jdbcType=VARCHAR}, 
+        #{item.fdDocNum,jdbcType=VARCHAR}, #{item.fdContent,jdbcType=VARCHAR}, #{item.fdHandleResult,jdbcType=VARCHAR}, 
+        #{item.fdUseForm,jdbcType=BIT}, #{item.extendFilePath,jdbcType=VARCHAR}, #{item.extendDataXml,jdbcType=LONGVARCHAR}, 
+        #{item.docReadCount,jdbcType=BIGINT}, #{item.authAttNodownload,jdbcType=BIT}, #{item.authAttNocopy,jdbcType=BIT}, 
+        #{item.authAttNoprint,jdbcType=BIT}, #{item.authReaderFlag,jdbcType=BIT}, #{item.docStatus,jdbcType=VARCHAR}, 
+        #{item.docAlterTime,jdbcType=TIMESTAMP}, #{item.docPublishTime,jdbcType=TIMESTAMP}, 
+        #{item.docPublishTimeUpper,jdbcType=VARCHAR}, #{item.docPublishTimeNum,jdbcType=VARCHAR}, 
+        #{item.docCreateTime,jdbcType=TIMESTAMP}, #{item.fdDeadTime,jdbcType=TIMESTAMP}, 
+        #{item.fdModelName,jdbcType=VARCHAR}, #{item.fdModelId,jdbcType=VARCHAR}, #{item.fdIsFiling,jdbcType=BIT}, 
+        #{item.fdFilingTime,jdbcType=TIMESTAMP}, #{item.fdChangeReaderFlag,jdbcType=BIT}, 
+        #{item.fdRbpFlag,jdbcType=BIT}, #{item.fdChangeAtt,jdbcType=BIT}, #{item.fdFilingerId,jdbcType=VARCHAR}, 
+        #{item.docCreateId,jdbcType=VARCHAR}, #{item.fdSecretGrade,jdbcType=VARCHAR}, #{item.fdEmergencyGrade,jdbcType=VARCHAR}, 
+        #{item.fdSendtoUnit,jdbcType=VARCHAR}, #{item.fdSecretGradeStr,jdbcType=VARCHAR}, 
+        #{item.fdEmergencyGradeStr,jdbcType=VARCHAR}, #{item.fdDocTypeStr,jdbcType=VARCHAR}, 
+        #{item.fdDocType,jdbcType=VARCHAR}, #{item.docAlterorId,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="cn.biuaxia.odm.generate.domain.KmImissiveReceiveMain">
+    <!--@mbg.generated-->
+    insert into km_imissive_receive_main
+    (fd_id, fd_is_topiced, fd_is_supervised, fd_supervise_flag, fd_reserve_one, fd_reserve_two, 
+      doc_delete_flag, doc_delete_time, doc_delete_by, fd_reserve_three, fd_reserve_four, 
+      fd_reserve_five, fd_isfrom_out, fd_is_change_pdf, fd_old_data, fd_main_id, fd_need_content, 
+      fd_detail_id, fd_third_id, fd_is_advice, fd_is_return, fd_is_writesignopinion, 
+      fd_readsend_opinion, fd_deliver_type, fd_receive_time, fd_receive_num, fd_doc_flow, 
+      fd_flow_no, fd_no_rule, fd_record_time, fd_sign_time, fd_out_sendto, fd_share_num, 
+      fd_last_modified_time, fd_recorder, fd_signer, fd_receive_unit, auth_area_id, doc_subject, 
+      fd_template_id, fd_number_main_id, fd_table_head, fd_doc_num, fd_content, fd_handle_result, 
+      fd_use_form, extend_file_path, extend_data_xml, doc_read_count, auth_att_nodownload, 
+      auth_att_nocopy, auth_att_noprint, auth_reader_flag, doc_status, doc_alter_time, 
+      doc_publish_time, doc_publish_time_upper, doc_publish_time_num, doc_create_time, 
+      fd_dead_time, fd_model_name, fd_model_id, fd_is_filing, fd_filing_time, fd_change_reader_flag, 
+      fd_rbp_flag, fd_change_att, fd_filinger_id, doc_create_id, fd_secret_grade, fd_emergency_grade, 
+      fd_sendto_unit, fd_secret_grade_str, fd_emergency_grade_str, fd_doc_type_str, fd_doc_type, 
+      doc_alteror_id)
+    values
+    (#{fdId,jdbcType=VARCHAR}, #{fdIsTopiced,jdbcType=BIT}, #{fdIsSupervised,jdbcType=BIT}, 
+      #{fdSuperviseFlag,jdbcType=BIT}, #{fdReserveOne,jdbcType=VARCHAR}, #{fdReserveTwo,jdbcType=VARCHAR}, 
+      #{docDeleteFlag,jdbcType=INTEGER}, #{docDeleteTime,jdbcType=TIMESTAMP}, #{docDeleteBy,jdbcType=VARCHAR}, 
+      #{fdReserveThree,jdbcType=VARCHAR}, #{fdReserveFour,jdbcType=VARCHAR}, #{fdReserveFive,jdbcType=VARCHAR}, 
+      #{fdIsfromOut,jdbcType=BIT}, #{fdIsChangePdf,jdbcType=VARCHAR}, #{fdOldData,jdbcType=BIT}, 
+      #{fdMainId,jdbcType=VARCHAR}, #{fdNeedContent,jdbcType=VARCHAR}, #{fdDetailId,jdbcType=VARCHAR}, 
+      #{fdThirdId,jdbcType=VARCHAR}, #{fdIsAdvice,jdbcType=BIT}, #{fdIsReturn,jdbcType=BIT}, 
+      #{fdIsWritesignopinion,jdbcType=BIT}, #{fdReadsendOpinion,jdbcType=BIT}, #{fdDeliverType,jdbcType=VARCHAR}, 
+      #{fdReceiveTime,jdbcType=TIMESTAMP}, #{fdReceiveNum,jdbcType=VARCHAR}, #{fdDocFlow,jdbcType=VARCHAR}, 
+      #{fdFlowNo,jdbcType=VARCHAR}, #{fdNoRule,jdbcType=VARCHAR}, #{fdRecordTime,jdbcType=TIMESTAMP}, 
+      #{fdSignTime,jdbcType=TIMESTAMP}, #{fdOutSendto,jdbcType=VARCHAR}, #{fdShareNum,jdbcType=INTEGER}, 
+      #{fdLastModifiedTime,jdbcType=TIMESTAMP}, #{fdRecorder,jdbcType=VARCHAR}, #{fdSigner,jdbcType=VARCHAR}, 
+      #{fdReceiveUnit,jdbcType=VARCHAR}, #{authAreaId,jdbcType=VARCHAR}, #{docSubject,jdbcType=VARCHAR}, 
+      #{fdTemplateId,jdbcType=VARCHAR}, #{fdNumberMainId,jdbcType=VARCHAR}, #{fdTableHead,jdbcType=VARCHAR}, 
+      #{fdDocNum,jdbcType=VARCHAR}, #{fdContent,jdbcType=VARCHAR}, #{fdHandleResult,jdbcType=VARCHAR}, 
+      #{fdUseForm,jdbcType=BIT}, #{extendFilePath,jdbcType=VARCHAR}, #{extendDataXml,jdbcType=LONGVARCHAR}, 
+      #{docReadCount,jdbcType=BIGINT}, #{authAttNodownload,jdbcType=BIT}, #{authAttNocopy,jdbcType=BIT}, 
+      #{authAttNoprint,jdbcType=BIT}, #{authReaderFlag,jdbcType=BIT}, #{docStatus,jdbcType=VARCHAR}, 
+      #{docAlterTime,jdbcType=TIMESTAMP}, #{docPublishTime,jdbcType=TIMESTAMP}, #{docPublishTimeUpper,jdbcType=VARCHAR}, 
+      #{docPublishTimeNum,jdbcType=VARCHAR}, #{docCreateTime,jdbcType=TIMESTAMP}, #{fdDeadTime,jdbcType=TIMESTAMP}, 
+      #{fdModelName,jdbcType=VARCHAR}, #{fdModelId,jdbcType=VARCHAR}, #{fdIsFiling,jdbcType=BIT}, 
+      #{fdFilingTime,jdbcType=TIMESTAMP}, #{fdChangeReaderFlag,jdbcType=BIT}, #{fdRbpFlag,jdbcType=BIT}, 
+      #{fdChangeAtt,jdbcType=BIT}, #{fdFilingerId,jdbcType=VARCHAR}, #{docCreateId,jdbcType=VARCHAR}, 
+      #{fdSecretGrade,jdbcType=VARCHAR}, #{fdEmergencyGrade,jdbcType=VARCHAR}, #{fdSendtoUnit,jdbcType=VARCHAR}, 
+      #{fdSecretGradeStr,jdbcType=VARCHAR}, #{fdEmergencyGradeStr,jdbcType=VARCHAR}, 
+      #{fdDocTypeStr,jdbcType=VARCHAR}, #{fdDocType,jdbcType=VARCHAR}, #{docAlterorId,jdbcType=VARCHAR}
+      )
+    on duplicate key update 
+    fd_id = #{fdId,jdbcType=VARCHAR}, 
+    fd_is_topiced = #{fdIsTopiced,jdbcType=BIT}, 
+    fd_is_supervised = #{fdIsSupervised,jdbcType=BIT}, 
+    fd_supervise_flag = #{fdSuperviseFlag,jdbcType=BIT}, 
+    fd_reserve_one = #{fdReserveOne,jdbcType=VARCHAR}, 
+    fd_reserve_two = #{fdReserveTwo,jdbcType=VARCHAR}, 
+    doc_delete_flag = #{docDeleteFlag,jdbcType=INTEGER}, 
+    doc_delete_time = #{docDeleteTime,jdbcType=TIMESTAMP}, 
+    doc_delete_by = #{docDeleteBy,jdbcType=VARCHAR}, 
+    fd_reserve_three = #{fdReserveThree,jdbcType=VARCHAR}, 
+    fd_reserve_four = #{fdReserveFour,jdbcType=VARCHAR}, 
+    fd_reserve_five = #{fdReserveFive,jdbcType=VARCHAR}, 
+    fd_isfrom_out = #{fdIsfromOut,jdbcType=BIT}, 
+    fd_is_change_pdf = #{fdIsChangePdf,jdbcType=VARCHAR}, 
+    fd_old_data = #{fdOldData,jdbcType=BIT}, 
+    fd_main_id = #{fdMainId,jdbcType=VARCHAR}, 
+    fd_need_content = #{fdNeedContent,jdbcType=VARCHAR}, 
+    fd_detail_id = #{fdDetailId,jdbcType=VARCHAR}, 
+    fd_third_id = #{fdThirdId,jdbcType=VARCHAR}, 
+    fd_is_advice = #{fdIsAdvice,jdbcType=BIT}, 
+    fd_is_return = #{fdIsReturn,jdbcType=BIT}, 
+    fd_is_writesignopinion = #{fdIsWritesignopinion,jdbcType=BIT}, 
+    fd_readsend_opinion = #{fdReadsendOpinion,jdbcType=BIT}, 
+    fd_deliver_type = #{fdDeliverType,jdbcType=VARCHAR}, 
+    fd_receive_time = #{fdReceiveTime,jdbcType=TIMESTAMP}, 
+    fd_receive_num = #{fdReceiveNum,jdbcType=VARCHAR}, 
+    fd_doc_flow = #{fdDocFlow,jdbcType=VARCHAR}, 
+    fd_flow_no = #{fdFlowNo,jdbcType=VARCHAR}, 
+    fd_no_rule = #{fdNoRule,jdbcType=VARCHAR}, 
+    fd_record_time = #{fdRecordTime,jdbcType=TIMESTAMP}, 
+    fd_sign_time = #{fdSignTime,jdbcType=TIMESTAMP}, 
+    fd_out_sendto = #{fdOutSendto,jdbcType=VARCHAR}, 
+    fd_share_num = #{fdShareNum,jdbcType=INTEGER}, 
+    fd_last_modified_time = #{fdLastModifiedTime,jdbcType=TIMESTAMP}, 
+    fd_recorder = #{fdRecorder,jdbcType=VARCHAR}, 
+    fd_signer = #{fdSigner,jdbcType=VARCHAR}, 
+    fd_receive_unit = #{fdReceiveUnit,jdbcType=VARCHAR}, 
+    auth_area_id = #{authAreaId,jdbcType=VARCHAR}, 
+    doc_subject = #{docSubject,jdbcType=VARCHAR}, 
+    fd_template_id = #{fdTemplateId,jdbcType=VARCHAR}, 
+    fd_number_main_id = #{fdNumberMainId,jdbcType=VARCHAR}, 
+    fd_table_head = #{fdTableHead,jdbcType=VARCHAR}, 
+    fd_doc_num = #{fdDocNum,jdbcType=VARCHAR}, 
+    fd_content = #{fdContent,jdbcType=VARCHAR}, 
+    fd_handle_result = #{fdHandleResult,jdbcType=VARCHAR}, 
+    fd_use_form = #{fdUseForm,jdbcType=BIT}, 
+    extend_file_path = #{extendFilePath,jdbcType=VARCHAR}, 
+    extend_data_xml = #{extendDataXml,jdbcType=LONGVARCHAR}, 
+    doc_read_count = #{docReadCount,jdbcType=BIGINT}, 
+    auth_att_nodownload = #{authAttNodownload,jdbcType=BIT}, 
+    auth_att_nocopy = #{authAttNocopy,jdbcType=BIT}, 
+    auth_att_noprint = #{authAttNoprint,jdbcType=BIT}, 
+    auth_reader_flag = #{authReaderFlag,jdbcType=BIT}, 
+    doc_status = #{docStatus,jdbcType=VARCHAR}, 
+    doc_alter_time = #{docAlterTime,jdbcType=TIMESTAMP}, 
+    doc_publish_time = #{docPublishTime,jdbcType=TIMESTAMP}, 
+    doc_publish_time_upper = #{docPublishTimeUpper,jdbcType=VARCHAR}, 
+    doc_publish_time_num = #{docPublishTimeNum,jdbcType=VARCHAR}, 
+    doc_create_time = #{docCreateTime,jdbcType=TIMESTAMP}, 
+    fd_dead_time = #{fdDeadTime,jdbcType=TIMESTAMP}, 
+    fd_model_name = #{fdModelName,jdbcType=VARCHAR}, 
+    fd_model_id = #{fdModelId,jdbcType=VARCHAR}, 
+    fd_is_filing = #{fdIsFiling,jdbcType=BIT}, 
+    fd_filing_time = #{fdFilingTime,jdbcType=TIMESTAMP}, 
+    fd_change_reader_flag = #{fdChangeReaderFlag,jdbcType=BIT}, 
+    fd_rbp_flag = #{fdRbpFlag,jdbcType=BIT}, 
+    fd_change_att = #{fdChangeAtt,jdbcType=BIT}, 
+    fd_filinger_id = #{fdFilingerId,jdbcType=VARCHAR}, 
+    doc_create_id = #{docCreateId,jdbcType=VARCHAR}, 
+    fd_secret_grade = #{fdSecretGrade,jdbcType=VARCHAR}, 
+    fd_emergency_grade = #{fdEmergencyGrade,jdbcType=VARCHAR}, 
+    fd_sendto_unit = #{fdSendtoUnit,jdbcType=VARCHAR}, 
+    fd_secret_grade_str = #{fdSecretGradeStr,jdbcType=VARCHAR}, 
+    fd_emergency_grade_str = #{fdEmergencyGradeStr,jdbcType=VARCHAR}, 
+    fd_doc_type_str = #{fdDocTypeStr,jdbcType=VARCHAR}, 
+    fd_doc_type = #{fdDocType,jdbcType=VARCHAR}, 
+    doc_alteror_id = #{docAlterorId,jdbcType=VARCHAR}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.odm.generate.domain.KmImissiveReceiveMain">
+    <!--@mbg.generated-->
+    insert into km_imissive_receive_main
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fdId != null">
+        fd_id,
+      </if>
+      <if test="fdIsTopiced != null">
+        fd_is_topiced,
+      </if>
+      <if test="fdIsSupervised != null">
+        fd_is_supervised,
+      </if>
+      <if test="fdSuperviseFlag != null">
+        fd_supervise_flag,
+      </if>
+      <if test="fdReserveOne != null">
+        fd_reserve_one,
+      </if>
+      <if test="fdReserveTwo != null">
+        fd_reserve_two,
+      </if>
+      <if test="docDeleteFlag != null">
+        doc_delete_flag,
+      </if>
+      <if test="docDeleteTime != null">
+        doc_delete_time,
+      </if>
+      <if test="docDeleteBy != null">
+        doc_delete_by,
+      </if>
+      <if test="fdReserveThree != null">
+        fd_reserve_three,
+      </if>
+      <if test="fdReserveFour != null">
+        fd_reserve_four,
+      </if>
+      <if test="fdReserveFive != null">
+        fd_reserve_five,
+      </if>
+      <if test="fdIsfromOut != null">
+        fd_isfrom_out,
+      </if>
+      <if test="fdIsChangePdf != null">
+        fd_is_change_pdf,
+      </if>
+      <if test="fdOldData != null">
+        fd_old_data,
+      </if>
+      <if test="fdMainId != null">
+        fd_main_id,
+      </if>
+      <if test="fdNeedContent != null">
+        fd_need_content,
+      </if>
+      <if test="fdDetailId != null">
+        fd_detail_id,
+      </if>
+      <if test="fdThirdId != null">
+        fd_third_id,
+      </if>
+      <if test="fdIsAdvice != null">
+        fd_is_advice,
+      </if>
+      <if test="fdIsReturn != null">
+        fd_is_return,
+      </if>
+      <if test="fdIsWritesignopinion != null">
+        fd_is_writesignopinion,
+      </if>
+      <if test="fdReadsendOpinion != null">
+        fd_readsend_opinion,
+      </if>
+      <if test="fdDeliverType != null">
+        fd_deliver_type,
+      </if>
+      <if test="fdReceiveTime != null">
+        fd_receive_time,
+      </if>
+      <if test="fdReceiveNum != null">
+        fd_receive_num,
+      </if>
+      <if test="fdDocFlow != null">
+        fd_doc_flow,
+      </if>
+      <if test="fdFlowNo != null">
+        fd_flow_no,
+      </if>
+      <if test="fdNoRule != null">
+        fd_no_rule,
+      </if>
+      <if test="fdRecordTime != null">
+        fd_record_time,
+      </if>
+      <if test="fdSignTime != null">
+        fd_sign_time,
+      </if>
+      <if test="fdOutSendto != null">
+        fd_out_sendto,
+      </if>
+      <if test="fdShareNum != null">
+        fd_share_num,
+      </if>
+      <if test="fdLastModifiedTime != null">
+        fd_last_modified_time,
+      </if>
+      <if test="fdRecorder != null">
+        fd_recorder,
+      </if>
+      <if test="fdSigner != null">
+        fd_signer,
+      </if>
+      <if test="fdReceiveUnit != null">
+        fd_receive_unit,
+      </if>
+      <if test="authAreaId != null">
+        auth_area_id,
+      </if>
+      <if test="docSubject != null">
+        doc_subject,
+      </if>
+      <if test="fdTemplateId != null">
+        fd_template_id,
+      </if>
+      <if test="fdNumberMainId != null">
+        fd_number_main_id,
+      </if>
+      <if test="fdTableHead != null">
+        fd_table_head,
+      </if>
+      <if test="fdDocNum != null">
+        fd_doc_num,
+      </if>
+      <if test="fdContent != null">
+        fd_content,
+      </if>
+      <if test="fdHandleResult != null">
+        fd_handle_result,
+      </if>
+      <if test="fdUseForm != null">
+        fd_use_form,
+      </if>
+      <if test="extendFilePath != null">
+        extend_file_path,
+      </if>
+      <if test="extendDataXml != null">
+        extend_data_xml,
+      </if>
+      <if test="docReadCount != null">
+        doc_read_count,
+      </if>
+      <if test="authAttNodownload != null">
+        auth_att_nodownload,
+      </if>
+      <if test="authAttNocopy != null">
+        auth_att_nocopy,
+      </if>
+      <if test="authAttNoprint != null">
+        auth_att_noprint,
+      </if>
+      <if test="authReaderFlag != null">
+        auth_reader_flag,
+      </if>
+      <if test="docStatus != null">
+        doc_status,
+      </if>
+      <if test="docAlterTime != null">
+        doc_alter_time,
+      </if>
+      <if test="docPublishTime != null">
+        doc_publish_time,
+      </if>
+      <if test="docPublishTimeUpper != null">
+        doc_publish_time_upper,
+      </if>
+      <if test="docPublishTimeNum != null">
+        doc_publish_time_num,
+      </if>
+      <if test="docCreateTime != null">
+        doc_create_time,
+      </if>
+      <if test="fdDeadTime != null">
+        fd_dead_time,
+      </if>
+      <if test="fdModelName != null">
+        fd_model_name,
+      </if>
+      <if test="fdModelId != null">
+        fd_model_id,
+      </if>
+      <if test="fdIsFiling != null">
+        fd_is_filing,
+      </if>
+      <if test="fdFilingTime != null">
+        fd_filing_time,
+      </if>
+      <if test="fdChangeReaderFlag != null">
+        fd_change_reader_flag,
+      </if>
+      <if test="fdRbpFlag != null">
+        fd_rbp_flag,
+      </if>
+      <if test="fdChangeAtt != null">
+        fd_change_att,
+      </if>
+      <if test="fdFilingerId != null">
+        fd_filinger_id,
+      </if>
+      <if test="docCreateId != null">
+        doc_create_id,
+      </if>
+      <if test="fdSecretGrade != null">
+        fd_secret_grade,
+      </if>
+      <if test="fdEmergencyGrade != null">
+        fd_emergency_grade,
+      </if>
+      <if test="fdSendtoUnit != null">
+        fd_sendto_unit,
+      </if>
+      <if test="fdSecretGradeStr != null">
+        fd_secret_grade_str,
+      </if>
+      <if test="fdEmergencyGradeStr != null">
+        fd_emergency_grade_str,
+      </if>
+      <if test="fdDocTypeStr != null">
+        fd_doc_type_str,
+      </if>
+      <if test="fdDocType != null">
+        fd_doc_type,
+      </if>
+      <if test="docAlterorId != null">
+        doc_alteror_id,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fdId != null">
+        #{fdId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdIsTopiced != null">
+        #{fdIsTopiced,jdbcType=BIT},
+      </if>
+      <if test="fdIsSupervised != null">
+        #{fdIsSupervised,jdbcType=BIT},
+      </if>
+      <if test="fdSuperviseFlag != null">
+        #{fdSuperviseFlag,jdbcType=BIT},
+      </if>
+      <if test="fdReserveOne != null">
+        #{fdReserveOne,jdbcType=VARCHAR},
+      </if>
+      <if test="fdReserveTwo != null">
+        #{fdReserveTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="docDeleteFlag != null">
+        #{docDeleteFlag,jdbcType=INTEGER},
+      </if>
+      <if test="docDeleteTime != null">
+        #{docDeleteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="docDeleteBy != null">
+        #{docDeleteBy,jdbcType=VARCHAR},
+      </if>
+      <if test="fdReserveThree != null">
+        #{fdReserveThree,jdbcType=VARCHAR},
+      </if>
+      <if test="fdReserveFour != null">
+        #{fdReserveFour,jdbcType=VARCHAR},
+      </if>
+      <if test="fdReserveFive != null">
+        #{fdReserveFive,jdbcType=VARCHAR},
+      </if>
+      <if test="fdIsfromOut != null">
+        #{fdIsfromOut,jdbcType=BIT},
+      </if>
+      <if test="fdIsChangePdf != null">
+        #{fdIsChangePdf,jdbcType=VARCHAR},
+      </if>
+      <if test="fdOldData != null">
+        #{fdOldData,jdbcType=BIT},
+      </if>
+      <if test="fdMainId != null">
+        #{fdMainId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdNeedContent != null">
+        #{fdNeedContent,jdbcType=VARCHAR},
+      </if>
+      <if test="fdDetailId != null">
+        #{fdDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdThirdId != null">
+        #{fdThirdId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdIsAdvice != null">
+        #{fdIsAdvice,jdbcType=BIT},
+      </if>
+      <if test="fdIsReturn != null">
+        #{fdIsReturn,jdbcType=BIT},
+      </if>
+      <if test="fdIsWritesignopinion != null">
+        #{fdIsWritesignopinion,jdbcType=BIT},
+      </if>
+      <if test="fdReadsendOpinion != null">
+        #{fdReadsendOpinion,jdbcType=BIT},
+      </if>
+      <if test="fdDeliverType != null">
+        #{fdDeliverType,jdbcType=VARCHAR},
+      </if>
+      <if test="fdReceiveTime != null">
+        #{fdReceiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdReceiveNum != null">
+        #{fdReceiveNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fdDocFlow != null">
+        #{fdDocFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="fdFlowNo != null">
+        #{fdFlowNo,jdbcType=VARCHAR},
+      </if>
+      <if test="fdNoRule != null">
+        #{fdNoRule,jdbcType=VARCHAR},
+      </if>
+      <if test="fdRecordTime != null">
+        #{fdRecordTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdSignTime != null">
+        #{fdSignTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdOutSendto != null">
+        #{fdOutSendto,jdbcType=VARCHAR},
+      </if>
+      <if test="fdShareNum != null">
+        #{fdShareNum,jdbcType=INTEGER},
+      </if>
+      <if test="fdLastModifiedTime != null">
+        #{fdLastModifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdRecorder != null">
+        #{fdRecorder,jdbcType=VARCHAR},
+      </if>
+      <if test="fdSigner != null">
+        #{fdSigner,jdbcType=VARCHAR},
+      </if>
+      <if test="fdReceiveUnit != null">
+        #{fdReceiveUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="authAreaId != null">
+        #{authAreaId,jdbcType=VARCHAR},
+      </if>
+      <if test="docSubject != null">
+        #{docSubject,jdbcType=VARCHAR},
+      </if>
+      <if test="fdTemplateId != null">
+        #{fdTemplateId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdNumberMainId != null">
+        #{fdNumberMainId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdTableHead != null">
+        #{fdTableHead,jdbcType=VARCHAR},
+      </if>
+      <if test="fdDocNum != null">
+        #{fdDocNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fdContent != null">
+        #{fdContent,jdbcType=VARCHAR},
+      </if>
+      <if test="fdHandleResult != null">
+        #{fdHandleResult,jdbcType=VARCHAR},
+      </if>
+      <if test="fdUseForm != null">
+        #{fdUseForm,jdbcType=BIT},
+      </if>
+      <if test="extendFilePath != null">
+        #{extendFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="extendDataXml != null">
+        #{extendDataXml,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="docReadCount != null">
+        #{docReadCount,jdbcType=BIGINT},
+      </if>
+      <if test="authAttNodownload != null">
+        #{authAttNodownload,jdbcType=BIT},
+      </if>
+      <if test="authAttNocopy != null">
+        #{authAttNocopy,jdbcType=BIT},
+      </if>
+      <if test="authAttNoprint != null">
+        #{authAttNoprint,jdbcType=BIT},
+      </if>
+      <if test="authReaderFlag != null">
+        #{authReaderFlag,jdbcType=BIT},
+      </if>
+      <if test="docStatus != null">
+        #{docStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="docAlterTime != null">
+        #{docAlterTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="docPublishTime != null">
+        #{docPublishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="docPublishTimeUpper != null">
+        #{docPublishTimeUpper,jdbcType=VARCHAR},
+      </if>
+      <if test="docPublishTimeNum != null">
+        #{docPublishTimeNum,jdbcType=VARCHAR},
+      </if>
+      <if test="docCreateTime != null">
+        #{docCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdDeadTime != null">
+        #{fdDeadTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdModelName != null">
+        #{fdModelName,jdbcType=VARCHAR},
+      </if>
+      <if test="fdModelId != null">
+        #{fdModelId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdIsFiling != null">
+        #{fdIsFiling,jdbcType=BIT},
+      </if>
+      <if test="fdFilingTime != null">
+        #{fdFilingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdChangeReaderFlag != null">
+        #{fdChangeReaderFlag,jdbcType=BIT},
+      </if>
+      <if test="fdRbpFlag != null">
+        #{fdRbpFlag,jdbcType=BIT},
+      </if>
+      <if test="fdChangeAtt != null">
+        #{fdChangeAtt,jdbcType=BIT},
+      </if>
+      <if test="fdFilingerId != null">
+        #{fdFilingerId,jdbcType=VARCHAR},
+      </if>
+      <if test="docCreateId != null">
+        #{docCreateId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdSecretGrade != null">
+        #{fdSecretGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="fdEmergencyGrade != null">
+        #{fdEmergencyGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="fdSendtoUnit != null">
+        #{fdSendtoUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="fdSecretGradeStr != null">
+        #{fdSecretGradeStr,jdbcType=VARCHAR},
+      </if>
+      <if test="fdEmergencyGradeStr != null">
+        #{fdEmergencyGradeStr,jdbcType=VARCHAR},
+      </if>
+      <if test="fdDocTypeStr != null">
+        #{fdDocTypeStr,jdbcType=VARCHAR},
+      </if>
+      <if test="fdDocType != null">
+        #{fdDocType,jdbcType=VARCHAR},
+      </if>
+      <if test="docAlterorId != null">
+        #{docAlterorId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="fdId != null">
+        fd_id = #{fdId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdIsTopiced != null">
+        fd_is_topiced = #{fdIsTopiced,jdbcType=BIT},
+      </if>
+      <if test="fdIsSupervised != null">
+        fd_is_supervised = #{fdIsSupervised,jdbcType=BIT},
+      </if>
+      <if test="fdSuperviseFlag != null">
+        fd_supervise_flag = #{fdSuperviseFlag,jdbcType=BIT},
+      </if>
+      <if test="fdReserveOne != null">
+        fd_reserve_one = #{fdReserveOne,jdbcType=VARCHAR},
+      </if>
+      <if test="fdReserveTwo != null">
+        fd_reserve_two = #{fdReserveTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="docDeleteFlag != null">
+        doc_delete_flag = #{docDeleteFlag,jdbcType=INTEGER},
+      </if>
+      <if test="docDeleteTime != null">
+        doc_delete_time = #{docDeleteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="docDeleteBy != null">
+        doc_delete_by = #{docDeleteBy,jdbcType=VARCHAR},
+      </if>
+      <if test="fdReserveThree != null">
+        fd_reserve_three = #{fdReserveThree,jdbcType=VARCHAR},
+      </if>
+      <if test="fdReserveFour != null">
+        fd_reserve_four = #{fdReserveFour,jdbcType=VARCHAR},
+      </if>
+      <if test="fdReserveFive != null">
+        fd_reserve_five = #{fdReserveFive,jdbcType=VARCHAR},
+      </if>
+      <if test="fdIsfromOut != null">
+        fd_isfrom_out = #{fdIsfromOut,jdbcType=BIT},
+      </if>
+      <if test="fdIsChangePdf != null">
+        fd_is_change_pdf = #{fdIsChangePdf,jdbcType=VARCHAR},
+      </if>
+      <if test="fdOldData != null">
+        fd_old_data = #{fdOldData,jdbcType=BIT},
+      </if>
+      <if test="fdMainId != null">
+        fd_main_id = #{fdMainId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdNeedContent != null">
+        fd_need_content = #{fdNeedContent,jdbcType=VARCHAR},
+      </if>
+      <if test="fdDetailId != null">
+        fd_detail_id = #{fdDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdThirdId != null">
+        fd_third_id = #{fdThirdId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdIsAdvice != null">
+        fd_is_advice = #{fdIsAdvice,jdbcType=BIT},
+      </if>
+      <if test="fdIsReturn != null">
+        fd_is_return = #{fdIsReturn,jdbcType=BIT},
+      </if>
+      <if test="fdIsWritesignopinion != null">
+        fd_is_writesignopinion = #{fdIsWritesignopinion,jdbcType=BIT},
+      </if>
+      <if test="fdReadsendOpinion != null">
+        fd_readsend_opinion = #{fdReadsendOpinion,jdbcType=BIT},
+      </if>
+      <if test="fdDeliverType != null">
+        fd_deliver_type = #{fdDeliverType,jdbcType=VARCHAR},
+      </if>
+      <if test="fdReceiveTime != null">
+        fd_receive_time = #{fdReceiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdReceiveNum != null">
+        fd_receive_num = #{fdReceiveNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fdDocFlow != null">
+        fd_doc_flow = #{fdDocFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="fdFlowNo != null">
+        fd_flow_no = #{fdFlowNo,jdbcType=VARCHAR},
+      </if>
+      <if test="fdNoRule != null">
+        fd_no_rule = #{fdNoRule,jdbcType=VARCHAR},
+      </if>
+      <if test="fdRecordTime != null">
+        fd_record_time = #{fdRecordTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdSignTime != null">
+        fd_sign_time = #{fdSignTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdOutSendto != null">
+        fd_out_sendto = #{fdOutSendto,jdbcType=VARCHAR},
+      </if>
+      <if test="fdShareNum != null">
+        fd_share_num = #{fdShareNum,jdbcType=INTEGER},
+      </if>
+      <if test="fdLastModifiedTime != null">
+        fd_last_modified_time = #{fdLastModifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdRecorder != null">
+        fd_recorder = #{fdRecorder,jdbcType=VARCHAR},
+      </if>
+      <if test="fdSigner != null">
+        fd_signer = #{fdSigner,jdbcType=VARCHAR},
+      </if>
+      <if test="fdReceiveUnit != null">
+        fd_receive_unit = #{fdReceiveUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="authAreaId != null">
+        auth_area_id = #{authAreaId,jdbcType=VARCHAR},
+      </if>
+      <if test="docSubject != null">
+        doc_subject = #{docSubject,jdbcType=VARCHAR},
+      </if>
+      <if test="fdTemplateId != null">
+        fd_template_id = #{fdTemplateId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdNumberMainId != null">
+        fd_number_main_id = #{fdNumberMainId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdTableHead != null">
+        fd_table_head = #{fdTableHead,jdbcType=VARCHAR},
+      </if>
+      <if test="fdDocNum != null">
+        fd_doc_num = #{fdDocNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fdContent != null">
+        fd_content = #{fdContent,jdbcType=VARCHAR},
+      </if>
+      <if test="fdHandleResult != null">
+        fd_handle_result = #{fdHandleResult,jdbcType=VARCHAR},
+      </if>
+      <if test="fdUseForm != null">
+        fd_use_form = #{fdUseForm,jdbcType=BIT},
+      </if>
+      <if test="extendFilePath != null">
+        extend_file_path = #{extendFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="extendDataXml != null">
+        extend_data_xml = #{extendDataXml,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="docReadCount != null">
+        doc_read_count = #{docReadCount,jdbcType=BIGINT},
+      </if>
+      <if test="authAttNodownload != null">
+        auth_att_nodownload = #{authAttNodownload,jdbcType=BIT},
+      </if>
+      <if test="authAttNocopy != null">
+        auth_att_nocopy = #{authAttNocopy,jdbcType=BIT},
+      </if>
+      <if test="authAttNoprint != null">
+        auth_att_noprint = #{authAttNoprint,jdbcType=BIT},
+      </if>
+      <if test="authReaderFlag != null">
+        auth_reader_flag = #{authReaderFlag,jdbcType=BIT},
+      </if>
+      <if test="docStatus != null">
+        doc_status = #{docStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="docAlterTime != null">
+        doc_alter_time = #{docAlterTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="docPublishTime != null">
+        doc_publish_time = #{docPublishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="docPublishTimeUpper != null">
+        doc_publish_time_upper = #{docPublishTimeUpper,jdbcType=VARCHAR},
+      </if>
+      <if test="docPublishTimeNum != null">
+        doc_publish_time_num = #{docPublishTimeNum,jdbcType=VARCHAR},
+      </if>
+      <if test="docCreateTime != null">
+        doc_create_time = #{docCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdDeadTime != null">
+        fd_dead_time = #{fdDeadTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdModelName != null">
+        fd_model_name = #{fdModelName,jdbcType=VARCHAR},
+      </if>
+      <if test="fdModelId != null">
+        fd_model_id = #{fdModelId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdIsFiling != null">
+        fd_is_filing = #{fdIsFiling,jdbcType=BIT},
+      </if>
+      <if test="fdFilingTime != null">
+        fd_filing_time = #{fdFilingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fdChangeReaderFlag != null">
+        fd_change_reader_flag = #{fdChangeReaderFlag,jdbcType=BIT},
+      </if>
+      <if test="fdRbpFlag != null">
+        fd_rbp_flag = #{fdRbpFlag,jdbcType=BIT},
+      </if>
+      <if test="fdChangeAtt != null">
+        fd_change_att = #{fdChangeAtt,jdbcType=BIT},
+      </if>
+      <if test="fdFilingerId != null">
+        fd_filinger_id = #{fdFilingerId,jdbcType=VARCHAR},
+      </if>
+      <if test="docCreateId != null">
+        doc_create_id = #{docCreateId,jdbcType=VARCHAR},
+      </if>
+      <if test="fdSecretGrade != null">
+        fd_secret_grade = #{fdSecretGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="fdEmergencyGrade != null">
+        fd_emergency_grade = #{fdEmergencyGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="fdSendtoUnit != null">
+        fd_sendto_unit = #{fdSendtoUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="fdSecretGradeStr != null">
+        fd_secret_grade_str = #{fdSecretGradeStr,jdbcType=VARCHAR},
+      </if>
+      <if test="fdEmergencyGradeStr != null">
+        fd_emergency_grade_str = #{fdEmergencyGradeStr,jdbcType=VARCHAR},
+      </if>
+      <if test="fdDocTypeStr != null">
+        fd_doc_type_str = #{fdDocTypeStr,jdbcType=VARCHAR},
+      </if>
+      <if test="fdDocType != null">
+        fd_doc_type = #{fdDocType,jdbcType=VARCHAR},
+      </if>
+      <if test="docAlterorId != null">
+        doc_alteror_id = #{docAlterorId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
