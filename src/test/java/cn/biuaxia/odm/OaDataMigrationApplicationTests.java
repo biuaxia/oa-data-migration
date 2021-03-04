@@ -12,8 +12,6 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.date.TimeInterval;
 import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.lang.Editor;
-import cn.hutool.core.lang.Filter;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.ReflectUtil;
 import cn.hutool.core.util.StrUtil;
@@ -118,23 +116,45 @@ public class OaDataMigrationApplicationTests {
         // 参见 ORG_TEAM#ID
         final String team = "OrgTeam|";
 
-        // 1. 先剔除team
-        Set<String> noContainsOrgTeamSet = CollUtil.filter(orgUnitSet, (Filter<String>) s -> !StrUtil.startWithIgnoreCase(s, team));
-        // 2. 再剔除exchange
-
-        Set<String> orgUnitExchangeSet = CollUtil.filter(orgUnitSet, (Filter<String>) s -> StrUtil.startWithIgnoreCase(s, exchangeAccount));
-        Collection<String> finalSet = CollUtil.filter(orgUnitSet, (Editor<String>) s -> {
-            if (StrUtil.contains(s, "|")) {
-                return StrUtil.subAfter(s, "|", true);
-            }
-            return s;
+        Set<String> transitionSet = new HashSet<>();
+        orgUnitSet.forEach(item -> {
+            final String[] split = StrUtil.split(item, ",");
+            transitionSet.addAll(Arrays.asList(split));
         });
 
-        log.info("总数: [{}], team: [{}], exchange: [{}], final: [{}]",
-                orgUnitSet.size(),
-                noContainsOrgTeamSet.size(),
-                orgUnitExchangeSet.size(),
-                finalSet.size());
+        log.info("transitionSet: [{}], orgUnitSet: [{}]", transitionSet.size(), orgUnitSet.size());
+
+        // // 1. team
+        // Collection<String> noContainsOrgTeamSet =
+        //         CollUtil.filter(orgUnitSet, (Editor<String>) s -> {
+        //             if (StrUtil.startWithIgnoreCase(s, team)) {
+        //                 return s;
+        //             }
+        //             return null;
+        //         });
+        // // 2. exchange
+        // Collection<String> orgUnitExchangeSet =
+        //         CollUtil.filter(orgUnitSet, (Editor<String>) s -> {
+        //             if (StrUtil.startWithIgnoreCase(s, exchangeAccount)) {
+        //                 return s;
+        //             }
+        //             return null;
+        //         });
+        // // 3. final
+        // Collection<String> finalSet = CollUtil.filter(orgUnitSet, (Editor<String>) s -> {
+        //     if (StrUtil.contains(s, "|")) {
+        //         return StrUtil.subAfter(s, "|", true);
+        //     }
+        //     return s;
+        // });
+        //
+        // log.info("总数: [{}], " +
+        //                 "team: [{}], exchange: [{}], " +
+        //                 "final: [{}]",
+        //         orgUnitSet.size(),
+        //         noContainsOrgTeamSet.size(),
+        //         orgUnitExchangeSet.size(),
+        //         finalSet.size());
 
         // List<OrgUnit> orgUnitList = orgUnitService.listByIds(orgUnitSet);
         // unitMap = orgUnitList.stream()
