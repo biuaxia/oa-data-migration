@@ -1,8 +1,10 @@
 package cn.biuaxia.odm;
 
+import cn.biuaxia.odm.generate.domain.EdocExchangeAccount;
 import cn.biuaxia.odm.generate.domain.EdocSummary;
 import cn.biuaxia.odm.generate.domain.OrgMember;
 import cn.biuaxia.odm.generate.domain.OrgUnit;
+import cn.biuaxia.odm.generate.service.EdocExchangeAccountService;
 import cn.biuaxia.odm.generate.service.EdocSummaryService;
 import cn.biuaxia.odm.generate.service.OrgMemberService;
 import cn.biuaxia.odm.generate.service.OrgUnitService;
@@ -10,6 +12,8 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.date.TimeInterval;
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.lang.Editor;
+import cn.hutool.core.lang.Filter;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.ReflectUtil;
 import cn.hutool.core.util.StrUtil;
@@ -53,6 +57,11 @@ public class OaDataMigrationApplicationTests {
      */
     private Map<Long, Optional<OrgUnit>> unitMap = new HashMap<>();
 
+    /**
+     * 扩展单位Map
+     */
+    private Map<Long, Optional<EdocExchangeAccount>> exchangeMap = new HashMap<>();
+
     @Autowired
     private EdocSummaryService edocSummaryService;
 
@@ -62,12 +71,15 @@ public class OaDataMigrationApplicationTests {
     @Autowired
     private OrgUnitService orgUnitService;
 
+    @Autowired
+    private EdocExchangeAccountService edocExchangeAccountService;
+
     @Test
     public void contextLoads() {
         interval.start();
 
-        getAllReceAndSendMember();
-        log.info("获取人员Map [{}] 个", memberMap.size());
+        // getAllReceAndSendMember();
+        // log.info("获取人员Map [{}] 个", memberMap.size());
         /*log.info("0: [{}]", JSONUtil.toJsonPrettyStr(
                 memberMap.get(CollUtil.get(memberMap.keySet(), 0)).orElse(null)
         ));*/
@@ -78,6 +90,10 @@ public class OaDataMigrationApplicationTests {
         ));*/
 
         log.info("共计耗时: [{}s]", interval.intervalSecond());
+    }
+
+    private void getAllReceAndSendExchange() {
+
     }
 
     /**
@@ -97,12 +113,35 @@ public class OaDataMigrationApplicationTests {
 
         Set<String> orgUnitSet = CollUtil.unionDistinct(sendUnitIdList, sendToIdList, copyToIdList, reportToIdList, sendDepartmentIdList);
 
-        List<OrgUnit> orgUnitList = orgUnitService.listByIds(orgUnitSet);
-        unitMap = orgUnitList.stream()
-                .collect(
-                        Collectors.groupingBy(
-                                OrgUnit::getId,
-                                Collectors.maxBy(Comparators.comparable())));
+        // 参见 EDOC_EXCHANGE_ACCOUNT#ID
+        final String exchangeAccount = "ExchangeAccount|";
+        // 参见 ORG_TEAM#ID
+        final String team = "OrgTeam|";
+
+        // 1. 先剔除team
+        Set<String> noContainsOrgTeamSet = CollUtil.filter(orgUnitSet, (Filter<String>) s -> !StrUtil.startWithIgnoreCase(s, team));
+        // 2. 再剔除exchange
+
+        Set<String> orgUnitExchangeSet = CollUtil.filter(orgUnitSet, (Filter<String>) s -> StrUtil.startWithIgnoreCase(s, exchangeAccount));
+        Collection<String> finalSet = CollUtil.filter(orgUnitSet, (Editor<String>) s -> {
+            if (StrUtil.contains(s, "|")) {
+                return StrUtil.subAfter(s, "|", true);
+            }
+            return s;
+        });
+
+        log.info("总数: [{}], team: [{}], exchange: [{}], final: [{}]",
+                orgUnitSet.size(),
+                noContainsOrgTeamSet.size(),
+                orgUnitExchangeSet.size(),
+                finalSet.size());
+
+        // List<OrgUnit> orgUnitList = orgUnitService.listByIds(orgUnitSet);
+        // unitMap = orgUnitList.stream()
+        //         .collect(
+        //                 Collectors.groupingBy(
+        //                         OrgUnit::getId,
+        //                         Collectors.maxBy(Comparators.comparable())));
     }
 
     /**
