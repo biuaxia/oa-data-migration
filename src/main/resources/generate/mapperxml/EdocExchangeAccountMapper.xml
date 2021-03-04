@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.odm.generate.mapper.EdocExchangeAccountMapper">
+    <resultMap id="BaseResultMap" type="cn.biuaxia.odm.generate.domain.EdocExchangeAccount">
+        <!--@mbg.generated-->
+        <!--@Table EDOC_EXCHANGE_ACCOUNT-->
+        <id column="ID" jdbcType="BIGINT" property="id"/>
+        <result column="ACCOUNT_ID" jdbcType="VARCHAR" property="accountId"/>
+        <result column="NAME" jdbcType="VARCHAR" property="name"/>
+        <result column="ACCOUNT_TYPE" jdbcType="DECIMAL" property="accountType"/>
+        <result column="DESCRIPTION" jdbcType="VARCHAR" property="description"/>
+        <result column="IS_INTERNAL_ACCOUNT" jdbcType="DECIMAL" property="isInternalAccount"/>
+        <result column="INTERNAL_ORG_ID" jdbcType="BIGINT" property="internalOrgId"/>
+        <result column="INTERNAL_DEPT_ID" jdbcType="BIGINT" property="internalDeptId"/>
+        <result column="INTERNAL_USER_ID" jdbcType="BIGINT" property="internalUserId"/>
+        <result column="EXCHANGE_SERVER_ID" jdbcType="VARCHAR" property="exchangeServerId"/>
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="LAST_UPDATE" jdbcType="TIMESTAMP" property="lastUpdate"/>
+        <result column="STATUS" jdbcType="DECIMAL" property="status"/>
+        <result column="DOMAIN_ID" jdbcType="BIGINT" property="domainId"/>
+        <result column="KEEP_PERIOD" jdbcType="BIGINT" property="keepPeriod"/>
+        <result column="relName" jdbcType="VARCHAR" property="relname"/>
+        <result column="telphone" jdbcType="VARCHAR" property="telphone"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, ACCOUNT_ID, `NAME`, ACCOUNT_TYPE, DESCRIPTION, IS_INTERNAL_ACCOUNT, INTERNAL_ORG_ID,
+        INTERNAL_DEPT_ID, INTERNAL_USER_ID, EXCHANGE_SERVER_ID, CREATE_TIME, LAST_UPDATE,
+        `STATUS`, DOMAIN_ID, KEEP_PERIOD, relName, telphone
+    </sql>
+    <update id="updateBatch" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update EDOC_EXCHANGE_ACCOUNT
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="ACCOUNT_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.accountId,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="`NAME` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="ACCOUNT_TYPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.accountType,jdbcType=DECIMAL}
+                </foreach>
+            </trim>
+            <trim prefix="DESCRIPTION = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.description,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="IS_INTERNAL_ACCOUNT = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.isInternalAccount,jdbcType=DECIMAL}
+                </foreach>
+            </trim>
+            <trim prefix="INTERNAL_ORG_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.internalOrgId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="INTERNAL_DEPT_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.internalDeptId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="INTERNAL_USER_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.internalUserId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="EXCHANGE_SERVER_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.exchangeServerId,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="CREATE_TIME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=TIMESTAMP}
+                </foreach>
+            </trim>
+            <trim prefix="LAST_UPDATE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.lastUpdate,jdbcType=TIMESTAMP}
+                </foreach>
+            </trim>
+            <trim prefix="`STATUS` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.status,jdbcType=DECIMAL}
+                </foreach>
+            </trim>
+            <trim prefix="DOMAIN_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.domainId,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="KEEP_PERIOD = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.keepPeriod,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="relName = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.relname,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="telphone = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when ID = #{item.id,jdbcType=BIGINT} then #{item.telphone,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <update id="updateBatchSelective" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update EDOC_EXCHANGE_ACCOUNT
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="ACCOUNT_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.accountId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.accountId,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`NAME` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.name != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="ACCOUNT_TYPE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.accountType != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.accountType,jdbcType=DECIMAL}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="DESCRIPTION = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.description != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.description,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="IS_INTERNAL_ACCOUNT = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.isInternalAccount != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.isInternalAccount,jdbcType=DECIMAL}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="INTERNAL_ORG_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.internalOrgId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.internalOrgId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="INTERNAL_DEPT_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.internalDeptId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.internalDeptId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="INTERNAL_USER_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.internalUserId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.internalUserId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="EXCHANGE_SERVER_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.exchangeServerId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.exchangeServerId,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="CREATE_TIME = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.createTime != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=TIMESTAMP}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="LAST_UPDATE = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.lastUpdate != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.lastUpdate,jdbcType=TIMESTAMP}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`STATUS` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.status != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.status,jdbcType=DECIMAL}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="DOMAIN_ID = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.domainId != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.domainId,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="KEEP_PERIOD = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.keepPeriod != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.keepPeriod,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="relName = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.relname != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.relname,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="telphone = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.telphone != null">
+                        when ID = #{item.id,jdbcType=BIGINT} then #{item.telphone,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where ID in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <insert id="batchInsert" parameterType="map">
+        <!--@mbg.generated-->
+        insert into EDOC_EXCHANGE_ACCOUNT
+                (ID, ACCOUNT_ID, `NAME`, ACCOUNT_TYPE, DESCRIPTION, IS_INTERNAL_ACCOUNT, INTERNAL_ORG_ID,
+                 INTERNAL_DEPT_ID, INTERNAL_USER_ID, EXCHANGE_SERVER_ID, CREATE_TIME, LAST_UPDATE,
+                 `STATUS`, DOMAIN_ID, KEEP_PERIOD, relName, telphone)
+                values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id,jdbcType=BIGINT}, #{item.accountId,jdbcType=VARCHAR}, #{item.name,jdbcType=VARCHAR},
+             #{item.accountType,jdbcType=DECIMAL}, #{item.description,jdbcType=VARCHAR},
+             #{item.isInternalAccount,jdbcType=DECIMAL},
+             #{item.internalOrgId,jdbcType=BIGINT}, #{item.internalDeptId,jdbcType=BIGINT},
+             #{item.internalUserId,jdbcType=BIGINT}, #{item.exchangeServerId,jdbcType=VARCHAR},
+             #{item.createTime,jdbcType=TIMESTAMP}, #{item.lastUpdate,jdbcType=TIMESTAMP},
+             #{item.status,jdbcType=DECIMAL},
+             #{item.domainId,jdbcType=BIGINT}, #{item.keepPeriod,jdbcType=BIGINT}, #{item.relname,jdbcType=VARCHAR},
+             #{item.telphone,jdbcType=VARCHAR})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" parameterType="cn.biuaxia.odm.generate.domain.EdocExchangeAccount">
+        <!--@mbg.generated-->
+        insert into EDOC_EXCHANGE_ACCOUNT
+                (ID, ACCOUNT_ID, `NAME`, ACCOUNT_TYPE, DESCRIPTION, IS_INTERNAL_ACCOUNT, INTERNAL_ORG_ID,
+                 INTERNAL_DEPT_ID, INTERNAL_USER_ID, EXCHANGE_SERVER_ID, CREATE_TIME, LAST_UPDATE,
+                 `STATUS`, DOMAIN_ID, KEEP_PERIOD, relName, telphone)
+        values (#{id,jdbcType=BIGINT}, #{accountId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+                #{accountType,jdbcType=DECIMAL}, #{description,jdbcType=VARCHAR}, #{isInternalAccount,jdbcType=DECIMAL},
+                #{internalOrgId,jdbcType=BIGINT}, #{internalDeptId,jdbcType=BIGINT}, #{internalUserId,jdbcType=BIGINT},
+                #{exchangeServerId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+                #{lastUpdate,jdbcType=TIMESTAMP},
+                #{status,jdbcType=DECIMAL}, #{domainId,jdbcType=BIGINT}, #{keepPeriod,jdbcType=BIGINT},
+                #{relname,jdbcType=VARCHAR}, #{telphone,jdbcType=VARCHAR})
+        on duplicate key update ID                  = #{id,jdbcType=BIGINT},
+                                ACCOUNT_ID          = #{accountId,jdbcType=VARCHAR},
+                                `NAME`              = #{name,jdbcType=VARCHAR},
+                                ACCOUNT_TYPE        = #{accountType,jdbcType=DECIMAL},
+                                DESCRIPTION         = #{description,jdbcType=VARCHAR},
+                                IS_INTERNAL_ACCOUNT = #{isInternalAccount,jdbcType=DECIMAL},
+                                INTERNAL_ORG_ID     = #{internalOrgId,jdbcType=BIGINT},
+                                INTERNAL_DEPT_ID    = #{internalDeptId,jdbcType=BIGINT},
+                                INTERNAL_USER_ID    = #{internalUserId,jdbcType=BIGINT},
+                                EXCHANGE_SERVER_ID  = #{exchangeServerId,jdbcType=VARCHAR},
+                                CREATE_TIME         = #{createTime,jdbcType=TIMESTAMP},
+                                LAST_UPDATE         = #{lastUpdate,jdbcType=TIMESTAMP},
+                                `STATUS`            = #{status,jdbcType=DECIMAL},
+                                DOMAIN_ID           = #{domainId,jdbcType=BIGINT},
+                                KEEP_PERIOD         = #{keepPeriod,jdbcType=BIGINT},
+                                relName             = #{relname,jdbcType=VARCHAR},
+                                telphone            = #{telphone,jdbcType=VARCHAR}
+    </insert>
+    <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.odm.generate.domain.EdocExchangeAccount">
+        <!--@mbg.generated-->
+        insert into EDOC_EXCHANGE_ACCOUNT
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="accountId != null">
+                ACCOUNT_ID,
+            </if>
+            <if test="name != null">
+                `NAME`,
+            </if>
+            <if test="accountType != null">
+                ACCOUNT_TYPE,
+            </if>
+            <if test="description != null">
+                DESCRIPTION,
+            </if>
+            <if test="isInternalAccount != null">
+                IS_INTERNAL_ACCOUNT,
+            </if>
+            <if test="internalOrgId != null">
+                INTERNAL_ORG_ID,
+            </if>
+            <if test="internalDeptId != null">
+                INTERNAL_DEPT_ID,
+            </if>
+            <if test="internalUserId != null">
+                INTERNAL_USER_ID,
+            </if>
+            <if test="exchangeServerId != null">
+                EXCHANGE_SERVER_ID,
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME,
+            </if>
+            <if test="lastUpdate != null">
+                LAST_UPDATE,
+            </if>
+            <if test="status != null">
+                `STATUS`,
+            </if>
+            <if test="domainId != null">
+                DOMAIN_ID,
+            </if>
+            <if test="keepPeriod != null">
+                KEEP_PERIOD,
+            </if>
+            <if test="relname != null">
+                relName,
+            </if>
+            <if test="telphone != null">
+                telphone,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="accountId != null">
+                #{accountId,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="accountType != null">
+                #{accountType,jdbcType=DECIMAL},
+            </if>
+            <if test="description != null">
+                #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="isInternalAccount != null">
+                #{isInternalAccount,jdbcType=DECIMAL},
+            </if>
+            <if test="internalOrgId != null">
+                #{internalOrgId,jdbcType=BIGINT},
+            </if>
+            <if test="internalDeptId != null">
+                #{internalDeptId,jdbcType=BIGINT},
+            </if>
+            <if test="internalUserId != null">
+                #{internalUserId,jdbcType=BIGINT},
+            </if>
+            <if test="exchangeServerId != null">
+                #{exchangeServerId,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastUpdate != null">
+                #{lastUpdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=DECIMAL},
+            </if>
+            <if test="domainId != null">
+                #{domainId,jdbcType=BIGINT},
+            </if>
+            <if test="keepPeriod != null">
+                #{keepPeriod,jdbcType=BIGINT},
+            </if>
+            <if test="relname != null">
+                #{relname,jdbcType=VARCHAR},
+            </if>
+            <if test="telphone != null">
+                #{telphone,jdbcType=VARCHAR},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                ID = #{id,jdbcType=BIGINT},
+            </if>
+            <if test="accountId != null">
+                ACCOUNT_ID = #{accountId,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                `NAME` = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="accountType != null">
+                ACCOUNT_TYPE = #{accountType,jdbcType=DECIMAL},
+            </if>
+            <if test="description != null">
+                DESCRIPTION = #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="isInternalAccount != null">
+                IS_INTERNAL_ACCOUNT = #{isInternalAccount,jdbcType=DECIMAL},
+            </if>
+            <if test="internalOrgId != null">
+                INTERNAL_ORG_ID = #{internalOrgId,jdbcType=BIGINT},
+            </if>
+            <if test="internalDeptId != null">
+                INTERNAL_DEPT_ID = #{internalDeptId,jdbcType=BIGINT},
+            </if>
+            <if test="internalUserId != null">
+                INTERNAL_USER_ID = #{internalUserId,jdbcType=BIGINT},
+            </if>
+            <if test="exchangeServerId != null">
+                EXCHANGE_SERVER_ID = #{exchangeServerId,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastUpdate != null">
+                LAST_UPDATE = #{lastUpdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                `STATUS` = #{status,jdbcType=DECIMAL},
+            </if>
+            <if test="domainId != null">
+                DOMAIN_ID = #{domainId,jdbcType=BIGINT},
+            </if>
+            <if test="keepPeriod != null">
+                KEEP_PERIOD = #{keepPeriod,jdbcType=BIGINT},
+            </if>
+            <if test="relname != null">
+                relName = #{relname,jdbcType=VARCHAR},
+            </if>
+            <if test="telphone != null">
+                telphone = #{telphone,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+</mapper>
