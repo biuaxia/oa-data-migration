@@ -10,9 +10,7 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Slf4j
 @RunWith(SpringRunner.class)
@@ -23,12 +21,15 @@ public class OaDataMigrationApplicationTests {
     public void analysisExistDataGroupByLength() {
         String basePath = "/Users/biuaxia/Downloads/D/D";
         List<String> listFileNames = FileUtil.listFileNames(basePath);
+        listFileNames.removeIf(item -> !item.contains(".json"));
         log.info("{}", listFileNames);
         listFileNames.forEach(item -> {
+            log.info("=====================");
             String filePath = StrUtil.format("{}/{}", basePath, item);
+            log.info("[{}]", StrUtil.subBefore(item, ".", true));
             String readUtf8String = FileUtil.readUtf8String(filePath);
             JSONObject jsonObject = JSONUtil.parseObj(readUtf8String);
-            log.info("\t{} -> [{}]", StrUtil.subBefore(item, ".", true), jsonObject.size());
+            log.info("\t[{}]", jsonObject.size());
             Set<String> keySet = jsonObject.keySet();
             List<Integer> keyLengths = new ArrayList<>();
             keySet.removeIf(k -> {
@@ -39,7 +40,11 @@ public class OaDataMigrationApplicationTests {
                     return false;
                 }
             });
-            FileUtil.writeUtf8String(JSONUtil.toJsonPrettyStr(keySet),
+            Map<String, List<Long>> m = new HashMap<>();
+            for (String s : keySet) {
+                m.put(s, jsonObject.getJSONArray(s).toList(Long.class));
+            }
+            FileUtil.writeUtf8String(JSONUtil.toJsonPrettyStr(m),
                     StrUtil.format("{}/new/{}", basePath, item));
         });
     }
