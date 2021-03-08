@@ -1,0 +1,1438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.data.migration.generate.orcl.mapper.MvFormsetInstMapper">
+  <resultMap id="BaseResultMap" type="cn.biuaxia.data.migration.generate.orcl.domain.MvFormsetInst">
+    <!--@mbg.generated-->
+    <!--@Table MV_FORMSET_INST-->
+    <id column="FORMSET_INST_ID" jdbcType="DECIMAL" property="formsetInstId" />
+    <result column="PROC_ID" jdbcType="DECIMAL" property="procId" />
+    <result column="FORM_ID" jdbcType="DECIMAL" property="formId" />
+    <result column="FOLDER_ID" jdbcType="DECIMAL" property="folderId" />
+    <result column="FORMSET_ID" jdbcType="DECIMAL" property="formsetId" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="STATUS" jdbcType="DECIMAL" property="status" />
+    <result column="TO_PIGEONHOLE" jdbcType="DECIMAL" property="toPigeonhole" />
+    <result column="TO_REPOSITORY" jdbcType="DECIMAL" property="toRepository" />
+    <result column="LOCKING_ACTIVITY" jdbcType="VARCHAR" property="lockingActivity" />
+    <result column="FORMSET_NAME" jdbcType="VARCHAR" property="formsetName" />
+    <result column="TEXT_MODE" jdbcType="VARCHAR" property="textMode" />
+    <result column="FOLDER_NAME" jdbcType="VARCHAR" property="folderName" />
+    <result column="CREATOR_ID" jdbcType="DECIMAL" property="creatorId" />
+    <result column="CREATOR" jdbcType="VARCHAR" property="creator" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="LOCKER_ID" jdbcType="DECIMAL" property="lockerId" />
+    <result column="LOCKER" jdbcType="VARCHAR" property="locker" />
+    <result column="LOCK_TIME" jdbcType="TIMESTAMP" property="lockTime" />
+    <result column="EXT1" jdbcType="VARCHAR" property="ext1" />
+    <result column="EXT2" jdbcType="VARCHAR" property="ext2" />
+    <result column="EXT3" jdbcType="VARCHAR" property="ext3" />
+    <result column="EXT4" jdbcType="VARCHAR" property="ext4" />
+    <result column="EXT5" jdbcType="VARCHAR" property="ext5" />
+    <result column="EXT6" jdbcType="VARCHAR" property="ext6" />
+    <result column="EXT7" jdbcType="VARCHAR" property="ext7" />
+    <result column="EXT8" jdbcType="VARCHAR" property="ext8" />
+    <result column="EXT9" jdbcType="VARCHAR" property="ext9" />
+    <result column="EXT10" jdbcType="VARCHAR" property="ext10" />
+    <result column="EXT11" jdbcType="VARCHAR" property="ext11" />
+    <result column="EXT12" jdbcType="VARCHAR" property="ext12" />
+    <result column="EXT13" jdbcType="VARCHAR" property="ext13" />
+    <result column="EXT14" jdbcType="VARCHAR" property="ext14" />
+    <result column="EXT15" jdbcType="VARCHAR" property="ext15" />
+    <result column="EXT16" jdbcType="VARCHAR" property="ext16" />
+    <result column="EXT17" jdbcType="VARCHAR" property="ext17" />
+    <result column="EXT18" jdbcType="VARCHAR" property="ext18" />
+    <result column="EXT19" jdbcType="VARCHAR" property="ext19" />
+    <result column="EXT20" jdbcType="VARCHAR" property="ext20" />
+    <result column="EXT21" jdbcType="VARCHAR" property="ext21" />
+    <result column="EXT22" jdbcType="VARCHAR" property="ext22" />
+    <result column="EXT23" jdbcType="DECIMAL" property="ext23" />
+    <result column="EXT24" jdbcType="DECIMAL" property="ext24" />
+    <result column="EXT25" jdbcType="DECIMAL" property="ext25" />
+    <result column="EXT26" jdbcType="DECIMAL" property="ext26" />
+    <result column="EXT27" jdbcType="TIMESTAMP" property="ext27" />
+    <result column="EXT28" jdbcType="TIMESTAMP" property="ext28" />
+    <result column="EXT29" jdbcType="TIMESTAMP" property="ext29" />
+    <result column="EXT30" jdbcType="TIMESTAMP" property="ext30" />
+    <result column="SYS_TYPE" jdbcType="DECIMAL" property="sysType" />
+    <result column="GUID" jdbcType="VARCHAR" property="guid" />
+    <result column="CREATOR_DEPT" jdbcType="VARCHAR" property="creatorDept" />
+    <result column="CREATOR_DEPT_ID" jdbcType="DECIMAL" property="creatorDeptId" />
+    <result column="FORMSET_GUID" jdbcType="VARCHAR" property="formsetGuid" />
+    <result column="CREATOR_UNIT" jdbcType="VARCHAR" property="creatorUnit" />
+    <result column="CREATOR_UNIT_ID" jdbcType="DECIMAL" property="creatorUnitId" />
+    <result column="URGENT" jdbcType="DECIMAL" property="urgent" />
+    <result column="NEEDSEND" jdbcType="DECIMAL" property="needsend" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    FORMSET_INST_ID, PROC_ID, FORM_ID, FOLDER_ID, FORMSET_ID, "NAME", "STATUS", TO_PIGEONHOLE, 
+    TO_REPOSITORY, LOCKING_ACTIVITY, FORMSET_NAME, TEXT_MODE, FOLDER_NAME, CREATOR_ID, 
+    CREATOR, CREATE_TIME, LOCKER_ID, LOCKER, LOCK_TIME, EXT1, EXT2, EXT3, EXT4, EXT5, 
+    EXT6, EXT7, EXT8, EXT9, EXT10, EXT11, EXT12, EXT13, EXT14, EXT15, EXT16, EXT17, EXT18, 
+    EXT19, EXT20, EXT21, EXT22, EXT23, EXT24, EXT25, EXT26, EXT27, EXT28, EXT29, EXT30, 
+    SYS_TYPE, GUID, CREATOR_DEPT, CREATOR_DEPT_ID, FORMSET_GUID, CREATOR_UNIT, CREATOR_UNIT_ID, 
+    URGENT, NEEDSEND
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update MV_FORMSET_INST
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="PROC_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.procId,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="FORM_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.formId,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="FOLDER_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.folderId,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="FORMSET_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.formsetId,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="&quot;NAME&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.name,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="&quot;STATUS&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.status,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="TO_PIGEONHOLE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.toPigeonhole,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="TO_REPOSITORY = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.toRepository,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="LOCKING_ACTIVITY = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.lockingActivity,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="FORMSET_NAME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.formsetName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="TEXT_MODE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.textMode,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="FOLDER_NAME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.folderName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="CREATOR_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.creatorId,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="CREATOR = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.creator,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="CREATE_TIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.createTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="LOCKER_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.lockerId,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="LOCKER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.locker,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="LOCK_TIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.lockTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="EXT1 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext1,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT2 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext2,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT3 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext3,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT4 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext4,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT5 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext5,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT6 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext6,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT7 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext7,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT8 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext8,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT9 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext9,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT10 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext10,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT11 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext11,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT12 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext12,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT13 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext13,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT14 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext14,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT15 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext15,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT16 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext16,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT17 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext17,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT18 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext18,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT19 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext19,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT20 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext20,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT21 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext21,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT22 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext22,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EXT23 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext23,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="EXT24 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext24,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="EXT25 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext25,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="EXT26 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext26,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="EXT27 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext27,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="EXT28 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext28,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="EXT29 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext29,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="EXT30 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext30,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="SYS_TYPE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.sysType,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="GUID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.guid,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="CREATOR_DEPT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.creatorDept,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="CREATOR_DEPT_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.creatorDeptId,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="FORMSET_GUID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.formsetGuid,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="CREATOR_UNIT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.creatorUnit,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="CREATOR_UNIT_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.creatorUnitId,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="URGENT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.urgent,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="NEEDSEND = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.needsend,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+    </trim>
+    where FORMSET_INST_ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.formsetInstId,jdbcType=DECIMAL}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update MV_FORMSET_INST
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="PROC_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.procId != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.procId,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FORM_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.formId != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.formId,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FOLDER_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.folderId != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.folderId,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FORMSET_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.formsetId != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.formsetId,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="&quot;NAME&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.name != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.name,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="&quot;STATUS&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.status != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.status,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="TO_PIGEONHOLE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.toPigeonhole != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.toPigeonhole,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="TO_REPOSITORY = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.toRepository != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.toRepository,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="LOCKING_ACTIVITY = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.lockingActivity != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.lockingActivity,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FORMSET_NAME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.formsetName != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.formsetName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="TEXT_MODE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.textMode != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.textMode,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FOLDER_NAME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.folderName != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.folderName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CREATOR_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.creatorId != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.creatorId,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CREATOR = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.creator != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.creator,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CREATE_TIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.createTime != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.createTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="LOCKER_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.lockerId != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.lockerId,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="LOCKER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.locker != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.locker,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="LOCK_TIME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.lockTime != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.lockTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT1 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext1 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext1,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT2 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext2 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext2,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT3 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext3 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext3,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT4 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext4 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext4,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT5 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext5 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext5,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT6 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext6 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext6,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT7 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext7 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext7,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT8 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext8 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext8,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT9 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext9 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext9,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT10 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext10 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext10,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT11 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext11 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext11,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT12 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext12 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext12,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT13 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext13 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext13,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT14 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext14 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext14,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT15 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext15 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext15,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT16 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext16 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext16,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT17 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext17 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext17,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT18 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext18 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext18,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT19 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext19 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext19,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT20 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext20 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext20,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT21 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext21 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext21,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT22 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext22 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext22,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT23 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext23 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext23,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT24 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext24 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext24,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT25 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext25 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext25,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT26 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext26 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext26,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT27 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext27 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext27,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT28 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext28 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext28,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT29 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext29 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext29,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EXT30 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ext30 != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.ext30,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="SYS_TYPE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.sysType != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.sysType,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="GUID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.guid != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.guid,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CREATOR_DEPT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.creatorDept != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.creatorDept,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CREATOR_DEPT_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.creatorDeptId != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.creatorDeptId,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FORMSET_GUID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.formsetGuid != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.formsetGuid,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CREATOR_UNIT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.creatorUnit != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.creatorUnit,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CREATOR_UNIT_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.creatorUnitId != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.creatorUnitId,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="URGENT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.urgent != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.urgent,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="NEEDSEND = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.needsend != null">
+            when FORMSET_INST_ID = #{item.formsetInstId,jdbcType=DECIMAL} then #{item.needsend,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where FORMSET_INST_ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.formsetInstId,jdbcType=DECIMAL}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into MV_FORMSET_INST
+    (FORMSET_INST_ID, PROC_ID, FORM_ID, FOLDER_ID, FORMSET_ID, "NAME", "STATUS", TO_PIGEONHOLE, 
+      TO_REPOSITORY, LOCKING_ACTIVITY, FORMSET_NAME, TEXT_MODE, FOLDER_NAME, CREATOR_ID, 
+      CREATOR, CREATE_TIME, LOCKER_ID, LOCKER, LOCK_TIME, EXT1, EXT2, EXT3, EXT4, EXT5, 
+      EXT6, EXT7, EXT8, EXT9, EXT10, EXT11, EXT12, EXT13, EXT14, EXT15, EXT16, EXT17, 
+      EXT18, EXT19, EXT20, EXT21, EXT22, EXT23, EXT24, EXT25, EXT26, EXT27, EXT28, EXT29, 
+      EXT30, SYS_TYPE, GUID, CREATOR_DEPT, CREATOR_DEPT_ID, FORMSET_GUID, CREATOR_UNIT, 
+      CREATOR_UNIT_ID, URGENT, NEEDSEND)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.formsetInstId,jdbcType=DECIMAL}, #{item.procId,jdbcType=DECIMAL}, #{item.formId,jdbcType=DECIMAL}, 
+        #{item.folderId,jdbcType=DECIMAL}, #{item.formsetId,jdbcType=DECIMAL}, #{item.name,jdbcType=VARCHAR}, 
+        #{item.status,jdbcType=DECIMAL}, #{item.toPigeonhole,jdbcType=DECIMAL}, #{item.toRepository,jdbcType=DECIMAL}, 
+        #{item.lockingActivity,jdbcType=VARCHAR}, #{item.formsetName,jdbcType=VARCHAR}, 
+        #{item.textMode,jdbcType=VARCHAR}, #{item.folderName,jdbcType=VARCHAR}, #{item.creatorId,jdbcType=DECIMAL}, 
+        #{item.creator,jdbcType=VARCHAR}, #{item.createTime,jdbcType=TIMESTAMP}, #{item.lockerId,jdbcType=DECIMAL}, 
+        #{item.locker,jdbcType=VARCHAR}, #{item.lockTime,jdbcType=TIMESTAMP}, #{item.ext1,jdbcType=VARCHAR}, 
+        #{item.ext2,jdbcType=VARCHAR}, #{item.ext3,jdbcType=VARCHAR}, #{item.ext4,jdbcType=VARCHAR}, 
+        #{item.ext5,jdbcType=VARCHAR}, #{item.ext6,jdbcType=VARCHAR}, #{item.ext7,jdbcType=VARCHAR}, 
+        #{item.ext8,jdbcType=VARCHAR}, #{item.ext9,jdbcType=VARCHAR}, #{item.ext10,jdbcType=VARCHAR}, 
+        #{item.ext11,jdbcType=VARCHAR}, #{item.ext12,jdbcType=VARCHAR}, #{item.ext13,jdbcType=VARCHAR}, 
+        #{item.ext14,jdbcType=VARCHAR}, #{item.ext15,jdbcType=VARCHAR}, #{item.ext16,jdbcType=VARCHAR}, 
+        #{item.ext17,jdbcType=VARCHAR}, #{item.ext18,jdbcType=VARCHAR}, #{item.ext19,jdbcType=VARCHAR}, 
+        #{item.ext20,jdbcType=VARCHAR}, #{item.ext21,jdbcType=VARCHAR}, #{item.ext22,jdbcType=VARCHAR}, 
+        #{item.ext23,jdbcType=DECIMAL}, #{item.ext24,jdbcType=DECIMAL}, #{item.ext25,jdbcType=DECIMAL}, 
+        #{item.ext26,jdbcType=DECIMAL}, #{item.ext27,jdbcType=TIMESTAMP}, #{item.ext28,jdbcType=TIMESTAMP}, 
+        #{item.ext29,jdbcType=TIMESTAMP}, #{item.ext30,jdbcType=TIMESTAMP}, #{item.sysType,jdbcType=DECIMAL}, 
+        #{item.guid,jdbcType=VARCHAR}, #{item.creatorDept,jdbcType=VARCHAR}, #{item.creatorDeptId,jdbcType=DECIMAL}, 
+        #{item.formsetGuid,jdbcType=VARCHAR}, #{item.creatorUnit,jdbcType=VARCHAR}, #{item.creatorUnitId,jdbcType=DECIMAL}, 
+        #{item.urgent,jdbcType=DECIMAL}, #{item.needsend,jdbcType=DECIMAL})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="cn.biuaxia.data.migration.generate.orcl.domain.MvFormsetInst">
+    <!--@mbg.generated-->
+    insert into MV_FORMSET_INST
+    (FORMSET_INST_ID, PROC_ID, FORM_ID, FOLDER_ID, FORMSET_ID, "NAME", "STATUS", TO_PIGEONHOLE, 
+      TO_REPOSITORY, LOCKING_ACTIVITY, FORMSET_NAME, TEXT_MODE, FOLDER_NAME, CREATOR_ID, 
+      CREATOR, CREATE_TIME, LOCKER_ID, LOCKER, LOCK_TIME, EXT1, EXT2, EXT3, EXT4, EXT5, 
+      EXT6, EXT7, EXT8, EXT9, EXT10, EXT11, EXT12, EXT13, EXT14, EXT15, EXT16, EXT17, 
+      EXT18, EXT19, EXT20, EXT21, EXT22, EXT23, EXT24, EXT25, EXT26, EXT27, EXT28, EXT29, 
+      EXT30, SYS_TYPE, GUID, CREATOR_DEPT, CREATOR_DEPT_ID, FORMSET_GUID, CREATOR_UNIT, 
+      CREATOR_UNIT_ID, URGENT, NEEDSEND)
+    values
+    (#{formsetInstId,jdbcType=DECIMAL}, #{procId,jdbcType=DECIMAL}, #{formId,jdbcType=DECIMAL}, 
+      #{folderId,jdbcType=DECIMAL}, #{formsetId,jdbcType=DECIMAL}, #{name,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{toPigeonhole,jdbcType=DECIMAL}, #{toRepository,jdbcType=DECIMAL}, 
+      #{lockingActivity,jdbcType=VARCHAR}, #{formsetName,jdbcType=VARCHAR}, #{textMode,jdbcType=VARCHAR}, 
+      #{folderName,jdbcType=VARCHAR}, #{creatorId,jdbcType=DECIMAL}, #{creator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lockerId,jdbcType=DECIMAL}, #{locker,jdbcType=VARCHAR}, 
+      #{lockTime,jdbcType=TIMESTAMP}, #{ext1,jdbcType=VARCHAR}, #{ext2,jdbcType=VARCHAR}, 
+      #{ext3,jdbcType=VARCHAR}, #{ext4,jdbcType=VARCHAR}, #{ext5,jdbcType=VARCHAR}, #{ext6,jdbcType=VARCHAR}, 
+      #{ext7,jdbcType=VARCHAR}, #{ext8,jdbcType=VARCHAR}, #{ext9,jdbcType=VARCHAR}, #{ext10,jdbcType=VARCHAR}, 
+      #{ext11,jdbcType=VARCHAR}, #{ext12,jdbcType=VARCHAR}, #{ext13,jdbcType=VARCHAR}, 
+      #{ext14,jdbcType=VARCHAR}, #{ext15,jdbcType=VARCHAR}, #{ext16,jdbcType=VARCHAR}, 
+      #{ext17,jdbcType=VARCHAR}, #{ext18,jdbcType=VARCHAR}, #{ext19,jdbcType=VARCHAR}, 
+      #{ext20,jdbcType=VARCHAR}, #{ext21,jdbcType=VARCHAR}, #{ext22,jdbcType=VARCHAR}, 
+      #{ext23,jdbcType=DECIMAL}, #{ext24,jdbcType=DECIMAL}, #{ext25,jdbcType=DECIMAL}, 
+      #{ext26,jdbcType=DECIMAL}, #{ext27,jdbcType=TIMESTAMP}, #{ext28,jdbcType=TIMESTAMP}, 
+      #{ext29,jdbcType=TIMESTAMP}, #{ext30,jdbcType=TIMESTAMP}, #{sysType,jdbcType=DECIMAL}, 
+      #{guid,jdbcType=VARCHAR}, #{creatorDept,jdbcType=VARCHAR}, #{creatorDeptId,jdbcType=DECIMAL}, 
+      #{formsetGuid,jdbcType=VARCHAR}, #{creatorUnit,jdbcType=VARCHAR}, #{creatorUnitId,jdbcType=DECIMAL}, 
+      #{urgent,jdbcType=DECIMAL}, #{needsend,jdbcType=DECIMAL})
+    on duplicate key update 
+    FORMSET_INST_ID = #{formsetInstId,jdbcType=DECIMAL}, 
+    PROC_ID = #{procId,jdbcType=DECIMAL}, 
+    FORM_ID = #{formId,jdbcType=DECIMAL}, 
+    FOLDER_ID = #{folderId,jdbcType=DECIMAL}, 
+    FORMSET_ID = #{formsetId,jdbcType=DECIMAL}, 
+    "NAME" = #{name,jdbcType=VARCHAR}, 
+    "STATUS" = #{status,jdbcType=DECIMAL}, 
+    TO_PIGEONHOLE = #{toPigeonhole,jdbcType=DECIMAL}, 
+    TO_REPOSITORY = #{toRepository,jdbcType=DECIMAL}, 
+    LOCKING_ACTIVITY = #{lockingActivity,jdbcType=VARCHAR}, 
+    FORMSET_NAME = #{formsetName,jdbcType=VARCHAR}, 
+    TEXT_MODE = #{textMode,jdbcType=VARCHAR}, 
+    FOLDER_NAME = #{folderName,jdbcType=VARCHAR}, 
+    CREATOR_ID = #{creatorId,jdbcType=DECIMAL}, 
+    CREATOR = #{creator,jdbcType=VARCHAR}, 
+    CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}, 
+    LOCKER_ID = #{lockerId,jdbcType=DECIMAL}, 
+    LOCKER = #{locker,jdbcType=VARCHAR}, 
+    LOCK_TIME = #{lockTime,jdbcType=TIMESTAMP}, 
+    EXT1 = #{ext1,jdbcType=VARCHAR}, 
+    EXT2 = #{ext2,jdbcType=VARCHAR}, 
+    EXT3 = #{ext3,jdbcType=VARCHAR}, 
+    EXT4 = #{ext4,jdbcType=VARCHAR}, 
+    EXT5 = #{ext5,jdbcType=VARCHAR}, 
+    EXT6 = #{ext6,jdbcType=VARCHAR}, 
+    EXT7 = #{ext7,jdbcType=VARCHAR}, 
+    EXT8 = #{ext8,jdbcType=VARCHAR}, 
+    EXT9 = #{ext9,jdbcType=VARCHAR}, 
+    EXT10 = #{ext10,jdbcType=VARCHAR}, 
+    EXT11 = #{ext11,jdbcType=VARCHAR}, 
+    EXT12 = #{ext12,jdbcType=VARCHAR}, 
+    EXT13 = #{ext13,jdbcType=VARCHAR}, 
+    EXT14 = #{ext14,jdbcType=VARCHAR}, 
+    EXT15 = #{ext15,jdbcType=VARCHAR}, 
+    EXT16 = #{ext16,jdbcType=VARCHAR}, 
+    EXT17 = #{ext17,jdbcType=VARCHAR}, 
+    EXT18 = #{ext18,jdbcType=VARCHAR}, 
+    EXT19 = #{ext19,jdbcType=VARCHAR}, 
+    EXT20 = #{ext20,jdbcType=VARCHAR}, 
+    EXT21 = #{ext21,jdbcType=VARCHAR}, 
+    EXT22 = #{ext22,jdbcType=VARCHAR}, 
+    EXT23 = #{ext23,jdbcType=DECIMAL}, 
+    EXT24 = #{ext24,jdbcType=DECIMAL}, 
+    EXT25 = #{ext25,jdbcType=DECIMAL}, 
+    EXT26 = #{ext26,jdbcType=DECIMAL}, 
+    EXT27 = #{ext27,jdbcType=TIMESTAMP}, 
+    EXT28 = #{ext28,jdbcType=TIMESTAMP}, 
+    EXT29 = #{ext29,jdbcType=TIMESTAMP}, 
+    EXT30 = #{ext30,jdbcType=TIMESTAMP}, 
+    SYS_TYPE = #{sysType,jdbcType=DECIMAL}, 
+    GUID = #{guid,jdbcType=VARCHAR}, 
+    CREATOR_DEPT = #{creatorDept,jdbcType=VARCHAR}, 
+    CREATOR_DEPT_ID = #{creatorDeptId,jdbcType=DECIMAL}, 
+    FORMSET_GUID = #{formsetGuid,jdbcType=VARCHAR}, 
+    CREATOR_UNIT = #{creatorUnit,jdbcType=VARCHAR}, 
+    CREATOR_UNIT_ID = #{creatorUnitId,jdbcType=DECIMAL}, 
+    URGENT = #{urgent,jdbcType=DECIMAL}, 
+    NEEDSEND = #{needsend,jdbcType=DECIMAL}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.data.migration.generate.orcl.domain.MvFormsetInst">
+    <!--@mbg.generated-->
+    insert into MV_FORMSET_INST
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="formsetInstId != null">
+        FORMSET_INST_ID,
+      </if>
+      <if test="procId != null">
+        PROC_ID,
+      </if>
+      <if test="formId != null">
+        FORM_ID,
+      </if>
+      <if test="folderId != null">
+        FOLDER_ID,
+      </if>
+      <if test="formsetId != null">
+        FORMSET_ID,
+      </if>
+      <if test="name != null">
+        "NAME",
+      </if>
+      <if test="status != null">
+        "STATUS",
+      </if>
+      <if test="toPigeonhole != null">
+        TO_PIGEONHOLE,
+      </if>
+      <if test="toRepository != null">
+        TO_REPOSITORY,
+      </if>
+      <if test="lockingActivity != null">
+        LOCKING_ACTIVITY,
+      </if>
+      <if test="formsetName != null">
+        FORMSET_NAME,
+      </if>
+      <if test="textMode != null">
+        TEXT_MODE,
+      </if>
+      <if test="folderName != null">
+        FOLDER_NAME,
+      </if>
+      <if test="creatorId != null">
+        CREATOR_ID,
+      </if>
+      <if test="creator != null">
+        CREATOR,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="lockerId != null">
+        LOCKER_ID,
+      </if>
+      <if test="locker != null">
+        LOCKER,
+      </if>
+      <if test="lockTime != null">
+        LOCK_TIME,
+      </if>
+      <if test="ext1 != null">
+        EXT1,
+      </if>
+      <if test="ext2 != null">
+        EXT2,
+      </if>
+      <if test="ext3 != null">
+        EXT3,
+      </if>
+      <if test="ext4 != null">
+        EXT4,
+      </if>
+      <if test="ext5 != null">
+        EXT5,
+      </if>
+      <if test="ext6 != null">
+        EXT6,
+      </if>
+      <if test="ext7 != null">
+        EXT7,
+      </if>
+      <if test="ext8 != null">
+        EXT8,
+      </if>
+      <if test="ext9 != null">
+        EXT9,
+      </if>
+      <if test="ext10 != null">
+        EXT10,
+      </if>
+      <if test="ext11 != null">
+        EXT11,
+      </if>
+      <if test="ext12 != null">
+        EXT12,
+      </if>
+      <if test="ext13 != null">
+        EXT13,
+      </if>
+      <if test="ext14 != null">
+        EXT14,
+      </if>
+      <if test="ext15 != null">
+        EXT15,
+      </if>
+      <if test="ext16 != null">
+        EXT16,
+      </if>
+      <if test="ext17 != null">
+        EXT17,
+      </if>
+      <if test="ext18 != null">
+        EXT18,
+      </if>
+      <if test="ext19 != null">
+        EXT19,
+      </if>
+      <if test="ext20 != null">
+        EXT20,
+      </if>
+      <if test="ext21 != null">
+        EXT21,
+      </if>
+      <if test="ext22 != null">
+        EXT22,
+      </if>
+      <if test="ext23 != null">
+        EXT23,
+      </if>
+      <if test="ext24 != null">
+        EXT24,
+      </if>
+      <if test="ext25 != null">
+        EXT25,
+      </if>
+      <if test="ext26 != null">
+        EXT26,
+      </if>
+      <if test="ext27 != null">
+        EXT27,
+      </if>
+      <if test="ext28 != null">
+        EXT28,
+      </if>
+      <if test="ext29 != null">
+        EXT29,
+      </if>
+      <if test="ext30 != null">
+        EXT30,
+      </if>
+      <if test="sysType != null">
+        SYS_TYPE,
+      </if>
+      <if test="guid != null">
+        GUID,
+      </if>
+      <if test="creatorDept != null">
+        CREATOR_DEPT,
+      </if>
+      <if test="creatorDeptId != null">
+        CREATOR_DEPT_ID,
+      </if>
+      <if test="formsetGuid != null">
+        FORMSET_GUID,
+      </if>
+      <if test="creatorUnit != null">
+        CREATOR_UNIT,
+      </if>
+      <if test="creatorUnitId != null">
+        CREATOR_UNIT_ID,
+      </if>
+      <if test="urgent != null">
+        URGENT,
+      </if>
+      <if test="needsend != null">
+        NEEDSEND,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="formsetInstId != null">
+        #{formsetInstId,jdbcType=DECIMAL},
+      </if>
+      <if test="procId != null">
+        #{procId,jdbcType=DECIMAL},
+      </if>
+      <if test="formId != null">
+        #{formId,jdbcType=DECIMAL},
+      </if>
+      <if test="folderId != null">
+        #{folderId,jdbcType=DECIMAL},
+      </if>
+      <if test="formsetId != null">
+        #{formsetId,jdbcType=DECIMAL},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="toPigeonhole != null">
+        #{toPigeonhole,jdbcType=DECIMAL},
+      </if>
+      <if test="toRepository != null">
+        #{toRepository,jdbcType=DECIMAL},
+      </if>
+      <if test="lockingActivity != null">
+        #{lockingActivity,jdbcType=VARCHAR},
+      </if>
+      <if test="formsetName != null">
+        #{formsetName,jdbcType=VARCHAR},
+      </if>
+      <if test="textMode != null">
+        #{textMode,jdbcType=VARCHAR},
+      </if>
+      <if test="folderName != null">
+        #{folderName,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=DECIMAL},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lockerId != null">
+        #{lockerId,jdbcType=DECIMAL},
+      </if>
+      <if test="locker != null">
+        #{locker,jdbcType=VARCHAR},
+      </if>
+      <if test="lockTime != null">
+        #{lockTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ext1 != null">
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null">
+        #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null">
+        #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null">
+        #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null">
+        #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null">
+        #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null">
+        #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null">
+        #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null">
+        #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null">
+        #{ext10,jdbcType=VARCHAR},
+      </if>
+      <if test="ext11 != null">
+        #{ext11,jdbcType=VARCHAR},
+      </if>
+      <if test="ext12 != null">
+        #{ext12,jdbcType=VARCHAR},
+      </if>
+      <if test="ext13 != null">
+        #{ext13,jdbcType=VARCHAR},
+      </if>
+      <if test="ext14 != null">
+        #{ext14,jdbcType=VARCHAR},
+      </if>
+      <if test="ext15 != null">
+        #{ext15,jdbcType=VARCHAR},
+      </if>
+      <if test="ext16 != null">
+        #{ext16,jdbcType=VARCHAR},
+      </if>
+      <if test="ext17 != null">
+        #{ext17,jdbcType=VARCHAR},
+      </if>
+      <if test="ext18 != null">
+        #{ext18,jdbcType=VARCHAR},
+      </if>
+      <if test="ext19 != null">
+        #{ext19,jdbcType=VARCHAR},
+      </if>
+      <if test="ext20 != null">
+        #{ext20,jdbcType=VARCHAR},
+      </if>
+      <if test="ext21 != null">
+        #{ext21,jdbcType=VARCHAR},
+      </if>
+      <if test="ext22 != null">
+        #{ext22,jdbcType=VARCHAR},
+      </if>
+      <if test="ext23 != null">
+        #{ext23,jdbcType=DECIMAL},
+      </if>
+      <if test="ext24 != null">
+        #{ext24,jdbcType=DECIMAL},
+      </if>
+      <if test="ext25 != null">
+        #{ext25,jdbcType=DECIMAL},
+      </if>
+      <if test="ext26 != null">
+        #{ext26,jdbcType=DECIMAL},
+      </if>
+      <if test="ext27 != null">
+        #{ext27,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ext28 != null">
+        #{ext28,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ext29 != null">
+        #{ext29,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ext30 != null">
+        #{ext30,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysType != null">
+        #{sysType,jdbcType=DECIMAL},
+      </if>
+      <if test="guid != null">
+        #{guid,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorDept != null">
+        #{creatorDept,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorDeptId != null">
+        #{creatorDeptId,jdbcType=DECIMAL},
+      </if>
+      <if test="formsetGuid != null">
+        #{formsetGuid,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorUnit != null">
+        #{creatorUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorUnitId != null">
+        #{creatorUnitId,jdbcType=DECIMAL},
+      </if>
+      <if test="urgent != null">
+        #{urgent,jdbcType=DECIMAL},
+      </if>
+      <if test="needsend != null">
+        #{needsend,jdbcType=DECIMAL},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="formsetInstId != null">
+        FORMSET_INST_ID = #{formsetInstId,jdbcType=DECIMAL},
+      </if>
+      <if test="procId != null">
+        PROC_ID = #{procId,jdbcType=DECIMAL},
+      </if>
+      <if test="formId != null">
+        FORM_ID = #{formId,jdbcType=DECIMAL},
+      </if>
+      <if test="folderId != null">
+        FOLDER_ID = #{folderId,jdbcType=DECIMAL},
+      </if>
+      <if test="formsetId != null">
+        FORMSET_ID = #{formsetId,jdbcType=DECIMAL},
+      </if>
+      <if test="name != null">
+        "NAME" = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        "STATUS" = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="toPigeonhole != null">
+        TO_PIGEONHOLE = #{toPigeonhole,jdbcType=DECIMAL},
+      </if>
+      <if test="toRepository != null">
+        TO_REPOSITORY = #{toRepository,jdbcType=DECIMAL},
+      </if>
+      <if test="lockingActivity != null">
+        LOCKING_ACTIVITY = #{lockingActivity,jdbcType=VARCHAR},
+      </if>
+      <if test="formsetName != null">
+        FORMSET_NAME = #{formsetName,jdbcType=VARCHAR},
+      </if>
+      <if test="textMode != null">
+        TEXT_MODE = #{textMode,jdbcType=VARCHAR},
+      </if>
+      <if test="folderName != null">
+        FOLDER_NAME = #{folderName,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null">
+        CREATOR_ID = #{creatorId,jdbcType=DECIMAL},
+      </if>
+      <if test="creator != null">
+        CREATOR = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lockerId != null">
+        LOCKER_ID = #{lockerId,jdbcType=DECIMAL},
+      </if>
+      <if test="locker != null">
+        LOCKER = #{locker,jdbcType=VARCHAR},
+      </if>
+      <if test="lockTime != null">
+        LOCK_TIME = #{lockTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ext1 != null">
+        EXT1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null">
+        EXT2 = #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null">
+        EXT3 = #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null">
+        EXT4 = #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="ext5 != null">
+        EXT5 = #{ext5,jdbcType=VARCHAR},
+      </if>
+      <if test="ext6 != null">
+        EXT6 = #{ext6,jdbcType=VARCHAR},
+      </if>
+      <if test="ext7 != null">
+        EXT7 = #{ext7,jdbcType=VARCHAR},
+      </if>
+      <if test="ext8 != null">
+        EXT8 = #{ext8,jdbcType=VARCHAR},
+      </if>
+      <if test="ext9 != null">
+        EXT9 = #{ext9,jdbcType=VARCHAR},
+      </if>
+      <if test="ext10 != null">
+        EXT10 = #{ext10,jdbcType=VARCHAR},
+      </if>
+      <if test="ext11 != null">
+        EXT11 = #{ext11,jdbcType=VARCHAR},
+      </if>
+      <if test="ext12 != null">
+        EXT12 = #{ext12,jdbcType=VARCHAR},
+      </if>
+      <if test="ext13 != null">
+        EXT13 = #{ext13,jdbcType=VARCHAR},
+      </if>
+      <if test="ext14 != null">
+        EXT14 = #{ext14,jdbcType=VARCHAR},
+      </if>
+      <if test="ext15 != null">
+        EXT15 = #{ext15,jdbcType=VARCHAR},
+      </if>
+      <if test="ext16 != null">
+        EXT16 = #{ext16,jdbcType=VARCHAR},
+      </if>
+      <if test="ext17 != null">
+        EXT17 = #{ext17,jdbcType=VARCHAR},
+      </if>
+      <if test="ext18 != null">
+        EXT18 = #{ext18,jdbcType=VARCHAR},
+      </if>
+      <if test="ext19 != null">
+        EXT19 = #{ext19,jdbcType=VARCHAR},
+      </if>
+      <if test="ext20 != null">
+        EXT20 = #{ext20,jdbcType=VARCHAR},
+      </if>
+      <if test="ext21 != null">
+        EXT21 = #{ext21,jdbcType=VARCHAR},
+      </if>
+      <if test="ext22 != null">
+        EXT22 = #{ext22,jdbcType=VARCHAR},
+      </if>
+      <if test="ext23 != null">
+        EXT23 = #{ext23,jdbcType=DECIMAL},
+      </if>
+      <if test="ext24 != null">
+        EXT24 = #{ext24,jdbcType=DECIMAL},
+      </if>
+      <if test="ext25 != null">
+        EXT25 = #{ext25,jdbcType=DECIMAL},
+      </if>
+      <if test="ext26 != null">
+        EXT26 = #{ext26,jdbcType=DECIMAL},
+      </if>
+      <if test="ext27 != null">
+        EXT27 = #{ext27,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ext28 != null">
+        EXT28 = #{ext28,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ext29 != null">
+        EXT29 = #{ext29,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ext30 != null">
+        EXT30 = #{ext30,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysType != null">
+        SYS_TYPE = #{sysType,jdbcType=DECIMAL},
+      </if>
+      <if test="guid != null">
+        GUID = #{guid,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorDept != null">
+        CREATOR_DEPT = #{creatorDept,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorDeptId != null">
+        CREATOR_DEPT_ID = #{creatorDeptId,jdbcType=DECIMAL},
+      </if>
+      <if test="formsetGuid != null">
+        FORMSET_GUID = #{formsetGuid,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorUnit != null">
+        CREATOR_UNIT = #{creatorUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorUnitId != null">
+        CREATOR_UNIT_ID = #{creatorUnitId,jdbcType=DECIMAL},
+      </if>
+      <if test="urgent != null">
+        URGENT = #{urgent,jdbcType=DECIMAL},
+      </if>
+      <if test="needsend != null">
+        NEEDSEND = #{needsend,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>

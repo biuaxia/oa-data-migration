@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.data.migration.generate.orcl.mapper.UmOrganizationMapper">
+  <resultMap id="BaseResultMap" type="cn.biuaxia.data.migration.generate.orcl.domain.UmOrganization">
+    <!--@mbg.generated-->
+    <!--@Table UM_ORGANIZATION-->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="ISDEPT" jdbcType="DECIMAL" property="isdept" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="FAX" jdbcType="VARCHAR" property="fax" />
+    <result column="LINKMAN" jdbcType="VARCHAR" property="linkman" />
+    <result column="LINK_EMAIL" jdbcType="VARCHAR" property="linkEmail" />
+    <result column="OFFICIAL_LEVEL" jdbcType="DECIMAL" property="officialLevel" />
+    <result column="LEADER" jdbcType="DECIMAL" property="leader" />
+    <result column="OTHER_LEADER" jdbcType="VARCHAR" property="otherLeader" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, ISDEPT, PHONE, FAX, LINKMAN, LINK_EMAIL, OFFICIAL_LEVEL, LEADER, OTHER_LEADER
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update UM_ORGANIZATION
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="ISDEPT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.isdept,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="PHONE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.phone,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="FAX = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.fax,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="LINKMAN = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.linkman,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="LINK_EMAIL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.linkEmail,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="OFFICIAL_LEVEL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.officialLevel,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="LEADER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.leader,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="OTHER_LEADER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.otherLeader,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=DECIMAL}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update UM_ORGANIZATION
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="ISDEPT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.isdept != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.isdept,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="PHONE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.phone != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.phone,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FAX = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fax != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.fax,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="LINKMAN = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.linkman != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.linkman,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="LINK_EMAIL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.linkEmail != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.linkEmail,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="OFFICIAL_LEVEL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.officialLevel != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.officialLevel,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="LEADER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.leader != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.leader,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="OTHER_LEADER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.otherLeader != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.otherLeader,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=DECIMAL}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into UM_ORGANIZATION
+    (ID, ISDEPT, PHONE, FAX, LINKMAN, LINK_EMAIL, OFFICIAL_LEVEL, LEADER, OTHER_LEADER
+      )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=DECIMAL}, #{item.isdept,jdbcType=DECIMAL}, #{item.phone,jdbcType=VARCHAR}, 
+        #{item.fax,jdbcType=VARCHAR}, #{item.linkman,jdbcType=VARCHAR}, #{item.linkEmail,jdbcType=VARCHAR}, 
+        #{item.officialLevel,jdbcType=DECIMAL}, #{item.leader,jdbcType=DECIMAL}, #{item.otherLeader,jdbcType=VARCHAR}
+        )
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="cn.biuaxia.data.migration.generate.orcl.domain.UmOrganization">
+    <!--@mbg.generated-->
+    insert into UM_ORGANIZATION
+    (ID, ISDEPT, PHONE, FAX, LINKMAN, LINK_EMAIL, OFFICIAL_LEVEL, LEADER, OTHER_LEADER
+      )
+    values
+    (#{id,jdbcType=DECIMAL}, #{isdept,jdbcType=DECIMAL}, #{phone,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, 
+      #{linkman,jdbcType=VARCHAR}, #{linkEmail,jdbcType=VARCHAR}, #{officialLevel,jdbcType=DECIMAL}, 
+      #{leader,jdbcType=DECIMAL}, #{otherLeader,jdbcType=VARCHAR})
+    on duplicate key update 
+    ID = #{id,jdbcType=DECIMAL}, 
+    ISDEPT = #{isdept,jdbcType=DECIMAL}, 
+    PHONE = #{phone,jdbcType=VARCHAR}, 
+    FAX = #{fax,jdbcType=VARCHAR}, 
+    LINKMAN = #{linkman,jdbcType=VARCHAR}, 
+    LINK_EMAIL = #{linkEmail,jdbcType=VARCHAR}, 
+    OFFICIAL_LEVEL = #{officialLevel,jdbcType=DECIMAL}, 
+    LEADER = #{leader,jdbcType=DECIMAL}, 
+    OTHER_LEADER = #{otherLeader,jdbcType=VARCHAR}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.data.migration.generate.orcl.domain.UmOrganization">
+    <!--@mbg.generated-->
+    insert into UM_ORGANIZATION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="isdept != null">
+        ISDEPT,
+      </if>
+      <if test="phone != null">
+        PHONE,
+      </if>
+      <if test="fax != null">
+        FAX,
+      </if>
+      <if test="linkman != null">
+        LINKMAN,
+      </if>
+      <if test="linkEmail != null">
+        LINK_EMAIL,
+      </if>
+      <if test="officialLevel != null">
+        OFFICIAL_LEVEL,
+      </if>
+      <if test="leader != null">
+        LEADER,
+      </if>
+      <if test="otherLeader != null">
+        OTHER_LEADER,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="isdept != null">
+        #{isdept,jdbcType=DECIMAL},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="linkman != null">
+        #{linkman,jdbcType=VARCHAR},
+      </if>
+      <if test="linkEmail != null">
+        #{linkEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="officialLevel != null">
+        #{officialLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="leader != null">
+        #{leader,jdbcType=DECIMAL},
+      </if>
+      <if test="otherLeader != null">
+        #{otherLeader,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        ID = #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="isdept != null">
+        ISDEPT = #{isdept,jdbcType=DECIMAL},
+      </if>
+      <if test="phone != null">
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        FAX = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="linkman != null">
+        LINKMAN = #{linkman,jdbcType=VARCHAR},
+      </if>
+      <if test="linkEmail != null">
+        LINK_EMAIL = #{linkEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="officialLevel != null">
+        OFFICIAL_LEVEL = #{officialLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="leader != null">
+        LEADER = #{leader,jdbcType=DECIMAL},
+      </if>
+      <if test="otherLeader != null">
+        OTHER_LEADER = #{otherLeader,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

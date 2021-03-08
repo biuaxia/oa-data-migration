@@ -1,0 +1,24 @@
+# dataSource config
+spring:
+  datasource:
+    dynamic:
+      primary: orcl
+      strict: true
+      datasource:
+        orcl:
+          url: jdbc:oracle:thin:@172.16.17.53:1521:orcl
+          username: EXOA
+          password: Jtt_1234
+          driver-class-name: oracle.jdbc.OracleDriver
+        msq:
+          url: jdbc:mysql://localhost/jtt_gkp?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+          username: root
+          password: 2PvR4UEThwFofg
+          driver-class-name: com.mysql.cj.jdbc.Driver
+
+# mybatisPlus config
+mybatis-plus:
+  mapper-locations: classpath*:/generate/**/mapperxml/*Mapper.xml
+  type-aliases-package: cn.biuaxia.data.migration.generate.*.domain
+  configuration:
+    jdbc-type-for-null: null

@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.data.migration.generate.orcl.mapper.UmUserMapper">
+  <resultMap id="BaseResultMap" type="cn.biuaxia.data.migration.generate.orcl.domain.UmUser">
+    <!--@mbg.generated-->
+    <!--@Table UM_USER-->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="ACCOUNT" jdbcType="VARCHAR" property="account" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="CERTIFICATE" jdbcType="VARCHAR" property="certificate" />
+    <result column="SIGNATURE" jdbcType="VARCHAR" property="signature" />
+    <result column="PWD_LIMIT_DATE" jdbcType="TIMESTAMP" property="pwdLimitDate" />
+    <result column="ACCOUNT_LMT_DATE" jdbcType="TIMESTAMP" property="accountLmtDate" />
+    <result column="LOGIN_MODE" jdbcType="DECIMAL" property="loginMode" />
+    <result column="STATUS" jdbcType="DECIMAL" property="status" />
+    <result column="PWD_ERR_NUM" jdbcType="DECIMAL" property="pwdErrNum" />
+    <result column="PWD_ERR_LOCK" jdbcType="DECIMAL" property="pwdErrLock" />
+    <result column="NICKNAME" jdbcType="VARCHAR" property="nickname" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="FAX" jdbcType="VARCHAR" property="fax" />
+    <result column="URL" jdbcType="VARCHAR" property="url" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="GENDER" jdbcType="DECIMAL" property="gender" />
+    <result column="BIRTHDAY" jdbcType="TIMESTAMP" property="birthday" />
+    <result column="STYLE" jdbcType="VARCHAR" property="style" />
+    <result column="IDENTITY_NUM" jdbcType="VARCHAR" property="identityNum" />
+    <result column="NATION" jdbcType="VARCHAR" property="nation" />
+    <result column="NATIVE_PLACE" jdbcType="VARCHAR" property="nativePlace" />
+    <result column="MOBILE" jdbcType="VARCHAR" property="mobile" />
+    <result column="GRADUATE_SCHOOL" jdbcType="VARCHAR" property="graduateSchool" />
+    <result column="DEGREE_LEVEL" jdbcType="DECIMAL" property="degreeLevel" />
+    <result column="INTEREST" jdbcType="VARCHAR" property="interest" />
+    <result column="EDUCATE_EXPERIENCE" jdbcType="VARCHAR" property="educateExperience" />
+    <result column="WORK_EXPERIENCE" jdbcType="VARCHAR" property="workExperience" />
+    <result column="WE_CHAT" jdbcType="VARCHAR" property="weChat" />
+    <result column="SCRETTYPE" jdbcType="DECIMAL" property="screttype" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, ACCOUNT, "PASSWORD", CERTIFICATE, SIGNATURE, PWD_LIMIT_DATE, ACCOUNT_LMT_DATE, 
+    LOGIN_MODE, "STATUS", PWD_ERR_NUM, PWD_ERR_LOCK, NICKNAME, PHONE, FAX, URL, EMAIL, 
+    GENDER, BIRTHDAY, "STYLE", IDENTITY_NUM, NATION, NATIVE_PLACE, MOBILE, GRADUATE_SCHOOL, 
+    DEGREE_LEVEL, INTEREST, EDUCATE_EXPERIENCE, WORK_EXPERIENCE, WE_CHAT, SCRETTYPE
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update UM_USER
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="ACCOUNT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.account,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="&quot;PASSWORD&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.password,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="CERTIFICATE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.certificate,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="SIGNATURE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.signature,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="PWD_LIMIT_DATE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.pwdLimitDate,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="ACCOUNT_LMT_DATE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.accountLmtDate,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="LOGIN_MODE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.loginMode,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="&quot;STATUS&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.status,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="PWD_ERR_NUM = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.pwdErrNum,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="PWD_ERR_LOCK = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.pwdErrLock,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="NICKNAME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.nickname,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="PHONE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.phone,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="FAX = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.fax,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="URL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.url,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EMAIL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.email,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="GENDER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.gender,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="BIRTHDAY = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.birthday,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="&quot;STYLE&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.style,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="IDENTITY_NUM = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.identityNum,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="NATION = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.nation,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="NATIVE_PLACE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.nativePlace,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="MOBILE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.mobile,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="GRADUATE_SCHOOL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.graduateSchool,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="DEGREE_LEVEL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.degreeLevel,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="INTEREST = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.interest,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="EDUCATE_EXPERIENCE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.educateExperience,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="WORK_EXPERIENCE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.workExperience,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="WE_CHAT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.weChat,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="SCRETTYPE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.screttype,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+    </trim>
+    where ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=DECIMAL}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update UM_USER
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="ACCOUNT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.account != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.account,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="&quot;PASSWORD&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.password != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.password,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="CERTIFICATE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.certificate != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.certificate,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="SIGNATURE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.signature != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.signature,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="PWD_LIMIT_DATE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.pwdLimitDate != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.pwdLimitDate,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="ACCOUNT_LMT_DATE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.accountLmtDate != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.accountLmtDate,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="LOGIN_MODE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.loginMode != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.loginMode,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="&quot;STATUS&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.status != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.status,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="PWD_ERR_NUM = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.pwdErrNum != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.pwdErrNum,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="PWD_ERR_LOCK = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.pwdErrLock != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.pwdErrLock,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="NICKNAME = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.nickname != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.nickname,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="PHONE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.phone != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.phone,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="FAX = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.fax != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.fax,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="URL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.url != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.url,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EMAIL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.email != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.email,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="GENDER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.gender != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.gender,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="BIRTHDAY = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.birthday != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.birthday,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="&quot;STYLE&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.style != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.style,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="IDENTITY_NUM = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.identityNum != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.identityNum,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="NATION = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.nation != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.nation,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="NATIVE_PLACE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.nativePlace != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.nativePlace,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="MOBILE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.mobile != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.mobile,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="GRADUATE_SCHOOL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.graduateSchool != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.graduateSchool,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="DEGREE_LEVEL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.degreeLevel != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.degreeLevel,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="INTEREST = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.interest != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.interest,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="EDUCATE_EXPERIENCE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.educateExperience != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.educateExperience,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="WORK_EXPERIENCE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.workExperience != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.workExperience,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="WE_CHAT = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.weChat != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.weChat,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="SCRETTYPE = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.screttype != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.screttype,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=DECIMAL}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into UM_USER
+    (ID, ACCOUNT, "PASSWORD", CERTIFICATE, SIGNATURE, PWD_LIMIT_DATE, ACCOUNT_LMT_DATE, 
+      LOGIN_MODE, "STATUS", PWD_ERR_NUM, PWD_ERR_LOCK, NICKNAME, PHONE, FAX, URL, EMAIL, 
+      GENDER, BIRTHDAY, "STYLE", IDENTITY_NUM, NATION, NATIVE_PLACE, MOBILE, GRADUATE_SCHOOL, 
+      DEGREE_LEVEL, INTEREST, EDUCATE_EXPERIENCE, WORK_EXPERIENCE, WE_CHAT, SCRETTYPE
+      )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=DECIMAL}, #{item.account,jdbcType=VARCHAR}, #{item.password,jdbcType=VARCHAR}, 
+        #{item.certificate,jdbcType=VARCHAR}, #{item.signature,jdbcType=VARCHAR}, #{item.pwdLimitDate,jdbcType=TIMESTAMP}, 
+        #{item.accountLmtDate,jdbcType=TIMESTAMP}, #{item.loginMode,jdbcType=DECIMAL}, 
+        #{item.status,jdbcType=DECIMAL}, #{item.pwdErrNum,jdbcType=DECIMAL}, #{item.pwdErrLock,jdbcType=DECIMAL}, 
+        #{item.nickname,jdbcType=VARCHAR}, #{item.phone,jdbcType=VARCHAR}, #{item.fax,jdbcType=VARCHAR}, 
+        #{item.url,jdbcType=VARCHAR}, #{item.email,jdbcType=VARCHAR}, #{item.gender,jdbcType=DECIMAL}, 
+        #{item.birthday,jdbcType=TIMESTAMP}, #{item.style,jdbcType=VARCHAR}, #{item.identityNum,jdbcType=VARCHAR}, 
+        #{item.nation,jdbcType=VARCHAR}, #{item.nativePlace,jdbcType=VARCHAR}, #{item.mobile,jdbcType=VARCHAR}, 
+        #{item.graduateSchool,jdbcType=VARCHAR}, #{item.degreeLevel,jdbcType=DECIMAL}, 
+        #{item.interest,jdbcType=VARCHAR}, #{item.educateExperience,jdbcType=VARCHAR}, 
+        #{item.workExperience,jdbcType=VARCHAR}, #{item.weChat,jdbcType=VARCHAR}, #{item.screttype,jdbcType=DECIMAL}
+        )
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="cn.biuaxia.data.migration.generate.orcl.domain.UmUser">
+    <!--@mbg.generated-->
+    insert into UM_USER
+    (ID, ACCOUNT, "PASSWORD", CERTIFICATE, SIGNATURE, PWD_LIMIT_DATE, ACCOUNT_LMT_DATE, 
+      LOGIN_MODE, "STATUS", PWD_ERR_NUM, PWD_ERR_LOCK, NICKNAME, PHONE, FAX, URL, EMAIL, 
+      GENDER, BIRTHDAY, "STYLE", IDENTITY_NUM, NATION, NATIVE_PLACE, MOBILE, GRADUATE_SCHOOL, 
+      DEGREE_LEVEL, INTEREST, EDUCATE_EXPERIENCE, WORK_EXPERIENCE, WE_CHAT, SCRETTYPE
+      )
+    values
+    (#{id,jdbcType=DECIMAL}, #{account,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{certificate,jdbcType=VARCHAR}, #{signature,jdbcType=VARCHAR}, #{pwdLimitDate,jdbcType=TIMESTAMP}, 
+      #{accountLmtDate,jdbcType=TIMESTAMP}, #{loginMode,jdbcType=DECIMAL}, #{status,jdbcType=DECIMAL}, 
+      #{pwdErrNum,jdbcType=DECIMAL}, #{pwdErrLock,jdbcType=DECIMAL}, #{nickname,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{gender,jdbcType=DECIMAL}, #{birthday,jdbcType=TIMESTAMP}, #{style,jdbcType=VARCHAR}, 
+      #{identityNum,jdbcType=VARCHAR}, #{nation,jdbcType=VARCHAR}, #{nativePlace,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{graduateSchool,jdbcType=VARCHAR}, #{degreeLevel,jdbcType=DECIMAL}, 
+      #{interest,jdbcType=VARCHAR}, #{educateExperience,jdbcType=VARCHAR}, #{workExperience,jdbcType=VARCHAR}, 
+      #{weChat,jdbcType=VARCHAR}, #{screttype,jdbcType=DECIMAL})
+    on duplicate key update 
+    ID = #{id,jdbcType=DECIMAL}, 
+    ACCOUNT = #{account,jdbcType=VARCHAR}, 
+    "PASSWORD" = #{password,jdbcType=VARCHAR}, 
+    CERTIFICATE = #{certificate,jdbcType=VARCHAR}, 
+    SIGNATURE = #{signature,jdbcType=VARCHAR}, 
+    PWD_LIMIT_DATE = #{pwdLimitDate,jdbcType=TIMESTAMP}, 
+    ACCOUNT_LMT_DATE = #{accountLmtDate,jdbcType=TIMESTAMP}, 
+    LOGIN_MODE = #{loginMode,jdbcType=DECIMAL}, 
+    "STATUS" = #{status,jdbcType=DECIMAL}, 
+    PWD_ERR_NUM = #{pwdErrNum,jdbcType=DECIMAL}, 
+    PWD_ERR_LOCK = #{pwdErrLock,jdbcType=DECIMAL}, 
+    NICKNAME = #{nickname,jdbcType=VARCHAR}, 
+    PHONE = #{phone,jdbcType=VARCHAR}, 
+    FAX = #{fax,jdbcType=VARCHAR}, 
+    URL = #{url,jdbcType=VARCHAR}, 
+    EMAIL = #{email,jdbcType=VARCHAR}, 
+    GENDER = #{gender,jdbcType=DECIMAL}, 
+    BIRTHDAY = #{birthday,jdbcType=TIMESTAMP}, 
+    "STYLE" = #{style,jdbcType=VARCHAR}, 
+    IDENTITY_NUM = #{identityNum,jdbcType=VARCHAR}, 
+    NATION = #{nation,jdbcType=VARCHAR}, 
+    NATIVE_PLACE = #{nativePlace,jdbcType=VARCHAR}, 
+    MOBILE = #{mobile,jdbcType=VARCHAR}, 
+    GRADUATE_SCHOOL = #{graduateSchool,jdbcType=VARCHAR}, 
+    DEGREE_LEVEL = #{degreeLevel,jdbcType=DECIMAL}, 
+    INTEREST = #{interest,jdbcType=VARCHAR}, 
+    EDUCATE_EXPERIENCE = #{educateExperience,jdbcType=VARCHAR}, 
+    WORK_EXPERIENCE = #{workExperience,jdbcType=VARCHAR}, 
+    WE_CHAT = #{weChat,jdbcType=VARCHAR}, 
+    SCRETTYPE = #{screttype,jdbcType=DECIMAL}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.data.migration.generate.orcl.domain.UmUser">
+    <!--@mbg.generated-->
+    insert into UM_USER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="account != null">
+        ACCOUNT,
+      </if>
+      <if test="password != null">
+        "PASSWORD",
+      </if>
+      <if test="certificate != null">
+        CERTIFICATE,
+      </if>
+      <if test="signature != null">
+        SIGNATURE,
+      </if>
+      <if test="pwdLimitDate != null">
+        PWD_LIMIT_DATE,
+      </if>
+      <if test="accountLmtDate != null">
+        ACCOUNT_LMT_DATE,
+      </if>
+      <if test="loginMode != null">
+        LOGIN_MODE,
+      </if>
+      <if test="status != null">
+        "STATUS",
+      </if>
+      <if test="pwdErrNum != null">
+        PWD_ERR_NUM,
+      </if>
+      <if test="pwdErrLock != null">
+        PWD_ERR_LOCK,
+      </if>
+      <if test="nickname != null">
+        NICKNAME,
+      </if>
+      <if test="phone != null">
+        PHONE,
+      </if>
+      <if test="fax != null">
+        FAX,
+      </if>
+      <if test="url != null">
+        URL,
+      </if>
+      <if test="email != null">
+        EMAIL,
+      </if>
+      <if test="gender != null">
+        GENDER,
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY,
+      </if>
+      <if test="style != null">
+        "STYLE",
+      </if>
+      <if test="identityNum != null">
+        IDENTITY_NUM,
+      </if>
+      <if test="nation != null">
+        NATION,
+      </if>
+      <if test="nativePlace != null">
+        NATIVE_PLACE,
+      </if>
+      <if test="mobile != null">
+        MOBILE,
+      </if>
+      <if test="graduateSchool != null">
+        GRADUATE_SCHOOL,
+      </if>
+      <if test="degreeLevel != null">
+        DEGREE_LEVEL,
+      </if>
+      <if test="interest != null">
+        INTEREST,
+      </if>
+      <if test="educateExperience != null">
+        EDUCATE_EXPERIENCE,
+      </if>
+      <if test="workExperience != null">
+        WORK_EXPERIENCE,
+      </if>
+      <if test="weChat != null">
+        WE_CHAT,
+      </if>
+      <if test="screttype != null">
+        SCRETTYPE,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="account != null">
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="certificate != null">
+        #{certificate,jdbcType=VARCHAR},
+      </if>
+      <if test="signature != null">
+        #{signature,jdbcType=VARCHAR},
+      </if>
+      <if test="pwdLimitDate != null">
+        #{pwdLimitDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accountLmtDate != null">
+        #{accountLmtDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loginMode != null">
+        #{loginMode,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="pwdErrNum != null">
+        #{pwdErrNum,jdbcType=DECIMAL},
+      </if>
+      <if test="pwdErrLock != null">
+        #{pwdErrLock,jdbcType=DECIMAL},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=DECIMAL},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="style != null">
+        #{style,jdbcType=VARCHAR},
+      </if>
+      <if test="identityNum != null">
+        #{identityNum,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="nativePlace != null">
+        #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="graduateSchool != null">
+        #{graduateSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="degreeLevel != null">
+        #{degreeLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="interest != null">
+        #{interest,jdbcType=VARCHAR},
+      </if>
+      <if test="educateExperience != null">
+        #{educateExperience,jdbcType=VARCHAR},
+      </if>
+      <if test="workExperience != null">
+        #{workExperience,jdbcType=VARCHAR},
+      </if>
+      <if test="weChat != null">
+        #{weChat,jdbcType=VARCHAR},
+      </if>
+      <if test="screttype != null">
+        #{screttype,jdbcType=DECIMAL},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        ID = #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="account != null">
+        ACCOUNT = #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        "PASSWORD" = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="certificate != null">
+        CERTIFICATE = #{certificate,jdbcType=VARCHAR},
+      </if>
+      <if test="signature != null">
+        SIGNATURE = #{signature,jdbcType=VARCHAR},
+      </if>
+      <if test="pwdLimitDate != null">
+        PWD_LIMIT_DATE = #{pwdLimitDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accountLmtDate != null">
+        ACCOUNT_LMT_DATE = #{accountLmtDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loginMode != null">
+        LOGIN_MODE = #{loginMode,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        "STATUS" = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="pwdErrNum != null">
+        PWD_ERR_NUM = #{pwdErrNum,jdbcType=DECIMAL},
+      </if>
+      <if test="pwdErrLock != null">
+        PWD_ERR_LOCK = #{pwdErrLock,jdbcType=DECIMAL},
+      </if>
+      <if test="nickname != null">
+        NICKNAME = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        FAX = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        URL = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        GENDER = #{gender,jdbcType=DECIMAL},
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY = #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="style != null">
+        "STYLE" = #{style,jdbcType=VARCHAR},
+      </if>
+      <if test="identityNum != null">
+        IDENTITY_NUM = #{identityNum,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        NATION = #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="nativePlace != null">
+        NATIVE_PLACE = #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        MOBILE = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="graduateSchool != null">
+        GRADUATE_SCHOOL = #{graduateSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="degreeLevel != null">
+        DEGREE_LEVEL = #{degreeLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="interest != null">
+        INTEREST = #{interest,jdbcType=VARCHAR},
+      </if>
+      <if test="educateExperience != null">
+        EDUCATE_EXPERIENCE = #{educateExperience,jdbcType=VARCHAR},
+      </if>
+      <if test="workExperience != null">
+        WORK_EXPERIENCE = #{workExperience,jdbcType=VARCHAR},
+      </if>
+      <if test="weChat != null">
+        WE_CHAT = #{weChat,jdbcType=VARCHAR},
+      </if>
+      <if test="screttype != null">
+        SCRETTYPE = #{screttype,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>

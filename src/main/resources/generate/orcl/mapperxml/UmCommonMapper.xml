@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.data.migration.generate.orcl.mapper.UmCommonMapper">
+  <resultMap id="BaseResultMap" type="cn.biuaxia.data.migration.generate.orcl.domain.UmCommon">
+    <!--@mbg.generated-->
+    <!--@Table UM_COMMON-->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="OPTIONS" jdbcType="DECIMAL" property="options" />
+    <result column="PID" jdbcType="DECIMAL" property="pid" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="PRIORITY" jdbcType="VARCHAR" property="priority" />
+    <result column="SYMBOL" jdbcType="VARCHAR" property="symbol" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, "NAME", "OPTIONS", PID, DESCRIPTION, PRIORITY, SYMBOL
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update UM_COMMON
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="&quot;NAME&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.name,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="&quot;OPTIONS&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.options,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="PID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.pid,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="DESCRIPTION = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.description,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="PRIORITY = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.priority,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="SYMBOL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.symbol,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=DECIMAL}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update UM_COMMON
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="&quot;NAME&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.name != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.name,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="&quot;OPTIONS&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.options != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.options,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="PID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.pid != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.pid,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="DESCRIPTION = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.description != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.description,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="PRIORITY = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.priority != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.priority,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="SYMBOL = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.symbol != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.symbol,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=DECIMAL}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into UM_COMMON
+    (ID, "NAME", "OPTIONS", PID, DESCRIPTION, PRIORITY, SYMBOL)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=DECIMAL}, #{item.name,jdbcType=VARCHAR}, #{item.options,jdbcType=DECIMAL}, 
+        #{item.pid,jdbcType=DECIMAL}, #{item.description,jdbcType=VARCHAR}, #{item.priority,jdbcType=VARCHAR}, 
+        #{item.symbol,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="cn.biuaxia.data.migration.generate.orcl.domain.UmCommon">
+    <!--@mbg.generated-->
+    insert into UM_COMMON
+    (ID, "NAME", "OPTIONS", PID, DESCRIPTION, PRIORITY, SYMBOL)
+    values
+    (#{id,jdbcType=DECIMAL}, #{name,jdbcType=VARCHAR}, #{options,jdbcType=DECIMAL}, #{pid,jdbcType=DECIMAL}, 
+      #{description,jdbcType=VARCHAR}, #{priority,jdbcType=VARCHAR}, #{symbol,jdbcType=VARCHAR}
+      )
+    on duplicate key update 
+    ID = #{id,jdbcType=DECIMAL}, 
+    "NAME" = #{name,jdbcType=VARCHAR}, 
+    "OPTIONS" = #{options,jdbcType=DECIMAL}, 
+    PID = #{pid,jdbcType=DECIMAL}, 
+    DESCRIPTION = #{description,jdbcType=VARCHAR}, 
+    PRIORITY = #{priority,jdbcType=VARCHAR}, 
+    SYMBOL = #{symbol,jdbcType=VARCHAR}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.data.migration.generate.orcl.domain.UmCommon">
+    <!--@mbg.generated-->
+    insert into UM_COMMON
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="name != null">
+        "NAME",
+      </if>
+      <if test="options != null">
+        "OPTIONS",
+      </if>
+      <if test="pid != null">
+        PID,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="priority != null">
+        PRIORITY,
+      </if>
+      <if test="symbol != null">
+        SYMBOL,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="options != null">
+        #{options,jdbcType=DECIMAL},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=DECIMAL},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="priority != null">
+        #{priority,jdbcType=VARCHAR},
+      </if>
+      <if test="symbol != null">
+        #{symbol,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        ID = #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="name != null">
+        "NAME" = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="options != null">
+        "OPTIONS" = #{options,jdbcType=DECIMAL},
+      </if>
+      <if test="pid != null">
+        PID = #{pid,jdbcType=DECIMAL},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="priority != null">
+        PRIORITY = #{priority,jdbcType=VARCHAR},
+      </if>
+      <if test="symbol != null">
+        SYMBOL = #{symbol,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

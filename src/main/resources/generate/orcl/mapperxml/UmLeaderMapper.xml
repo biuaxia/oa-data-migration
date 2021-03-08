@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.data.migration.generate.orcl.mapper.UmLeaderMapper">
+  <resultMap id="BaseResultMap" type="cn.biuaxia.data.migration.generate.orcl.domain.UmLeader">
+    <!--@mbg.generated-->
+    <!--@Table UM_LEADER-->
+    <id column="LEAD_ID" jdbcType="DECIMAL" property="leadId" />
+    <result column="INFERIOR_ID" jdbcType="VARCHAR" property="inferiorId" />
+    <result column="DEPT_ID" jdbcType="VARCHAR" property="deptId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    LEAD_ID, INFERIOR_ID, DEPT_ID
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update UM_LEADER
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="INFERIOR_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when LEAD_ID = #{item.leadId,jdbcType=DECIMAL} then #{item.inferiorId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="DEPT_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when LEAD_ID = #{item.leadId,jdbcType=DECIMAL} then #{item.deptId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where LEAD_ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.leadId,jdbcType=DECIMAL}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update UM_LEADER
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="INFERIOR_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.inferiorId != null">
+            when LEAD_ID = #{item.leadId,jdbcType=DECIMAL} then #{item.inferiorId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="DEPT_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.deptId != null">
+            when LEAD_ID = #{item.leadId,jdbcType=DECIMAL} then #{item.deptId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where LEAD_ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.leadId,jdbcType=DECIMAL}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into UM_LEADER
+    (LEAD_ID, INFERIOR_ID, DEPT_ID)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.leadId,jdbcType=DECIMAL}, #{item.inferiorId,jdbcType=VARCHAR}, #{item.deptId,jdbcType=VARCHAR}
+        )
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="cn.biuaxia.data.migration.generate.orcl.domain.UmLeader">
+    <!--@mbg.generated-->
+    insert into UM_LEADER
+    (LEAD_ID, INFERIOR_ID, DEPT_ID)
+    values
+    (#{leadId,jdbcType=DECIMAL}, #{inferiorId,jdbcType=VARCHAR}, #{deptId,jdbcType=VARCHAR}
+      )
+    on duplicate key update 
+    LEAD_ID = #{leadId,jdbcType=DECIMAL}, 
+    INFERIOR_ID = #{inferiorId,jdbcType=VARCHAR}, 
+    DEPT_ID = #{deptId,jdbcType=VARCHAR}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.data.migration.generate.orcl.domain.UmLeader">
+    <!--@mbg.generated-->
+    insert into UM_LEADER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="leadId != null">
+        LEAD_ID,
+      </if>
+      <if test="inferiorId != null">
+        INFERIOR_ID,
+      </if>
+      <if test="deptId != null">
+        DEPT_ID,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="leadId != null">
+        #{leadId,jdbcType=DECIMAL},
+      </if>
+      <if test="inferiorId != null">
+        #{inferiorId,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="leadId != null">
+        LEAD_ID = #{leadId,jdbcType=DECIMAL},
+      </if>
+      <if test="inferiorId != null">
+        INFERIOR_ID = #{inferiorId,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null">
+        DEPT_ID = #{deptId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

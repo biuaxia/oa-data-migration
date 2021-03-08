@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.biuaxia.data.migration.generate.orcl.mapper.UmGroupMapper">
+  <resultMap id="BaseResultMap" type="cn.biuaxia.data.migration.generate.orcl.domain.UmGroup">
+    <!--@mbg.generated-->
+    <!--@Table UM_GROUP-->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="TYPE" jdbcType="DECIMAL" property="type" />
+    <result column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="LEADER" jdbcType="DECIMAL" property="leader" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, "TYPE", USER_ID, LEADER
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update UM_GROUP
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="&quot;TYPE&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.type,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="USER_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.userId,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="LEADER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when ID = #{item.id,jdbcType=DECIMAL} then #{item.leader,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+    </trim>
+    where ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=DECIMAL}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update UM_GROUP
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="&quot;TYPE&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.type != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.type,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="USER_ID = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.userId != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.userId,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="LEADER = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.leader != null">
+            when ID = #{item.id,jdbcType=DECIMAL} then #{item.leader,jdbcType=DECIMAL}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where ID in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=DECIMAL}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into UM_GROUP
+    (ID, "TYPE", USER_ID, LEADER)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=DECIMAL}, #{item.type,jdbcType=DECIMAL}, #{item.userId,jdbcType=DECIMAL}, 
+        #{item.leader,jdbcType=DECIMAL})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="cn.biuaxia.data.migration.generate.orcl.domain.UmGroup">
+    <!--@mbg.generated-->
+    insert into UM_GROUP
+    (ID, "TYPE", USER_ID, LEADER)
+    values
+    (#{id,jdbcType=DECIMAL}, #{type,jdbcType=DECIMAL}, #{userId,jdbcType=DECIMAL}, #{leader,jdbcType=DECIMAL}
+      )
+    on duplicate key update 
+    ID = #{id,jdbcType=DECIMAL}, 
+    "TYPE" = #{type,jdbcType=DECIMAL}, 
+    USER_ID = #{userId,jdbcType=DECIMAL}, 
+    LEADER = #{leader,jdbcType=DECIMAL}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="cn.biuaxia.data.migration.generate.orcl.domain.UmGroup">
+    <!--@mbg.generated-->
+    insert into UM_GROUP
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="type != null">
+        "TYPE",
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="leader != null">
+        LEADER,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="leader != null">
+        #{leader,jdbcType=DECIMAL},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        ID = #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null">
+        "TYPE" = #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="leader != null">
+        LEADER = #{leader,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>
