@@ -1,5 +1,6 @@
 package cn.biuaxia.odm;
 
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
@@ -42,7 +43,8 @@ public class OaDataMigrationApplicationTests {
             });
             Map<String, List<Long>> m = new HashMap<>();
             for (String s : keySet) {
-                m.put(s, jsonObject.getJSONArray(s).toList(Long.class));
+                List<Long> idList = jsonObject.getJSONArray(s).toList(Long.class);
+                m.put(s, CollUtil.sub(idList, 0, 3));
             }
             FileUtil.writeUtf8String(JSONUtil.toJsonPrettyStr(m),
                     StrUtil.format("{}/new/{}", basePath, item));
